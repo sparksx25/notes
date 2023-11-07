@@ -8,9 +8,24 @@ Color: 设置颜色
 
 TextDecoration: 文本装饰，如设置下划线，删除线等
 
-TextAlign: left | right | center
+TextAlign: left | right | center | ...
 
 TextStyle: 设置文本样式，如字体大小，粗细，是否倾斜等
+```dart
+TextStyle(
+  fontWeight:
+  fontSize:
+  fontStyle:
+  color:
+)
+```
+
+DefaultTextStyle: 样式继承
+
+
+## 容器大小设置
+BoxConstraints: 设置最大，最小值
+
 
 ## 内边距
 1. 使用 `Padding widgets`:
@@ -22,50 +37,64 @@ Padding(
 ```
 2. 自带`padding` 属性的 `Widgets`, 如 `Container`
 
+
 ## 外边距
 1. 自带`margin` 属性的 `Widgets`, 如 `Container`
 
-## 边框
-边框大小，边框样式，边框颜色 
+
+## 盒子设置
+```dart
+// 边框设置
+BoxDecoration
 Border
 BorderSide
-BoxDecoration
+enum BorderStyle 
+Borderradius
 
-## 圆角
+// 阴影
+BoxShadow
+
+Container(
+  // 内容垂直居中布局
+  alignment: Alignment.center,
+  padding: const EdgeInsets.symmetric(vertical: 10),
+  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+  decoration: BoxDecoration(
+    // 设置盒子的背景色
+    color: const Color(0xFF999999), 
+    // 设置背景图
+    image: const DecorationImage(
+      image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+      fit: BoxFit.cover,
+    ),
+    // 设置背景渐变
+    gradient:
+    // 设置边框
+    border: Border.all(color: const Color(0xFF999999), style: BorderStyle.solid, width: 1),
+    // 设置圆角
+    borderRadius: const BorderRadius.all(Radius.circular(4)),
+    shape: BoxShape.rectangle
+    // 阴影
+    boxShadow: BoxShadow()
+  )
+)
+```
 
 ## 阴影
 BoxShadow
 
 
-## 创建文本
-ParagraphBuilder： 是一个更高级的文本显示 Widget，它可以创建一个段落，其中包含多个文本块。
-你可以使用 ParagraphBuilder 的方法来添加多个文本块，并对它们进行样式和布局的控制。
-ParagraphBuilder 还可以处理文本的换行和段落间距等问题。
-
-Text: 设置简单的文本
-
-## 表单
-Form
-FormField
-
-TextBox： 文本输入框
-EditableText： 基础文本输入框
-
-
-## 基本布局 Widgets
-Container: 可设置 `margin`, `padding`, `border`
-
-Image： 图片
-
-Padding: 设置内边距
-ViewPadding：设置内边距
-
-Row: 弹性布局
-
-Column: 弹性布局
-
-List：列表
-
-
-## 时间监听
+## 事件监听
 GestureDetector
+
+```dart
+GestureDetector(
+  // 点击事件
+  onTap: 
+  onDoubleTap: 
+  onLongPress:
+  onScaleStart:
+  onScaleEnd:
+  onScaleUpdate: ,
+)
+```
