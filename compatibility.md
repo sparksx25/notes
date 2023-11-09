@@ -41,3 +41,8 @@ console.log([...str].length) // 3
 `body.scrollTop`的值
 
 具体实现可参考 `vant` 组件库 `Field` 组件
+
+
+## fixed 定位
+使用 fixed 定位固定在页面底部的按钮，输入框获取焦点时，整个 WebView 容器会往上推。
+[掘金](https://juejin.cn/post/6961757804491178014)
