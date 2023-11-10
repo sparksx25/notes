@@ -1,26 +1,42 @@
-# base基础开发
-## 字体设置
+# 样式设置
+
+
+## 文本设置
+```dart
+Text(title,
+  maxLines: 1, // 最大行数
+  overflow: TextOverflow.ellipsis,
+  style: const TextStyle()
+),
+```
+
+## 文本样式 TextStyle
+```dart
+const TextStyle(
+    color: Color(0XFF333333),
+    fontSize: 16,
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.bold | FontWeight,
+)
+```
 FontWeight: normal | bold | w100-w900
 
 FontStyle: normal | italic
 
-Color: 设置颜色
+Color: Color(0XFF333333),
 
 TextDecoration: 文本装饰，如设置下划线，删除线等
 
 TextAlign: left | right | center | ...
 
-TextStyle: 设置文本样式，如字体大小，粗细，是否倾斜等
+
+## 样式继承
+DefaultTextStyle
 ```dart
-TextStyle(
-  fontWeight:
-  fontSize:
-  fontStyle:
-  color:
+DefaultTextStyle(
+  child: Widget
 )
 ```
-
-DefaultTextStyle: 样式继承
 
 
 ## 容器大小设置
@@ -43,17 +59,3 @@ Padding(
 
 
 
-## 事件监听
-GestureDetector
-
-```dart
-GestureDetector(
-  // 点击事件
-  onTap: 
-  onDoubleTap: 
-  onLongPress:
-  onScaleStart:
-  onScaleEnd:
-  onScaleUpdate: ,
-)
-```
