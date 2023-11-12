@@ -8,7 +8,26 @@ ParagraphBuilder 还可以处理文本的换行和段落间距等问题。
 
 Text: 设置简单的文本
 
-## Container
+
+## Image
+```dart
+Image.network(
+  'https://picsum.photos/250?image=9',
+),
+```
+
+## TextButton
+
+## MaterialPageRoute
+根据实际运行平台来切换表现风格,在路由切换时，
+如果是 Android 系统，它将会使用 Android 系统默认的页面切换动画(从底向上)；
+如果是 iOS 系统，它会使用 iOS 系统默认的页面切换动画（从右向左）
+
+
+-----------------------------------------------------------------------
+## Scaffold 
+
+## 设置盒子样式：Container
 ```dart
 // 边框设置
 BoxDecoration
@@ -46,20 +65,32 @@ Container(
 )
 ```
 
-## SizedBox
+## BoxConstraints
+BoxConstraints({ minWidth, maxWidth, minHeight, maxHeight})
+BoxConstraints.tight(Size size)，它可以生成固定宽高的限制；
+BoxConstraints.expand()可以生成一个尽可能大的用以填充另一个容器的BoxConstraints
 
-## Image
+## ConstrainedBox
 ```dart
-Image.network(
-  'https://picsum.photos/250?image=9',
-),
+ConstrainedBox(
+  constraints: BoxConstraints,
+  cihld:
+);
 ```
+
+## SizedBox
+SizedBox用于给子元素指定固定的宽高
+
+
+## Flex
+Flex包含了 Row,Column 的功能
 
 ## Row
 弹性布局，主轴水平
 ```dart
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+  crossAxisAlignment: CrossAxisAlignment.center
   children: Widgets[]
 )
 ```
@@ -67,12 +98,26 @@ Row(
 ## Column
 弹性布局， 主轴纵向
 
+## Expanded
+类似 web 的 flex 属性。定义弹性盒子尺寸充足与不足的情况。
+
+## Wrap
+
+## Stack 层叠布局
+
+## Positioned
+根据 Stack 进行定位布局
+
+## Align
+调整子 Widget的对齐方式
+
+## Alignment
+相对定位布局
 
 ## ListView
 ```dart
 ListView()
 ```
-
 
 ## Padding
 ## ViewPadding

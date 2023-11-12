@@ -8,13 +8,6 @@ MaterialPage
 Navigator 路由嵌套
 
 
-```dart
-Navigator.push(context, MaterialPageRoute(builder: (context) {
-  return const DetailScreen();
-}));
-Navigator.pop(context);
-```
-
 ## MaterialRoutePage
 ```dart
 Navigator.push(
@@ -33,20 +26,25 @@ Navigator.push(
 ## 配置路由
 ```dart
 MaterialApp(
+  // 路由表
   routes:{
-    '/path': Builer,
-    onGenerateRoute: (settings) {
-      if (settings.name == PassArgumentsScreen.routeName) {
-        final args = settings.arguments as ScreenArguments;
-        return MaterialPageRoute(
-          builder: (context) {
-            return PassArgumentsScreen(
-              title: args.title,
-              message: args.message,
-            );
-          },
-        );
-      }
+    '/': (BuilderContext context) => HomePage(),
+  },
+  // 它在打开命名路由时可能会被调用，之所以说可能，
+  // 是因为当调用Navigator.pushNamed(...)打开命名路由时，
+  // 如果指定的路由名在路由表中已注册，则会调用路由表中的builder函数来生成路由组件；
+  // 如果路由表中没有注册，才会调用onGenerateRoute来生成路由
+  onGenerateRoute: (settings) {
+    if (settings.name == PassArgumentsScreen.routeName) {
+      final args = settings.arguments as ScreenArguments;
+      return MaterialPageRoute(
+        builder: (context) {
+          return PassArgumentsScreen(
+            title: args.title,
+            message: args.message,
+          );
+        },
+      );
     }
   }
 )
