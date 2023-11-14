@@ -59,3 +59,19 @@ Padding(
 
 
 
+## 设置边框圆角
+```dart
+abstract class BoxBorder extends ShapeBorder {}
+abstract class OutlinedBorder extends ShapeBorder {}
+class RoundedRectangleBorder extends OutlinedBorder {}
+
+showModalBottomSheet<void>(
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+  ),
+  context: context,
+  builder: (context) => Container(
+    child: const Text('demo'),
+  ),
+);
+```

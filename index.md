@@ -2,14 +2,6 @@
 
 ## 常用站点
 [Markdown基本语法](http://markdown.p2hp.com/basic-syntax/#code)
-[Typescript 中文网](https://ts.nodejs.cn/docs/handbook/project-references.html)
-[typescriptlang: JS DOC语法](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
-
-
-
-
-## 参考文档
-[文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
 
 
 
@@ -22,9 +14,26 @@
 - [frontendfocus](https://frontendfoc.us/latest)
 
 
+
 ## flutter
 - [官方-flutter 入门](https://flutter.cn/docs/ui/layout)
 - [官方-flutter API](https://api.flutter-io.cn/index.html)
 - [官方-flutter pub](https://pub-web.flutter-io.cn/)
 - [官方-dart文档](https://dart.cn/language/collections#maps)
 - [官方-dart API文档](https://api.dart.cn/stable/3.1.5/index.html)
+
+
+
+## Typescript
+[Typescript 中文网](https://ts.nodejs.cn/docs/handbook/project-references.html)
+[typescriptlang: JS DOC语法](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+[阮一峰：Typescript](https://wangdoc.com/typescript/utility#omittype-keys)
+
+
+
+## 个人笔记
+- [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
+
+
+## 个人博客
+[文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
