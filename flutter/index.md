@@ -2,6 +2,7 @@
 
 - [widget](./widget.md)
 - [布局及几何设置](./layout-widgets.md)
+- [flex 布局](./flex-widget.md)
 - [form表单的使用](./form-widgets.md)
 - [文本及样式设置](./style-widget.md)
 - [事件与手势](./guesture.md)
