@@ -47,3 +47,4 @@
 
 ## 推送
 - git push 将本地的当前分支推送到远程的同名分支
+- git push -u origin `branch_name` 将`branch_name`分支推送到远程，并在远程创建一个同名的`branch_name`分支
