@@ -2,10 +2,53 @@
 
 pwd
 man
+
 cat
 more
+tail 4: 从后往前查看文件
+
 touch
 which: 查找某个命令对应的二进制可执行程序文件所在的路径
+source: 用来执行某个脚本，一般用来重新加载变更的脚本文件
+
+## type
+```shell
+type echo;
+```
+命令用来判断命令的来源
+
+## echo
+-e 参数会解释引号（双引号和单引号）里面的特殊字符（比如换行符\n）。
+如果不使用-e参数，即默认情况下，引号会让特殊字符变成普通字符，echo不解释它们，原样输出。
+
+## set
+set命令可以显示所有变量（包括环境变量和自定义变量），以及所有的 Bash 函数
+```shell
+# 查看全部环境变量,函数
+set
+```
+## `env`与`printenv`
+`env`命令或`printenv`命令，可以显示所有环境变量
+
+## wc
+统计文本行数，字符数，字节数，单词数
+
+## chmod
+修改当前用户，用户组，其他用户对该文件的读，写，执行权限。
+```shell
+# 设置当前用户，用户组，其他用户可对 update.sh 文件进行读，写，执行
+# 4=读，2=写，1=执行
+chmod 777 update.sh
+```
+
+## chown
+修改文件的所属用户
+
+## ln
+创建连接
+
+## system
+system 控制注册到system的服务的启动与停止
 
 ## ls
 
@@ -54,3 +97,7 @@ grep 正则 文件
 
 
 grep -A 3 "\-type" ./index.md
+
+## history
+查看命令的操作历史记录
+HISTTIMEFORMAT，HISTSIZE
