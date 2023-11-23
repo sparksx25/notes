@@ -1,15 +1,62 @@
 # linux
 
-pwd
-man
-
+## 文件查看相关命令
 cat
+head
+tail
 more
-tail 4: 从后往前查看文件
+less
+stat: 查看文件信息
+file： 查看文件类型
 
+
+
+## 文件操作命令
 touch
-which: 查找某个命令对应的二进制可执行程序文件所在的路径
+cp
+mv
+mkdir
+rmdir
+rename
+rm
+chmod: 设置文件的读，写，执行权限
+chown: 修改文件的所有者
+
+
+## 目录查看
+ls
+tree
+pwd
+find: 文件目录查找
+
+## 文件内容操作
+grep
+wc
+join
+split
+cut
+paste
+
+
+## 工具命令
+man
+whatis: 功能类似 man
+type: 查看命令类型
+
 source: 用来执行某个脚本，一般用来重新加载变更的脚本文件
+which: 查找某个命令对应的二进制可执行程序文件所在的路径
+
+echo
+
+set: 显示所有环境变量
+`env`命令或`printenv`命令，可以显示所有环境变量
+
+查看命令的操作历史记录
+HISTTIMEFORMAT，HISTSIZE
+
+
+
+
 
 ## type
 ```shell
