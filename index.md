@@ -30,6 +30,9 @@
 [阮一峰：Typescript](https://wangdoc.com/typescript/utility#omittype-keys)
 
 
+## 技术文档
+[网道技术文档：包含多种开发文档](https://github.com/wangdoc)
+
 
 ## 个人笔记
 - [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
