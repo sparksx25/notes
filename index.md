@@ -6,12 +6,12 @@
 
 
 ## 周刊参考池
-- [前端技术精读](https://github.com/ascoders/weekly)
-- [奇舞团360最大的前端团队](https://www.zhihu.com/people/75team/posts)
 - [InfoQ 前端专栏](https://www.infoq.cn/news/aRc3dogIgR4dABwJRWXw)
+- [前端技术精读](https://github.com/ascoders/weekly)
 - [Javascript Weekly](https://javascriptweekly.com/issues/659)
 - [nodejs Weekly](https://nodeweekly.com/issues/506)
 - [frontendfocus](https://frontendfoc.us/latest)
+- [奇舞团360最大的前端团队](https://www.zhihu.com/people/75team/posts)
 
 
 
