@@ -29,9 +29,9 @@ console.log([...str].length) // 3
 
 
 
-
 ## user-select
 设置了 `user-select: none;` 的输入框(`input, textarea`), 点击输入框会首先获取焦点，然后立马失去焦点
+
 
 ## textarea
 1. `textarea` 输入框的高度不随文本内容长度的变化而变化，需要通过脚本动态设置, 
