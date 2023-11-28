@@ -49,14 +49,3 @@ app.use(async (ctx) => {
 样式加载完成, 才继续解析后面的内容。样式未加载完成之前，浏览器会将当前已解析的部分内容渲染到页面。
 
 2.  在 js 脚本前面的 `<link rel="stylesheet" href="index.css">` 标签会阻塞 js 脚本的执行，因为js可能会操作DOM，DOM 又依赖样式
-
-
-## 页面渲染流程
-[谷歌开发者文档-页面的关键渲染路径](https://web.dev/articles/critical-rendering-path?hl=zh-cn)
-
-
-
-
-## 优化页面流畅度
-[知乎: 让你的网页更丝滑(一)](https://zhuanlan.zhihu.com/p/66398148)
-[知乎: 让你的网页更丝滑-全](https://zhuanlan.zhihu.com/p/67728054)
