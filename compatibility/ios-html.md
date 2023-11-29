@@ -46,3 +46,6 @@ console.log([...str].length) // 3
 ## fixed 定位
 使用 fixed 定位固定在页面底部的按钮，输入框获取焦点时，整个 WebView 容器会往上推。
 [掘金](https://juejin.cn/post/6961757804491178014)
+
+## canvas
+canvas 获取滚动到顶部离开了可视区高度获取不到图片像素问题
