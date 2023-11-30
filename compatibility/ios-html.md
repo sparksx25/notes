@@ -48,4 +48,9 @@ console.log([...str].length) // 3
 [掘金](https://juejin.cn/post/6961757804491178014)
 
 ## canvas
-canvas 获取滚动到顶部离开了可视区高度获取不到图片像素问题
+- 当图片滚动的垂直距离离开了可视区，将该图片绘制到 canvas 时，canvas获取不到图片的像素，导致画布空白。
+- canvas 画布的最大宽度不能超过 3000 px，否则 canvas 转 base64 地址时，获取不到 base64。
+
+
+## window.open
+IOS 上执行 window.open 会被拦截，IOS认为这种操作打开的是广告。
