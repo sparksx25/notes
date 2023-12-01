@@ -17,3 +17,5 @@ export const Context = createContext(null)
 ```
 
 
+## React.memo
+- 缓存组件，与 vue 的 keep-alive 起相同的作用

@@ -82,6 +82,7 @@ workInProgress tree 创建过程是异步的，无论DOM树是创建还是更新
 如何判断当前帧是否还有剩余时间？
 
 
+
 ## 参考资料
 - [React Fiber 是如何实现更新过程可控的](https://www.infoq.cn/article/FlEX4gdZigdMJueq4orw)
 

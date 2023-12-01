@@ -1,8 +1,6 @@
 # react
 
+- [react 原码解读](https://github.com/7kms/react-illustration-series/blob/main/docs/main/workloop.md)
 - [react在线编辑](https://codepen.io/pen?editors=0011)
-
-
-- [技术选型](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ%3D%3D&chksm=9bd27a8baca5f39de930a94ebcb939229ec559f951e8b290f6fd24befdc26f4946cd6e1fa644&idx=3&mid=2247571219&scene=27&sn=77d2e326bd8039bafd47eaf4b4577a9d&utm_campaign=geek_search&utm_content=geek_search&utm_medium=geek_search&utm_source=geek_search&utm_term=geek_search#wechat_redirect)
-
 - [info react](https://s.geekbang.org/search/c=0/k=react%20%E6%97%B6%E9%97%B4%E5%88%87%E7%89%87/t=?referrer=InfoQ)
+- [babel 在线编译](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=MYewdgzgLgBFAWBTAtogIgQyhmBeGA3gFAwwBGGwA1gOYBOIArmACYBcMA5HYi50QF8A3EVCRYAFSSoAwuCiIAHrHzAeWRHLALlACgQp0WDAEoRY6DACiAGwBCjKFHB4YugA4N3EE3gB8hCQwFiA2iAB0NiA0Hl4-RACQFrBiOiowjBCa8kpQulKGWmkmQTxQjHRgbgA8ZI7OVdAAnmG4BBTU9EysHKm54R20DMwsAn4EniDe4cDwAJY2LDxgAtUA9HVO4H5mgqLglgDKczRgAAoYNIiuur64AcSkZRVVukGk1SxzAG5-76QwarwACMfmOpwuV3WIL-AIBnx-fnWX1-_w-tgcWzAfhkNjm1HWGPq23-yMRQV2wn24hgiDCqG0riBoIAEnSogAaGAAdxAdEWAEJoaDzAcUvIMHMwIg6K4WCBgIwGVBwlcoLZDNo7E0AJIsXTcEAgKCcXYAJUQlCgaAA8gBZcLLFgy3R0zVQLmpSXSui7IA&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact&prettier=false&targets=&version=7.23.5&externalPlugins=&assumptions=%7B%7D)
