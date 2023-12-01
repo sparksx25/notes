@@ -1,4 +1,5 @@
 # react fiber
+React 在v16.1.0 中应用了 fiber.
 
 
 ## 引入 Fiber 的原因，Fiber解决了什么问题

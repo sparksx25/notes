@@ -1,5 +1,15 @@
 # jsdoc
 
+[typescriptlang: JS DOC语法](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+
+
+// @ts-check
+在 js 文件顶部使用该注释，typescript 工具将使用 jsdoc提供的类型进行类型检查
+
+// @ts-nocheck
+// @ts-ignore
+
+
 ## 定义函数类型
 ```javascript
 /**

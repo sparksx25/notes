@@ -1,5 +1,28 @@
 # react
 
+## 版本变化
+- 18.2.0
+  在该版本已支持服务器组件
+  Scheduler(Experimental)
+
+- 18.0.0   
+  弃用了 ReactDOM.render，新增 createRoot
+  新增 useId，useDeferredValue，useSyncExternalStore，useInsertionEffect 
+  Scheduler(Experimental)
+
+- 17.0.0  
+  将事件委托给根而不是 document
+  新增 Concurrent Mode (Experimental)
+
+- v16.8.0
+  新增 react hooks
+
+- v16.1.0   
+  新增了 Fiber
+
+
+## 参考文档
+- [react 最新文档](https://react.dev/reference/react)
 - [react 原码解读](https://github.com/7kms/react-illustration-series/blob/main/docs/main/workloop.md)
 - [react在线编辑](https://codepen.io/pen?editors=0011)
 - [info react](https://s.geekbang.org/search/c=0/k=react%20%E6%97%B6%E9%97%B4%E5%88%87%E7%89%87/t=?referrer=InfoQ)
