@@ -1,4 +1,5 @@
 # react fiber
+React 在v16.1.0 中应用了 fiber.
 
 
 ## 引入 Fiber 的原因，Fiber解决了什么问题
@@ -80,6 +81,7 @@ workInProgress tree 创建过程是异步的，无论DOM树是创建还是更新
 
 
 如何判断当前帧是否还有剩余时间？
+
 
 
 ## 参考资料
