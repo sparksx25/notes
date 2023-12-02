@@ -4,7 +4,6 @@
 [Markdown基本语法](http://markdown.p2hp.com/basic-syntax/#code)
 
 
-
 ## 周刊参考池
 - [InfoQ 前端专栏](https://www.infoq.cn/news/aRc3dogIgR4dABwJRWXw)
 - [前端技术精读](https://github.com/ascoders/weekly)
@@ -14,14 +13,12 @@
 - [奇舞团360最大的前端团队](https://www.zhihu.com/people/75team/posts)
 
 
-
 ## flutter
 - [官方-flutter 入门](https://flutter.cn/docs/ui/layout)
 - [官方-flutter API](https://api.flutter-io.cn/index.html)
 - [官方-flutter pub](https://pub-web.flutter-io.cn/)
 - [官方-dart文档](https://dart.cn/language/collections#maps)
 - [官方-dart API文档](https://api.dart.cn/stable/3.1.5/index.html)
-
 
 
 ## Typescript
@@ -34,9 +31,9 @@
 [网道技术文档：包含多种开发文档](https://github.com/wangdoc)
 
 
-## 个人笔记
+## 个人博客
 - [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
 
-## 个人博客
-[文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
-·
+- [文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
+
+- [技术选型：各框架的特性](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ%3D%3D&idx=3&mid=2247571219&scene=27&sn=77d2e326bd8039bafd47eaf4b4577a9d#wechat_redirect)

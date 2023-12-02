@@ -47,6 +47,7 @@ console.log([...str].length) // 3
 使用 fixed 定位固定在页面底部的按钮，输入框获取焦点时，整个 WebView 容器会往上推。
 [掘金](https://juejin.cn/post/6961757804491178014)
 
+
 ## canvas
 - 当图片滚动的垂直距离离开了可视区，将该图片绘制到 canvas 时，canvas获取不到图片的像素，导致画布空白。
 - canvas 画布的最大宽度不能超过 3000 px，否则 canvas 转 base64 地址时，获取不到 base64。
