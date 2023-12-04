@@ -23,7 +23,8 @@
 
 
 ## 切换分支
-- git checkout `branch_name` 切换分支
+- git checkout `branch_name`   
+  切换分支
 
 
 
@@ -47,7 +48,7 @@
   在当前合并冲突的情况下，取消这次合并
 
 
-## 推送
+## 推送分支
 - git push   
   将本地的当前分支推送到远程的同名分支
   

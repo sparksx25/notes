@@ -27,8 +27,9 @@
 [阮一峰：Typescript](https://wangdoc.com/typescript/utility#omittype-keys)
 
 
-## 技术文档
-[网道技术文档：包含多种开发文档](https://github.com/wangdoc)
+## 多种技术文档
+- [网道技术文档](https://github.com/wangdoc)
+- [廖雪峰技术文档](https://www.liaoxuefeng.com/)
 
 
 ## 个人博客
