@@ -3,6 +3,9 @@
 ## 常用站点
 [Markdown基本语法](http://markdown.p2hp.com/basic-syntax/#code)
 
+## 电子书
+[免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)
+[免费电子书阅读](https://github.com/binzh303/IT_Book_pro)
 
 ## 周刊参考池
 - [InfoQ 前端专栏](https://www.infoq.cn/news/aRc3dogIgR4dABwJRWXw)
