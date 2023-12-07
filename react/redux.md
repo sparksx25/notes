@@ -1,4 +1,44 @@
-# redux
+# redux 源码阅读
+
+## store
+```javascript
+interface store = {
+  subscribe: (listener: Function) => () => {},
+  getState: any,
+  dispatch: (action: Action) => void
+}
+```
+
+## API
+```javascript
+export {
+  createStore, 
+  applyMiddleware, 
+  combineReducers,
+  compose
+}
+```
+
+
+## applyMiddleware
+- applyMiddleware 中间件的执行顺序是从右往左执行
+
+```javascript
+function middleware({ getState }) {
+  // 第一个中间件的 chain 函数接收的是 store.dispatch 方法作为参数
+  // 后续中间件接收上一个 chain 的执行结果作为参数
+  // 最后一个中间件需要返回最终的 dispatch 函数
+  return function chain(preChainRes) {
+    return function finalDispatch() {
+
+    }
+  }
+}
+applyMiddleware(middleware)
+```
+
+
+## 各API使用实例
 
 ```javascript
 import { createStore, applyMiddleware, combineReducers } from 'redux';
@@ -37,13 +77,6 @@ const initialState = {
   user: {id: 'init'}
 }
 
-function logStartMiddleware({ getState }) {
-  return function chain(dispatch) {
-    console.log('mutate start state', JSON.stringify(getState()))
-    return dispatch
-  }
-}
-
 /**
  * @param {function[]} funcs 
  * @returns {function}
@@ -64,9 +97,16 @@ function compose(...funcs) {
   )
 }
 
+function logStartMiddleware({ getState }) {
+  return function chain(dispatch) {
+    console.log('mutate start state', JSON.stringify(getState()))
+    return dispatch
+  }
+}
 
 /**
- * @description 
+ * @description
+ * 异步中间件的实现
  * store.dispatch 方法具体接收什么参数，由最后一个执行的中间件决定
  * 中间件的执行顺序是从右往左执行
  * store.dispatch = compose(middlewares.map(middleware => middleware({getState})))(store.dispatch)
