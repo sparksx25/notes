@@ -40,6 +40,8 @@ TTL（time - to - live）生存时间字段设置了数据报可以经过的最�
 
 套接字是应用程序进程和运输层协议之间的接口
 
+运行在不同机器上的进程彼此通过向套接字发送报文来进行通信
+
 ## 网络类型
 局域网（LAN：local area neetwork）
 广域网（WAN: wide area network）
@@ -49,9 +51,9 @@ Wifi
 
 ## TCP
 拥塞控制机制: 慢启动
-TCP 能够提供面向连接的，可靠的传输服务
+TCP 提供了一种面向连接的，可靠的传输服务
 
-TCP的加强版本，称为安全套接字层（Secure Sockets Layer, SSL） o
+TCP的加强版本，称为安全套接字层（Secure Sockets Layer, SSL）
 
 ## 设备
 
@@ -88,3 +90,13 @@ TCP的加强版本，称为安全套接字层（Secure Sockets Layer, SSL） o
 
 ## 数据传输
 - 存储转发传输：存储转发传输是指在交换机能够开始向输岀链路传输该分组的第一个比特之前，必须接收到整个分组
+
+
+## 比特率
+光纤每秒通过的比特数（bps: Bit Per Seconds）。
+视频每秒所包含图片数的总的比特数。
+
+
+## CDN
+用内容分发网（Content Distribution Network, CDN）
+大多数CDN利用DNS来截获和重定向请求
