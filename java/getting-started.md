@@ -13,7 +13,9 @@ Java 虚拟机直接内置于 Java 软件下载中，是 JRE 的一部分，可�
 
 
 ## JDK(Java Developer's Kit)
-JRE
+我们通常说的Java 8，Java 11，Java 17，是指JDK的版本，也就是JVM的版本，更确切地说，就是java.exe这个程序的版本。
+而每个版本的JVM，它能执行的class文件版本也不同。
+
 
 ## JAVA SE
 Java SE（Java Platform, Standard Edition）是Java平台的标准版本
@@ -23,5 +25,26 @@ Java SE（Java Platform, Standard Edition）是Java平台的标准版本
 J2EE、Java EE 或 Jakarta EE。所有这些首字母缩略词都是指 Java Enterprise Edition。它是一组用于创建企业级应用程序的工具和库
 
 
+## classpath
+`classpath`是`JVM`用到的一个环境变量，它用来指示`JVM`如何搜索`.class`字节码文件。
+
+
+## Tomcat
+Tomcat 是由 java 开发的。
+一个 支持 Servlet API 的 Web 服务器。加载的 war 包。
+
+## jar 包
+把目录打一个包，变成一个文件，一个zip格式的压缩文件，把后缀从.zip改为.jar，一个jar包就创建成功。
+而jar包相当于目录。如果我们要执行一个jar包的class，就可以把jar包放到classpath中
+，jar只是用于存放class的容器，它并不关心class之间的依赖
+
 ## 开发注意点
 - Java 类必须保存在扩展名为 .java 同名的文件中
+- 始终对 char 文本使用“单引号”，对 String 文本使用“双引号”
+- 字符串比较必须使用 `equals()`方法而不能用`==`
+- 引用类型可以赋值为null，表示空，但基本类型不能赋值为null
+
+
+## 优化
+- 字符串拼接： 支持使用`+`拼接字符串。但是循环拼接使用 `StringBuilder`效果更高，避免了每次创建临时字符串对象
+- 尽量使用 `Integer.valueOf` 替代 `new Integer`。
