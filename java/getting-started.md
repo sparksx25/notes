@@ -32,6 +32,8 @@ J2EE、Java EE 或 Jakarta EE。所有这些首字母缩略词都是指 Java Ent
 ## Tomcat
 Tomcat 是由 java 开发的。
 一个 支持 Servlet API 的 Web 服务器。加载的 war 包。
+启动Tomcat服务器实际上是启动Java虚拟机，执行Tomcat的main()方法，然后由Tomcat负责加载我们的.war文件，并创建一个HelloServlet实例，最后以多线程的模式来处理HTTP请求
+
 
 ## jar 包
 把目录打一个包，变成一个文件，一个zip格式的压缩文件，把后缀从.zip改为.jar，一个jar包就创建成功。
