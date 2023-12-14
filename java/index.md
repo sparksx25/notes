@@ -12,3 +12,4 @@
 - [java 开发者文档](https://dev.java/learn/generics/)
 - [spring 官网](https://spring.io/guides)
 - [spring 源代码](https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/web/service/annotation/DeleteExchange.java)
+- [spring boot application配置](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties)
