@@ -25,3 +25,15 @@ StringBuilder和StringBuffer接口完全相同，现在完全没有必要使用S
 
 ## StringJoiner
 使用指定分隔符拼接字符串。或者使用 String.join()
+
+## 多行字符串的表示
+```java
+String str = "line1 \n"
+              + "line2 \n";
+
+String s = """
+  line1
+  line2
+"""
+
+```

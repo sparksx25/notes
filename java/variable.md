@@ -45,7 +45,7 @@ String[][] names = {
 
 
 ## 变量修饰符
-final
+final 声明一个变量为常量
 
 ## 类修饰符
 static
