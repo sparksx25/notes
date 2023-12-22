@@ -1,5 +1,32 @@
 # Annotation 
 
+## 常用注解
+- @Target
+- @Retention
+- @Inherited
+- @Repeated
+- @Documented
+
+- @Override
+- @SuppressWarning
+- @Deprecated
+
+- @FunctionalInterface
+- @Nullable
+
+- @Bean
+- @Primary
+- @Order
+
+- @Value
+- @Autowired    
+- @Configuration    
+- @ComponentScan
+- @Component
+- @PostConstruct
+- @PropertySource
+- @Lazy
+
 ##  元注解
 @Target： 定义自定义注解的使用范围，如，类，类字段，类方法，类方法参数
 @Retention: 定义自定义注解的生命周期，如编译阶段使用，加载.class文件时使用，运行时使用
@@ -13,14 +40,7 @@
 ## 自定义注解
 使用 interface 自定义注解
 
-## 常用注解
-- @Value
-- @Autowired    
-- @PostConstruct
-- @Configuration    
-- @ComponentScan
-- @Component
-- @PropertySource
+
 
 
 ## @Configuration

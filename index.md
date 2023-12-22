@@ -33,7 +33,7 @@
 ## 多种技术文档
 - [网道技术文档](https://github.com/wangdoc)
 - [廖雪峰技术文档](https://www.liaoxuefeng.com/)
-
+- [java开发](https://pdai.tech/md/java/basic/java-basic-lan-sum.html)
 
 ## 个人博客
 - [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
