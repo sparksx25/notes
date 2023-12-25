@@ -23,7 +23,26 @@
   启动服务 `net  start mysql`
   停止服务 `net  stop mysql`
 
-## 
+## mysqld(MySQL Server Daemon)
+mysqld 是 MySQL 服务器的主要进程，它负责管理数据库、处理并发连接、执行查询、存储数据等核心功能。当你启动 MySQL 服务器时，实际上就是运行 mysqld 可执行文件。  
 
+
+## 设置字符集
+修改 my.ini 以设置字符集。
+设置字符集之后需要重新启动mysql服务。
+```
+[mysqld]
+# set basedir to your installation path
+basedir=E:\mysql\mysql-8.0.34-winx64
+# set datadir to the location of your data directory
+datadir=E:\mysql\mysql-8.0.34-winx64\database
+
+character-set-server=utf8
+
+[client]
+default-character-set = utf8
+``` 
+
+## 参考地址
 [参考地址: 知乎](https://zhuanlan.zhihu.com/p/649709377?utm_id=0)
 [mysql 官网](https://dev.mysql.com/doc/refman/8.0/en/windows-extract-archive.html)

@@ -49,6 +49,11 @@ bean: 描述Java的软件组件模型描述Java的软件组件模型
 Java 为关系数据库定义了一套标准的访问接口：JDBC
 Java代码并不是直接通过TCP连接去访问数据库，而是通过JDBC接口来访问，而JDBC接口则通过JDBC驱动来实现真正对数据库的访问
 
+JDBC 驱动： JDBC 标准接口的实现类
+JDBC 连接池的实现库：HikariCP
+JdbcTemplate：
+Spring提供的JdbcTemplate采用Template模式，提供了一系列以回调为特点的工具方法，目的是避免繁琐的try...catch语句。
+
 使用JDBC的好处是：
 - 各数据库厂商使用相同的接口，Java代码不需要针对不同数据库分别开发；
 - Java程序编译期仅依赖java.sql包，不依赖具体数据库的jar包；
@@ -57,6 +62,7 @@ Java代码并不是直接通过TCP连接去访问数据库，而是通过JDBC接
 缺点:
 - 需要使用 JPA 提供的 SQL 语法，JPA内部将 SQL 语法转换为指定的数据库语法，
 - 无法写出指定数据库的优化 SQL
+
 
 ## JPA
 JPA就是JavaEE的一个ORM标准，它的实现其实和Hibernate没啥本质区别，但是用户如果使用JPA，那么引用的就是jakarta.persistence这个“标准”包，
