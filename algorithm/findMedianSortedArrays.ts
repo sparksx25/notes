@@ -6,7 +6,7 @@
   [leetcode 原题地址](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
 */
 
-// 方法一：合并两个数组，求出中位数
+// 方法一：按从小到大的顺序合并两个数组，求出中位数
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   let list: number[] = [];
   let aIndex = 0;
@@ -31,18 +31,6 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
     list = list.concat(nums2.slice(bIndex));
   }
   const middle = Math.floor(list.length / 2);
-  if (list.length % 2) {
-    return list[Math.floor(middle)];
-  }
-  return (list[middle] + list[middle - 1]) / 2;
-};
-
-
-// 方法二:
-function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-  const list: number[] = [];
-
-
   if (list.length % 2) {
     return list[Math.floor(middle)];
   }
