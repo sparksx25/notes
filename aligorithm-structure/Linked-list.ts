@@ -10,6 +10,7 @@ export class ArrayList<T> extends List<T> {
 
   constructor(capacity: number = 50) {
     super();
+    this.length = 0;
     this.capacity = capacity;
     this.container = new Array(this.capacity);
   }
@@ -81,21 +82,27 @@ export class ArrayList<T> extends List<T> {
 
   public splice(index: number, count: number, ...insert: T[]): T[] {
     const removeCount = Math.min(count, this.length);
+    const removeList = new Array(removeCount);
     if (this.length + insert.length - removeCount > this.capacity) this.ensureCapacity(insert.length - removeCount);
+
     for (let i = 0; i < count; i++) {
+      removeList[i] = this.container[index + i];
       this.container[index + i] = undefined;
     }
 
-    const diff = insert.length - count;
-    if (diff < 0) {
-      for (let i = index + count; i < this.length; i++) {
-        this.container[i + diff] = this.container[i];
-      }
+    const diff = Math.abs(insert.length - count);
+    if (insert.length < removeCount) {
+      for (let i = index + count; i < this.length; i++)
+      this.container[i - diff] = this.container[i];
     } else {
-      for (let i = 0; i < diff; i++) {
-        this.container[this.length + i] = this.container[this.length - i - 1];
-      }
+      for (let i = this.length - 1; i >= index + count; i--)
+      this.container[i + diff] = this.container[i];
     }
+
+    for (let i = 0; i < insert.length; i++) {
+      this.container[index + i] = insert[i];
+    }
+    return removeList;
   }
 
   /**
@@ -107,30 +114,36 @@ export class ArrayList<T> extends List<T> {
 }
 
 
-class LinkedNode<T> {
-  public data: T;
+// class LinkedNode<T> {
+//   public data: T;
 
-  public next: LinkedNode<T> | null;
+//   public next: LinkedNode<T> | null;
 
-  constructor(data: T, next?: LinkedNode<T>) {
-    this.data = data;
-    this.next = next === undefined ? null : next;
-  }
-}
+//   constructor(data: T, next?: LinkedNode<T>) {
+//     this.data = data;
+//     this.next = next === undefined ? null : next;
+//   }
+// }
 
-export class LinkedList<T> {
-  size: number;
-  private head: LinkedNode<T>;
-  private tail: LinkedNode<T>;
+// export class LinkedList<T> {
+//   private head: LinkedNode<T>;
+//   private tail: LinkedNode<T>;
 
-  find() {}
+//   find() {}
 
-  insert() {}
+//   insert() {}
 
-  remove() {}
-}
-
+//   remove() {}
+// }
 
 
 
 
+
+const arr = new ArrayList();
+arr.push('b');
+arr.push('c', 'd', 'e');
+arr.pop();
+arr.unshift('a');
+arr.shift();
+console.log(arr)

@@ -19,7 +19,8 @@ export abstract class List<T> {
   /**
    * 当前列表的长度
   */
-  length: number;
+  private length: number = 0;
+
   /**
    * 列表末尾添加元素，
    * 返回当前列表长度
