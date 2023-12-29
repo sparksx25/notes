@@ -182,8 +182,8 @@ class LinkedNode<E> {
  * 使用链表实现 List
 */
 export class LinkedList<E> extends List<E>{
-  private head: LinkedNode<E>;
-  private tail: LinkedNode<E>;
+  private head: LinkedNode<E> | null = null;
+  private tail: LinkedNode<E> | null = null;
   private lastIndex: number = 0;
 
   constructor() {
@@ -194,19 +194,28 @@ export class LinkedList<E> extends List<E>{
     return this.lastIndex + 1;
   }
 
-  get(index: number): E|undefined {
+  find(index: number): LinkedNode<E>|null  {
     index = this.getIndex(index);
     let node = this.head;
     let i = 0;
-    while(i === index || node) {
+    while(i !== index && node) {
       i += 1;
       node = node.next;
     }
+    return node;
+  }
+
+  get(index: number): E|undefined {
+    const node = this.find(index);
+    return node ? node.data : undefined;
   }
 
   splice(index: number, deleteCount: number, ...items: E[]): E[] {
-    const index = this.getIndex(index);
-    
+    let node = this.get(index - 1);
+    let count = 0;
+    while (count <= deleteCount && node) {
+      node.next = 
+    }
   }
 }
 
