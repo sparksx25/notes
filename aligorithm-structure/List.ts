@@ -129,14 +129,23 @@ export class ArrayList<E> extends List<E> {
     this.container = container;
   }
   
+  /**
+   * @override
+  */
   size(): number {
     return this.length;
   }
 
+  /**
+   * @override
+  */
   get(index: number): E|undefined {
     return this.container[this.getIndex(index)];
   }
     
+  /**
+   * @override
+  */
   splice(start: number, deleteCount: number, ...items: E[]): E[] {
     start = this.getIndex(start);
     deleteCount = Math.min(deleteCount, this.length - start);
@@ -181,7 +190,7 @@ class LinkedNode<E> {
 /**
  * 使用链表实现 List
 */
-export class LinkedList<E> extends List<E>{
+export class ArrayLinked<E> extends List<E> {
   private head: LinkedNode<E> | null = null;
   private tail: LinkedNode<E> | null = null;
   private lastIndex: number = 0;
@@ -214,7 +223,6 @@ export class LinkedList<E> extends List<E>{
     let node = this.get(index - 1);
     let count = 0;
     while (count <= deleteCount && node) {
-      node.next = 
     }
   }
 }
