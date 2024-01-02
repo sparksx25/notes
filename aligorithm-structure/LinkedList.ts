@@ -1,4 +1,4 @@
-export class LinkedNode<E> {
+class LinkedNode<E> {
   public data: E;
 
   public next: LinkedNode<E> | null;
@@ -114,12 +114,6 @@ export class LinkedList<E> {
     return removeList;
   }
 
-  splice(start: number, deleteCount: number, ...items: E[]): E[] {
-    const removeList = this.remove(start, deleteCount);
-    this.add(start, ...items);
-    return removeList;
-  }
-  
   forEach(cb: (e:E, index: number) => any) {
     let node = this.head;
     let i = 0;

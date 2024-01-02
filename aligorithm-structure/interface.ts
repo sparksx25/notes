@@ -1,5 +1,5 @@
 // 列表
-export { List, ArrayList, ArrayLinked } from './List';
+export { List } from './List';
 
 // 哈希表
 export interface HashTable<K, V> {
