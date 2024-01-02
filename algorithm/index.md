@@ -1,5 +1,7 @@
 # 算法
 
+[github hello-algorithm 算法](https://github.com/geekxh/hello-algorithm)
+[github hello-algo](https://github.com/krahets/hello-algo/releases)
 
 
 ## 算法评估

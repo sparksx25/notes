@@ -1,7 +1,8 @@
 import { List } from './interface';
 import { ArrayList } from './ArrayList';
+import { ArrayLinked } from './ArrayLinked';
 
-const arr: List<string> = new ArrayList<string>(1);
+const arr: List<string> = new ArrayLinked<string>();
 console.log(arr.add('a')); 
 // 1,  ["a"]
 console.log(arr.add('b')); 

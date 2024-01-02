@@ -3,6 +3,7 @@
 ## 相关实现
 [列表接口](./List.ts)
 [列表实现: ArrayList](./ArrayList.ts)
+[列表实现: ArrayLinked](./ArrayLinked.ts)
 
 
 ## 数组
