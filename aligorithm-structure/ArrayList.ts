@@ -44,6 +44,17 @@ export class ArrayList<E> extends List<E> {
   get(index: number): E|undefined {
     return this.container[this.getIndex(index)];
   }
+  
+  /**
+   * @override
+  */
+  forEach(cb: (e: E, index: number) => any): void {
+    let i = 0;
+    while(i < this.length) {
+      if (cb(this.container[i]!, i) === false) return
+      i += 1;
+    }
+  }
     
   /**
    * @override

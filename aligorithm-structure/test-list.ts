@@ -25,4 +25,4 @@ console.log(arr.shift());
 // a, ["a", "c", "d", "e"]
 console.log(arr.remove(-1));
 // e, ["a", "c", "d"]
-console.log(arr);
+console.log(arr.toString());

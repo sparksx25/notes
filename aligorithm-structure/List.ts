@@ -25,6 +25,10 @@ export abstract class List<E> {
   */
   abstract get(index: number): E|undefined
 
+  /**
+   * 迭代列表，若回调函数返回 false 则停止迭代
+  */
+  abstract forEach(cb: (e:E, index: number) => any): void
   
   /**
    * 若 index 大于列表最大索引，则表现为添加   
@@ -95,5 +99,20 @@ export abstract class List<E> {
   */
   shift(): E|undefined {
     return this.splice(0, 1)[0];
+  }
+
+  /**
+   * 转字符串
+  */
+  toString() {
+    let strJoin = '';
+    this.forEach((e, i) => {
+      if (strJoin === '') {
+        strJoin = String(e);
+      } else {
+        strJoin = strJoin + ',' + String(e);
+      }
+    });
+    return strJoin;
   }
 }
