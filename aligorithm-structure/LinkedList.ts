@@ -20,13 +20,13 @@ export class LinkedList<E> {
   }
 
   /**
-   * @description 根据指定索引查找指定节点   
+   * 根据指定索引查找指定节点   
    * 若指定索引 < 0 则返回头节点   
    * 若指定索引 >= 链表长度，则返回尾节点
   */
-  protected find(index: number): LinkedNode<E>|null {
-    if (index < 0) return this.head;
-    if (index >= this.length) return this.tail;
+  protected findNode(index: number): LinkedNode<E> | null {
+    if (index < 0) return null;
+    if (index >= this.length) return null;
 
     let node = this.head;
     let i = 0;
@@ -42,12 +42,12 @@ export class LinkedList<E> {
   }
 
   get(index: number):E|undefined {
-    const node = this.find(index);
+    const node = this.findNode(index);
     return node?.data;
   }
 
   /**
-   * @description 从指定索引处插入n个节点，返回链表长度
+   * 从指定索引处插入n个节点，返回链表长度
   */
   add(start: number, ...args: E[]): number {
     if (args.length === 0) return this.length;
@@ -61,7 +61,7 @@ export class LinkedList<E> {
       }
       nodes[i] = new LinkedNode(args[i], nextNode);
     }
-    let prevNode = this.find(start - 1);
+    let prevNode = this.findNode(start - 1);
     let endNode = prevNode && prevNode.next;
 
     if (prevNode) {
@@ -79,17 +79,17 @@ export class LinkedList<E> {
   }
 
   /**
-   * @description 从末尾插入节点
+   * 从末尾插入节点
    * 返回链表长度
   */
   insert(e: E): number;
   /**
-   * @description 从指定索引处插入n个节点
+   * 从指定索引处插入n个节点
    * 返回链表长度
   */
   insert(e: E, index: number): number;
   /**
-   * @description 从指定索引处插入n个节点，若不指定则表示从末尾插入
+   * 从指定索引处插入n个节点，若不指定则表示从末尾插入
    * 返回链表长度
   */
   insert(e: E, index?: number): number {
@@ -108,14 +108,14 @@ export class LinkedList<E> {
   }
 
   /**
-   * @description 从指定索引处开始删除n个节（包含索引开始节点）
+   * 从指定索引处开始删除n个节（包含索引开始节点）
    * 返回删除的节点
   */
   remove(start: number, deleteCount: number = 1): E[] {
     if (deleteCount < 1) return [];
 
     // 删除节点区间的前一个节点
-    const prevNode = this.find(start - 1);
+    const prevNode = this.findNode(start - 1);
     //删除节点区间的开始节点
     let startNode = prevNode ? prevNode.next : this.head;
     let i = 0;
@@ -143,7 +143,20 @@ export class LinkedList<E> {
   }
 
   /**
-   * @description 迭代链表，若回调函数返回 false,则停止迭代
+   * 更新指定索引处节点的值,    
+   * 更新成功返回 true, 更新失败返回 false
+  */
+  update(index: number, data: E): boolean {
+    const node = this.findNode(index);
+    if (node) {
+      node.data = data
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * 迭代链表，若回调函数返回 false,则停止迭代
   */
   forEach(cb: (e:E, index: number) => any) {
     let node = this.head;
@@ -156,9 +169,10 @@ export class LinkedList<E> {
   }
 
   /**
-   * @description 查找索引
+   * 查找索引, 若 cb 返回 true, 则停止查找，并返回相应的索引，    
+   * 否则返回 -1
   */
-  findIndex(cb: (e:E, index: number) => boolean):number {
+  findIndex(cb: (e:E, index: number) => boolean): number {
     let index = -1;
     this.forEach((data, i) => {
       if (cb(data, i)) {
@@ -167,6 +181,31 @@ export class LinkedList<E> {
       }
     })
     return index;
+  }
+
+  /**
+   * 查找节点值, 若 cb 返回 true, 则停止查找，并返回相应的节点值，    
+   * 否则返回 undefined
+  */
+  find(cb: (e:E, index: number) => boolean): E | undefined {
+    let res: E | undefined = undefined;
+    this.forEach((data, i) => {
+      if (cb(data, i)) {
+        res = data;
+        return false;
+      }
+    })
+    return res;
+  }
+
+  toString() {
+    let strJoin = '';
+    this.forEach((data) => {
+      if (strJoin === '')  strJoin = '[';
+      strJoin = strJoin + '\n' + '\t' + String(data);
+    })
+    if (strJoin) strJoin = strJoin + '\n]';
+    return strJoin;
   }
 }
 
