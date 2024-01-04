@@ -1,4 +1,5 @@
-import { LinkedMap } from './LinkedMap';
+import { LinkedHashMap } from './LinkedHashMap';
+import { LinearHashMap } from './LinearHashMap'
 
 class Person {
   constructor(public id: number, public name: string) {}
@@ -20,7 +21,7 @@ class Person {
 const Li = new Person(1, 'Li');
 const Ma = new Person(2, 'Ma');
 
-const map = new LinkedMap(2);
+const map = new LinearHashMap(1);
 map.set(1, 'a');
 map.set('1', 'b');
 map.set(Li, 'li');

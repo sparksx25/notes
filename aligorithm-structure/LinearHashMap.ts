@@ -1,41 +1,21 @@
 import { HashMap, Pair } from './HashMap';
-import { LinkedList } from './LinkedList'
 
 import type { HashKey } from './HashMap';
 
 /**
  * 使用线性探测实现 HashMap
 */
-export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
-  // 负载因子阈值
-  private factor: number = 0.75;
-  // 扩容倍数
-  private multiple: number = 1.5;
-  // 当前容量
-  private capacity: number = 50;
-  // 初始容量
-  private initialCapacity: number = 50;
+export class LinearHashMap<K extends HashKey, V,> extends HashMap<K, V> {
   // 数组容器
-  private buckets: (Pair<K, V> | null)[];
+  private buckets: (Pair<K, V> | undefined)[];
   // 键值对数量
   private length: number = 0;
   // 删除标志
-  private removed: Pair<K, V> = new Pair(null as unknown as K, null as unknown as V);
+  private removed: Pair<K, V> = new Pair(undefined as unknown as K, undefined as unknown as V);
 
-  constructor(capacity: number = 50) {
-    super();
-    if (capacity && capacity > 0) {
-      this.capacity = capacity;
-      this.initialCapacity = capacity;
-    }
-    this.buckets = Array.from({ length: this.capacity }, () => null);
-  }
-
-  /**
-   * 获取 key 对应的索引
-  */
-  protected index(key: K): number {
-    return this.hash(key) % this.capacity;
+  constructor(capacity?: number) {
+    super(capacity);
+    this.buckets = new Array(this.capacity).fill(undefined);
   }
 
   /**
@@ -50,7 +30,7 @@ export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
       pairs.push([key, value]);
     });
     this.capacity = Math.ceil(this.capacity * this.multiple);
-    this.buckets = Array.from({ length: this.capacity }, () => new LinkedList());
+    this.buckets = new Array(this.capacity).fill(undefined);
     this.length = 0;
     for (let i = 0; i < pairs.length; i++) {
       this.set(pairs[i][0], pairs[i][1]);
@@ -58,11 +38,46 @@ export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
   }
 
   /**
+   * 判断当前桶是否可利用的
+  */
+  protected isAvailable(index: number):boolean {
+    const pair = this.buckets[index];
+    return (pair && pair !== this.removed) ? false : true;
+  }
+
+  /**
+   * 从指定 key 开始迭代键值对，   
+   * 若 cb 返回 false 则停止迭代  
+  */
+  protected forEachFromKey(key: K, cb: (pair: Pair<K, V> | undefined, index: number) => boolean): void {
+    const index = this.index(key);
+    // 线性探测，从 index 开始向后遍历
+    for (let i = 0; i < this.capacity; i++) {
+      // 计算桶索引，越过尾部返回头部
+      const position = (index + i) % this.capacity;
+      const pair = this.buckets[position];
+      if (cb(pair, position) === false) return;
+    }
+  }
+
+
+  /**
    * 根据 key 查找 pair
   */
   protected find(key: K): Pair<K, V> | undefined {
-    const linkedList = this.buckets[this.index(key)];
-    return linkedList.find((pair) => pair.key === key);
+    let res: Pair<K, V> | undefined;
+
+    this.forEachFromKey(key, (pair, index) => {
+      if (this.isAvailable(index)) {
+        return false;
+      }
+      if (pair!.key === key) {
+        res = pair;
+        return false;
+      };
+      return true;
+    });
+    return res;
   }
 
 
@@ -77,8 +92,19 @@ export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
    * @override
   */
   set(key: K, value: V): this {
-    const index = this.buckets[this.index(key)]!;
-    
+    this.ensureFactor();
+    this.forEachFromKey(key, (pair, index) => {
+      if (this.isAvailable(index)) {
+        this.buckets[index] = new Pair(key, value);
+        this.length += 1;
+        return false;
+      }
+      if (pair!.key === key) {
+        pair!.value = value;
+        return false;
+      };
+      return true;
+    })
     return this;
   }
 
@@ -103,19 +129,28 @@ export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
    * @override
   */
   delete(key: K): boolean {
-    const linkedList = this.buckets[this.index(key)]!;
-    const pairIndex = linkedList.findIndex((pair) => pair.key === key);
-    if (pairIndex < 0) return false;
-    linkedList.remove(pairIndex);
-    this.length -= 1;
-    return true;
+    let res = true;
+    this.forEachFromKey(key, (pair, index) => {
+      if (this.isAvailable(index)) {
+        res = false;
+        return false;
+      }
+      if (pair!.key === key) {
+        this.buckets[index] = this.removed;
+        this.length -= 1;
+        return false;
+      }
+      return true
+    });
+    return res;
   }
 
   /**
    * @override
   */
   clear(): void {
-    this.buckets = Array.from({ length: this.initialCapacity }, () => new LinkedList())
+    this.capacity = this.initialCapacity;
+    this.buckets = new Array(this.capacity).fill(undefined);
     this.length = 0;
   }
 
@@ -124,7 +159,10 @@ export class LinearHashMap<K extends HashKey, V> extends HashMap<K, V> {
   */
   forEach(callbackfn: (value: V, key: K, map: LinearHashMap<K, V>) => void, thisArg?: any): void {
     for (let i = 0; i < this.buckets.length; i++) {
-      this.buckets[i].forEach((pair) => callbackfn.call(thisArg ? thisArg : this, pair.value, pair.key, this));
+      const pair = this.buckets[i];
+      if (pair && pair !== this.removed) {
+        callbackfn.call(thisArg === undefined ? this : thisArg, pair.value, pair.key, this);
+      }
     }
   }
 }

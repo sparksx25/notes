@@ -7,33 +7,14 @@ import type { HashKey } from './HashMap';
  * 使用链地址法实现 HashMap
 */
 export class LinkedHashMap<K extends HashKey, V> extends HashMap<K, V> {
-  // 负载因子阈值
-  private factor: number = 0.75;
-  // 扩容倍数
-  private multiple: number = 1.5;
-  // 当前容量
-  private capacity: number = 50;
-  // 初始容量
-  private initialCapacity: number = 50;
   // 数组容器
   private buckets: LinkedList<Pair<K, V>>[];
   // 键值对数量
   private length: number = 0;
 
   constructor(capacity?: number) {
-    super();
-    if (capacity && capacity > 0) {
-      this.capacity = capacity;
-      this.initialCapacity = capacity;
-    }
+    super(capacity);
     this.buckets = Array.from({ length: this.capacity }, () => new LinkedList())
-  }
-
-  /**
-   * 获取 key 对应的索引
-  */
-  protected index(key: K): number {
-    return this.hash(key) % this.capacity;
   }
 
   /**
@@ -62,7 +43,6 @@ export class LinkedHashMap<K extends HashKey, V> extends HashMap<K, V> {
     const linkedList = this.buckets[this.index(key)];
     return linkedList.find((pair) => pair.key === key);
   }
-
 
   /**
    * @override
@@ -120,7 +100,8 @@ export class LinkedHashMap<K extends HashKey, V> extends HashMap<K, V> {
    * @override
   */
   clear(): void {
-    this.buckets = Array.from({ length: this.initialCapacity }, () => new LinkedList())
+    this.capacity = this.initialCapacity;
+    this.buckets = Array.from({ length: this.capacity }, () => new LinkedList())
     this.length = 0;
   }
 

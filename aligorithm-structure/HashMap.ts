@@ -7,6 +7,20 @@ export class Pair<K, V> {
 
 // 哈希表
 export abstract class HashMap<K extends HashKey, V> {
+  // 负载因子阈值, 值的范围为 (0, 1]
+  protected factor: number = 0.75;
+  // 扩容倍数, 值的范围为 (1, ]
+  protected multiple: number = 1.5;
+  // 当前容量, 值的范围为 [1, ]
+  protected capacity: number;
+  // 初始容量, 值的范围为 [1, ]
+  protected initialCapacity: number;
+
+  constructor(capacity: number = 50) {
+    this.capacity = capacity;
+    this.initialCapacity = capacity;
+  }
+
   /**
    * key 不能是空字符串
   */
@@ -25,6 +39,24 @@ export abstract class HashMap<K extends HashKey, V> {
     if (typeof key === 'number') return key;
     if (typeof key === 'string') return this.hashString(key);
     return key.hashCode();
+  }
+  /**
+   * 获取 key 对应的索引
+  */
+  protected index(key: K): number {
+    return this.hash(key) % this.capacity;
+  }
+  /**
+   * @returns string
+  */
+  toString() {
+    let strJoin = '';
+    this.forEach((value, key) => {
+      if (strJoin === '') strJoin = '[';
+      strJoin = strJoin + '\n' + '\t' + String(key) + '  =>  ' + String(value);
+    })
+    if (strJoin) strJoin = strJoin + '\n]';
+    return strJoin;
   }
   /**
    * 清空 哈希表
@@ -55,16 +87,4 @@ export abstract class HashMap<K extends HashKey, V> {
    * @returns the number of elements in the Map.
    */
   abstract size(): number;
-  /**
-   * @returns string
-  */
-  toString() {
-    let strJoin = '';
-    this.forEach((value, key) => {
-      if (strJoin === '') strJoin = '[';
-      strJoin = strJoin + '\n' + '\t' + String(key) + '  =>  ' + String(value);
-    })
-    if (strJoin) strJoin = strJoin + '\n]';
-    return strJoin;
-  }
 }
