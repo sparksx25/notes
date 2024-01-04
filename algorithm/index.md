@@ -39,6 +39,16 @@
 斐波那契数列
 
 
+## 迭代
+从指定位置开始遍历全部元素
+```typescript
+function forEachFromStart(list: any[], start: number){
+  for (let i = 0; i < list.length; i++) {
+    const item = list[(start + i) % list.length];
+  }
+}
+```
+
 
 
 ## 二叉树
