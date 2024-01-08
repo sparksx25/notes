@@ -144,13 +144,28 @@ function parse(n: number | string): ParseModel {
  * @returns string 
  */
 function intSum(a: string, b: string): string {
-  return ''
+  let aIndex = a.length - 1;
+  let bIndex = b.length - 1;
+
+  let sum = '';
+  let carry = 0;
+  while (aIndex >= 0 || bIndex >= 0 || carry) {
+    const m = Number(a[aIndex]) || 0;
+    const n = Number(b[bIndex]) || 0;
+    const s = m + n + carry;
+    carry = s > 9 ? 1 : 0;
+    sum = String(s % 10) + sum;
+    aIndex -= 1;
+    bIndex -= 1;
+  }
+  return sum;
 }
 
 function add(a: string, b: string): string {
   const modelA = parse(nomalize(a));
   const modelB = parse(nomalize(b));
   if (modelA.sign === modelB.sign) {
+    
   }
   return '';
 }
@@ -163,4 +178,5 @@ function divide() {}
 // console.log(disassemble(-12321321123213123213213))
 // console.log(nomalize('-1.313123e1111'))
 // console.log(leftShift('-1', 3))
-console.log(nomalize('1e-3'))
+// console.log(nomalize('1e-3'))
+console.log(intSum('1', '0'))
