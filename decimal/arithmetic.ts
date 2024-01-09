@@ -157,11 +157,12 @@ function uintGt(n: string, m: string):boolean {
   if (n === m) return false;
   if (n.length > m.length) return true;
   if (n.length < m.length) return false;
-  // TODO:
+
   let i = 0;
   while(n[i] || m[i]) {
     const a = Number(n[i]) || 0;
     const b = Number(m[i]) || 0;
+    // case n >= m
     if (a < b) return false;
     i++;
   }
@@ -218,7 +219,7 @@ function uintSub(minuend: string, subtrahend: string): string {
   let greater = minuend;
   let smaller = subtrahend;
   let sign = '';
-  if(uintGe(subtrahend, minuend)) {
+  if(uintGt(subtrahend, minuend)) {
     greater = subtrahend;
     smaller = minuend;
     sign = '-';
@@ -227,10 +228,12 @@ function uintSub(minuend: string, subtrahend: string): string {
   let s = smaller.length - 1;
   let brorow = false;
   let difference  = '';
+  let fragment = '';
   while (g >= 0 || s >= 0 || brorow) {
-    let a = Number(greater[g]);
-    const b = Number(smaller[s]);
+    let a = Number(greater[g] || 0) ;
+    const b = Number(smaller[s] || 0) ;
 
+    // TODO: bug recycle error
     a = brorow ? a - 1 : a;
     if (a < b) {
       brorow = true;
@@ -238,7 +241,15 @@ function uintSub(minuend: string, subtrahend: string): string {
     } else {
       brorow = false;
     }
-    difference = String(a - b) + difference;
+
+    // 1000 - 999 = 0001
+    const num = a - b;
+    if (num === 0) {
+      fragment += '0';
+    } else {
+      fragment = '';
+      difference = String(num) + difference;
+    }
     g -= 1;
     s -= 1;
   }
@@ -327,25 +338,34 @@ function add(a: string, b: string): string {
   metaA.decimal = padFraction(metaA.decimal, places);
   metaB.decimal = padFraction(metaB.decimal, places);
 
+  // 同号相加
   if (metaA.sign === metaB.sign) {
     const decimalSum = uintAdd(metaA.decimal, metaB.decimal);
     const carry = decimalSum.length > places ? 1 : 0;
     const decimal = decimalSum.length > places ? decimalSum.slice(1) : decimalSum;
     const integer = [metaA.integer, metaB.integer, String(carry)].reduce((s, n) => uintAdd(s, n), '0')
     const sign = metaA.sign === '-' ? '-' : '';
-    return [sign, integer, decimal].join('');
+    return [sign, integer, decimal ? '.' : '', decimal].join('');
   }
-  let sign = '-';
+  // 异号相加，符号由绝对值较大的决定，数值等于绝对值较大的减去较小的差
   let greater = metaB;
   let smaller = metaA;
-  // TODO: 判断条件错误
-  if ((uintGe(metaA.integer, metaB.integer) && uintGe(metaA.decimal, metaB.decimal))) {
-    sign = '';
+  if (
+    uintGt(metaA.integer, metaB.integer) ||
+    (metaA.integer === metaB.integer && uintGt(metaA.decimal, metaB.decimal))
+  ) {
     greater = metaA;
     smaller = metaB;
   }
-  const difference = uintSub(greater.decimal, smaller.decimal);
-
+  let decimal = uintSub(greater.decimal, smaller.decimal);
+  decimal = leftShift(decimal, places);
+  let integer = uintSub(greater.integer, smaller.integer);
+  if (decimal[0] === '-') {
+    decimal = decimal.slice(1);
+    integer = uintSub(integer, '1');
+  }
+  const sign = greater.sign === '-' ? '-' : '';
+  return [sign, integer, decimal].join('');
 }
 
 function sub() {}
@@ -390,4 +410,6 @@ function ge(n: string, m: string) {
 // console.log(nomalize('-1.313123e1111'))
 // console.log(leftShift('-1', 3))
 // console.log(nomalize('1e-3'))
-console.log(uintAdd('1', '0'))
+// console.log(add('0.1', '0.2')) // 0.3
+// console.log(add('0.19', '-0.21')) // -0.02
+console.log(add('0.21', '-0.19')) // -0.02
