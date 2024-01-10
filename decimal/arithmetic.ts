@@ -1,4 +1,7 @@
 /* 
+https://mikemcl.github.io/bignumber.js/#coefficient
+https://mikemcl.github.io/decimal.js/#decimal
+
 addition
 subtraction
 multiplication
@@ -17,6 +20,10 @@ greater than: 大于
 less than or equal: 小于或等于
 greater than or equal: 大于或等于
 
+Coefficients: 系数
+left shift: 左移
+right shift：右移
+operand: 操作数
 difference: 差额
 positive: 正的，整数
 negative: 负的，负数
@@ -133,22 +140,6 @@ function padIntegre(n: string, places:number) {
 }
 
 /**
- * 小数点部分大于等于比较 n >= m
- * @param n 
- * @param m 
- */
-function fractionGe(n: string, m: string):boolean {
-  let i = 0;
-  while(n[i] || m[i]) {
-    const a = Number(n[i]) || 0;
-    const b = Number(m[i]) || 0;
-    if (a < b) return false;
-    i++;
-  }
-  return true;
-}
-
-/**
  * 非零整数大于比较 n > m
  * @param n 
  * @param m 
@@ -162,7 +153,7 @@ function uintGt(n: string, m: string):boolean {
   while(n[i] || m[i]) {
     const a = Number(n[i]) || 0;
     const b = Number(m[i]) || 0;
-    // case n >= m
+    if (a > b) return true;
     if (a < b) return false;
     i++;
   }
@@ -176,10 +167,12 @@ function uintGt(n: string, m: string):boolean {
 function uintGe(n: string, m: string):boolean {
   if (n.length > m.length) return true;
   if (n.length < m.length) return false;
+
   let i = 0;
   while(n[i] || m[i]) {
     const a = Number(n[i]) || 0;
     const b = Number(m[i]) || 0;
+    if (a > b) return true;
     if (a < b) return false;
     i++;
   }
@@ -233,7 +226,6 @@ function uintSub(minuend: string, subtrahend: string): string {
     let a = Number(greater[g] || 0) ;
     const b = Number(smaller[s] || 0) ;
 
-    // TODO: bug recycle error
     a = brorow ? a - 1 : a;
     if (a < b) {
       brorow = true;
@@ -241,18 +233,17 @@ function uintSub(minuend: string, subtrahend: string): string {
     } else {
       brorow = false;
     }
-
-    // 1000 - 999 = 0001
-    const num = a - b;
-    if (num === 0) {
-      fragment += '0';
-    } else {
+    // case: 1000 - 999 = 0001
+    const digit = String(a - b);
+    fragment = digit + fragment;
+    if (digit !== '0') {
+      difference = fragment + difference;
       fragment = '';
-      difference = String(num) + difference;
     }
     g -= 1;
     s -= 1;
   }
+  difference = difference || '0';
   return sign + difference;
 }
 
@@ -364,11 +355,20 @@ function add(a: string, b: string): string {
     decimal = decimal.slice(1);
     integer = uintSub(integer, '1');
   }
+  decimal = decimal.slice(1)
   const sign = greater.sign === '-' ? '-' : '';
   return [sign, integer, decimal].join('');
 }
 
-function sub() {}
+function sub(a: string, b: string): string {
+  const metaB = parse(b);
+  if (metaB.sign === '-') {
+    b = b.slice(1);
+  } else {
+    b = '-' + b;
+  }
+  return add(a, b);
+}
 function mul() {}
 function div() {}
 
@@ -412,4 +412,4 @@ function ge(n: string, m: string) {
 // console.log(nomalize('1e-3'))
 // console.log(add('0.1', '0.2')) // 0.3
 // console.log(add('0.19', '-0.21')) // -0.02
-console.log(add('0.21', '-0.19')) // -0.02
+// console.log(sub('-0.21', '-0.19')) // -0.02
