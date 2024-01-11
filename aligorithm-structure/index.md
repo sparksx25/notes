@@ -39,10 +39,16 @@
 
 ## 哈希表(hash table)
 [哈希表](./hash-table.md)
-
+[链地址法实现哈希表](./LinkedHashMap.ts)
+[线性探测实现哈希表](./LinearHashMap.ts)
 
 ## 树
 [二叉树](./binary-tree.md)
+[二叉树的遍历](./BinaryTree.ts)
+[创建完全二叉树](./CompleteBinaryTree.ts)
+[二叉搜索树](./BinarySearchTree.ts)
+AVL树
+
 
 ## 堆
 - 大顶堆
