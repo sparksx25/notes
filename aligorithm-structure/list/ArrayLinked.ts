@@ -1,5 +1,5 @@
 import { List } from './List';
-import { LinkedList } from './LinkedList';
+import { LinkedList } from '../linked-list/LinkedList';
 
 /**
  * 使用链表实现 List

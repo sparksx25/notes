@@ -1,4 +1,4 @@
-import { List } from './interface';
+import { List } from '../interface';
 import { ArrayList } from './ArrayList';
 import { ArrayLinked } from './ArrayLinked';
 
