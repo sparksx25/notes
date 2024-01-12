@@ -65,12 +65,14 @@ class AVLTree<E> extends BinarySearchTree<E> {
    * @param node 
    * @returns 
    */
-  rightRotate(node: Node<E>) {
+  private rightRotate(node: Node<E>) {
     if (!node) return;
     const child = node.left!;
     const grandChild = child.right;
     child.right = node;
     node.left = grandChild;
+    this.updateHeight(node);
+    this.updateHeight(child);
   }
 
   private rotate(node: TreeNode<E>) {
@@ -107,19 +109,23 @@ class AVLTree<E> extends BinarySearchTree<E> {
         exist = true;
         return;
       };
-      if (node.left) {
-        travel(node.left);
-      } else if (node.right) {
-        travel(node.right);
+      const child = res < 0 ? node.left : node.right;
+      const direction:Direction = res < 0 ? 'left' : 'right';
+
+      if (child) {
+        travel(child);
       } else {
-        
+        node[direction] = new TreeNode(data);
       }
+      this.updateHeight(node);
+      this.rotate(node);
     }
 
     if (this.root) {
       travel(this.root)
       return !exist;
     }
+
     this.root = new TreeNode(data);
     this.length += 1;
     return true;
