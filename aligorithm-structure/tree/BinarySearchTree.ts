@@ -1,37 +1,30 @@
 import { BinaryTreeNode, ldr } from './BinaryTree';
 
-type Direction = 'left' | 'right' | null;
-type Node<E> = BinaryTreeNode<E>["left"];
-type CompareFn<E> = (insertData:E, nodeData:E) => number;
+// type Direction = 'left' | 'right' | null;
+// type Node<E> = BinaryTreeNode<E>["left"];
+// type CompareFn<E> = (insertData:E, nodeData:E) => number;
 
-export class BinarySearchTree<E> {
-  private root?: BinaryTreeNode<E>;
-  private length: number = 0;
+export abstract class BinarySearchTree<E> {
+  protected root?: BinaryTreeNode<E>;
 
   /**
-   * 根据 data 查找节点
-   * @param data 需要插入的节点数据
-   * @param compare 插入比较函数
-   * @returns 若找到data对应的节点则返回该节点，该节点的父节点，在父节点中的位置   
-   * 否则返回 undefined, 以及对应 data 节点对应的父节点，在父节点中的位置
+   * 二叉树有效节点数
    */
-  protected findNode(data: E, compare: CompareFn<E>): {node: Node<E>, parent: Node<E>, direction: Direction} {
-    let node: Node<E> = this.root;
-    let parent: Node<E>;
-    let direction: Direction = null; 
-    while(node) {
-      const res = compare(data, node.data);
-      if (res === 0) break;
-      parent = node;
-      node = res < 0 ? node.left : node.right;
-      direction = res < 0 ? 'left' : 'right';
-    }
-    return {
-      node,
-      parent,
-      direction
-    };
-  }
+  abstract size(): number;
+
+  /**
+   * 数据插入
+   * @param data 
+   * @returns 插入成功返回 true，元素已存在则返回 false
+   */
+  abstract insert(data: E): boolean;
+
+  /**
+   * 数据删除
+   * @param data 
+   * @returns 
+   */
+  abstract remove(data: E): boolean;
 
   /**
    * 决定节点插入左边还是右边
@@ -41,14 +34,6 @@ export class BinarySearchTree<E> {
    */
   compare(insertData: E, nodeData:E): number {
     return Number(insertData) - Number(nodeData);
-  }
-
-  /**
-   * 返回节点数
-   * @returns 
-   */
-  size(): number {
-    return this.length;
   }
 
   /**
@@ -71,80 +56,6 @@ export class BinarySearchTree<E> {
       node = node.left;
     }
     return node?.data;
-  }
-
-  /**
-   * 数据插入
-   * @param data 
-   * @returns 插入成功返回 true，元素已存在则返回 false
-   */
-  insert(data: E): boolean {
-    if (!this.root) {
-      this.root = new BinaryTreeNode(data);
-      this.length += 1;
-      return true;
-    }
-
-    const { node, parent, direction } = this.findNode(data, this.compare);
-    if (node) return false;
-
-    parent![direction!] = new BinaryTreeNode(data);
-    this.length += 1;
-    return true;
-  }
-
-  /**
-   * 数据删除
-   * @param data 
-   * @returns 
-   */
-  remove(data: E): boolean {
-    const { node, parent, direction } = this.findNode(data, this.compare);
-    if (!node) return false;
-
-    let degree = 0;
-    if (node.left) degree += 1; 
-    if (node.right) degree += 1;
-
-    if (degree < 2) {
-      const child = node.left ? node.left : node.right;
-      if (parent) {
-        parent[direction!] = child;
-      } else {
-        this.root = child;
-      }
-      this.length -= 1;
-      return true;
-    }
-
-    let maxNode = node.left!;
-    let maxNodeParent: Node<E> = node;
-    while(maxNode.right) {
-      maxNodeParent = maxNode;
-      maxNode = maxNode.right
-    }
-    if (parent) {
-      // 左子节点无右节点
-      if (maxNodeParent === node) {
-        parent[direction!] = maxNode;
-        maxNode.right = node.right;
-      } else {
-        parent[direction!]!.data = maxNode.data;
-        maxNodeParent.right = undefined;
-      }
-    } else {
-      // 左子节点无右节点
-      if (maxNodeParent === node) {
-        this.root = maxNode;
-        maxNode.right = node.right;
-      } else {
-        this.root!.data = maxNode.data;
-        maxNodeParent.right = undefined;
-      }
-    }
-
-    this.length -= 1;
-    return true;
   }
 
   /**

@@ -1,3 +1,5 @@
+export type Direction = 'left' | 'right';
+
 export class BinaryTreeNode<E> {
   constructor(
     public data: E,
@@ -5,7 +7,6 @@ export class BinaryTreeNode<E> {
     public right?: BinaryTreeNode<E>
   ) {}
 }
-
 
 
 //---------------------------深度优先搜索----------------------------

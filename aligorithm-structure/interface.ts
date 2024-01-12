@@ -1,15 +1,17 @@
 // 单链表
-export { LinkedList} from './LinkedList';
+export { LinkedList} from './linked-list/LinkedList';
 
 // 列表
-export { List } from './List';
-export { ArrayLinked } from './ArrayLinked'
-export { ArrayList } from './ArrayList'
+export { List } from './list/List';
+export { ArrayLinked } from './list/ArrayLinked'
+export { ArrayList } from './list/ArrayList'
 
 // 哈希表
-export { HashMap } from './HashMap';
-export { LinkedHashMap } from './LinkedHashMap'
-export { LinearHashMap } from './LinearHashMap'
+export { HashMap } from './hash-map/HashMap';
+export { LinkedHashMap } from './hash-map/LinkedHashMap'
+export { LinearHashMap } from './hash-map/LinearHashMap'
+
+// 二叉树
 
 
 
