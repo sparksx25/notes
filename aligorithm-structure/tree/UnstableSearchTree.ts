@@ -92,25 +92,13 @@ export class UnstableSearchTree<E> extends BinarySearchTree<E>{
       maxNodeParent = maxNode;
       maxNode = maxNode.right
     }
-    if (parent) {
-      // 左子节点无右节点
-      if (maxNodeParent === node) {
-        parent[direction!] = maxNode;
-        maxNode.right = node.right;
-      } else {
-        parent[direction!]!.data = maxNode.data;
-        maxNodeParent.right = undefined;
-      }
+    // 左子节点无右节点
+    if (maxNodeParent === node) {
+      node.left = undefined;
     } else {
-      // 左子节点无右节点
-      if (maxNodeParent === node) {
-        this.root = maxNode;
-        maxNode.right = node.right;
-      } else {
-        this.root!.data = maxNode.data;
-        maxNodeParent.right = undefined;
-      }
+      maxNodeParent.right = undefined;
     }
+    node.data = maxNode.data;
 
     this.length -= 1;
     return true;

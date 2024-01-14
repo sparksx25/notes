@@ -19,7 +19,7 @@ type Node<E> = TreeNode<E>["left"];
 /**
  * 平衡二叉搜索树
  */
-class AVLTree<E> extends BinarySearchTree<E> {
+export class AVLTree<E> extends BinarySearchTree<E> {
   protected root?: TreeNode<E>;
   private length: number = 0;
 
@@ -65,27 +65,49 @@ class AVLTree<E> extends BinarySearchTree<E> {
    * @param node 
    * @returns 
    */
-  private rightRotate(node: Node<E>) {
-    if (!node) return;
-    const child = node.left!;
-    const grandChild = child.right;
-    child.right = node;
+  private rightRotate(node: Node<E>):Node<E> {
+    if (!node) return node;
+    const root = node.left!;
+    const grandChild = root.right;
+    root.right = node;
     node.left = grandChild;
     this.updateHeight(node);
-    this.updateHeight(child);
+    this.updateHeight(root);
+    return root;
   }
 
-  private rotate(node: TreeNode<E>) {
+  /**
+   * 右偏树左旋
+   * @param node 
+   */
+  private leftRotate(node: Node<E>):Node<E> {
+    if (!node) return node;
+    const root = node.right!;
+    let grandChild = root.left;
+    root.left = node;
+    node.right = grandChild;
+    this.updateHeight(node);
+    this.updateHeight(root);
+    return root;
+  }
+
+  private rotate(node: TreeNode<E>): Node<E> {
     const factor = this.balanceFactor(node);
     // 左偏树
     if (factor > 1) {
-      // 右旋
-      if (this.balanceFactor(node.left) >= 0) {
-        this.rightRotate(node);
-      } else {
-        
+      // 先左旋后右旋
+      if (this.balanceFactor(node.left) < 0) {
+        node.left = this.leftRotate(node.left);
       }
+      // 右旋
+      node = this.rightRotate(node)!;
+    } else if (factor < -1) {
+      if (this.balanceFactor(node.right) > 0) {
+        node.right = this.rightRotate(node.right);
+      }
+      node = this.leftRotate(node)!;
     }
+    return node;
   }
 
   /**
@@ -102,31 +124,31 @@ class AVLTree<E> extends BinarySearchTree<E> {
   insert(data: E): boolean {
     let exist = false;
 
-    function travel(node: TreeNode<E>) {
-      if (exist) return;
+    const travel = (node: TreeNode<E>, parent?: Node<E>, direction?: Direction) => {
       const res = this.compare(data, node.data);
       if (res === 0) {
         exist = true;
         return;
       };
       const child = res < 0 ? node.left : node.right;
-      const direction:Direction = res < 0 ? 'left' : 'right';
+      const childDirection:Direction = res < 0 ? 'left' : 'right';
 
-      if (child) {
-        travel(child);
-      } else {
-        node[direction] = new TreeNode(data);
-      }
+      if (child) { travel(child, node, childDirection); }
+      else { node[childDirection] = new TreeNode(data); }
+
+      if (exist) return;
+
       this.updateHeight(node);
-      this.rotate(node);
+      const rotateRoot = this.rotate(node);
+
+      if (parent) { parent[direction!] = rotateRoot; }
     }
 
-    if (this.root) {
-      travel(this.root)
-      return !exist;
-    }
+    if (this.root) { travel(this.root) }
+    else { this.root = new TreeNode(data) };
 
-    this.root = new TreeNode(data);
+    if (exist) return false;
+
     this.length += 1;
     return true;
   }
@@ -136,6 +158,59 @@ class AVLTree<E> extends BinarySearchTree<E> {
    * @param data 
    */
   remove(data: E): boolean {
-      
+    let exist = false;
+    const travel = (node: TreeNode<E>, parent?: Node<E>, direction?:Direction) => {
+      let degree = 0;
+      if (node.left) degree++;
+      if (node.right) degree++;
+
+      let updateNode = parent;
+      const res = this.compare(data, node.data);
+      if (res === 0) {
+        exist = true;
+        if (degree < 2) {
+          const child = node.left ? node.left : node.right;
+          if (parent) { 
+            parent[direction!] = child;
+          } else { 
+            this.root = child;
+            updateNode = this.root;
+          }
+        } else {
+          let maxNode = node.left!;
+          let maxNodeParent = node;
+          while(maxNode?.right) {
+            maxNodeParent = maxNode;
+            maxNode = maxNode.right;
+          }
+          if (maxNodeParent === node) {
+            node.left = undefined;
+          } else {
+            maxNodeParent.right = undefined;
+          }
+          node.data = maxNode.data;
+        }
+      } else {
+        const child = res < 0 ? node.left : node.right;
+        const childDirection:Direction = res < 0 ? 'left' : 'right';
+        if (child) { travel(child, node, childDirection); }
+      }
+      if (exist) {
+        this.updateHeight(updateNode!);
+        this.rotate(updateNode!)
+      }
+    };
+
+    if (this.root) { travel(this.root); }
+    else { return false; }
+
+    return exist;
   }
 }
+
+// 二叉搜索树
+const bsTree = new AVLTree();
+bsTree.insert(4);
+bsTree.insert(2);
+bsTree.insert(1);
+console.log(bsTree.toList())
