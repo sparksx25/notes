@@ -15,7 +15,7 @@ export class MaxHeap<E> {
    * @param i 
    * @returns 
    */
-  private parent(i): number {
+  private parent(i: number): number {
     return Math.floor((i - 1) / 2);
   }
 
@@ -24,7 +24,7 @@ export class MaxHeap<E> {
    * @param i 
    * @returns 
    */
-  private left(i): number {
+  private left(i: number): number {
     return 2 * i + 1;
   }
 
@@ -33,7 +33,7 @@ export class MaxHeap<E> {
    * @param i 
    * @returns 
    */
-  private right(i):number {
+  private right(i: number):number {
     return 2 * i + 2;
   }
 
