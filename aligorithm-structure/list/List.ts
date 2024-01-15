@@ -26,6 +26,13 @@ export abstract class List<E> {
   abstract get(index: number): E|undefined
 
   /**
+   * 若 index 大于列表最大索引，则返回 flase    
+   * 若 index 小于 0, 则表示数组末尾的索引，若小于列表长度的相反数，则返回 false    
+   * 修改指定索引处的元素
+  */
+  abstract set(index: number, data: E): boolean
+
+  /**
    * 迭代列表，若回调函数返回 false 则停止迭代
   */
   abstract forEach(cb: (e:E, index: number) => any): void

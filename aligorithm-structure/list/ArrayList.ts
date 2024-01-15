@@ -44,7 +44,18 @@ export class ArrayList<E> extends List<E> {
   get(index: number): E|undefined {
     return this.container[this.getIndex(index)];
   }
-  
+
+  /**
+   * @override
+  */
+  set(index: number, data: E): boolean {
+    if (index < -1 * this.length) return false;
+    if (index >= this.length) return false;
+    index = this.getIndex(index);
+    this.container[index] = data;
+    return true;
+  }
+
   /**
    * @override
   */
