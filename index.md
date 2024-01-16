@@ -1,7 +1,8 @@
 # 索引
 
 ## 常用站点
-[Markdown基本语法](http://markdown.p2hp.com/basic-syntax/#code)
+[Markdown基本语法](https://markdown.com.cn/basic-syntax/code.html)
+[维基百科](https://zh.wikipedia.org/wiki/TeX)
 
 ## 电子书
 [免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)

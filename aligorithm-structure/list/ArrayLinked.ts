@@ -26,6 +26,19 @@ export class ArrayLinked<E> extends List<E> {
   }
 
   /**
+   * 
+   * @param index 
+   * @param data 
+   */
+  set(index: number, data: E): boolean {
+    const length = this.size();
+    if (index < -1 * length) return false;
+    if (index >= length) return false;
+    this.linkedList.update(index, data);
+    return true;
+  }
+
+  /**
    * @override
   */
   forEach(cb: (e: E, index: number) => any): void {

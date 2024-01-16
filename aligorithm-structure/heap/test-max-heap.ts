@@ -12,3 +12,8 @@ heap.push(5)
 heap.push(6)
 heap.pop();
 console.log(heap.top()) // 6
+
+
+const initialHeap = new MaxHeap<number>();
+initialHeap.reset(5,23,1,3,45,3);
+console.log(initialHeap.top()) // 45

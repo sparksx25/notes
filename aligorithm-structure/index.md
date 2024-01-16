@@ -39,27 +39,32 @@
 优先队列(priority queue)：可以使用大顶堆实现 
 
 ## 哈希表(hash table)
-[哈希表](./hash-table.md)
-[链地址法实现哈希表](./LinkedHashMap.ts)
-[线性探测实现哈希表](./LinearHashMap.ts)
+[哈希表](./hash-map/index.md)
+[链地址法实现哈希表](./hash-map/LinkedHashMap.ts)
+[线性探测实现哈希表](./hash-map/LinearHashMap.ts)
 
 ## 树
-[二叉树](./binary-tree.md)
-[二叉树的遍历](./BinaryTree.ts)
-[创建完全二叉树](./CompleteBinaryTree.ts)
-[二叉搜索树](./BinarySearchTree.ts)
-AVL树
+[二叉树](./tree/binary-tree.md)
+[二叉树的遍历](./tree/BinaryTree.ts)
+[创建完全二叉树](./tree/CompleteBinaryTree.ts)
+[二叉搜索树](./tree/BinarySearchTree.ts)
+[平衡二叉搜索树](./tree/AVLTree.ts)
 
 
 ## 堆
 - 大顶堆
 - 小顶堆
+- 出堆：自上而下，入堆：自下而上堆化
+- 创建初始堆
+[使用数组实现大顶堆](./heap/MaxHeap.ts)
 
 ## 图
 - 无向图
 - 有向图
-- 带环图
-
+- 右权图
+- 无权图
+- 可以使用邻接矩阵，邻接表表示无向图
+[无向图](./graph/graph.ts)
 
 ## 疑问
 内存中的栈和堆是什么样的存在。

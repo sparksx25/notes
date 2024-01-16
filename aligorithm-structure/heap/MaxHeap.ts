@@ -4,10 +4,22 @@ import { ArrayList } from '../list/ArrayList';
  * 使用列表实现大顶堆
  */
 export class MaxHeap<E> {
-  private list = new ArrayList<E>()
+  private list = new ArrayList<E>();
 
   private get(index: number):E | undefined {
     return this.list.get(index);
+  }
+
+  /**
+   * 交换两个索引的值
+   * @param i 
+   * @param j 
+   */
+  private swap(i: number, j: number) {
+    const a = this.list.get(i)!;
+    const b = this.list.get(j)!;
+    this.list.set(i, b);
+    this.list.set(j, a);
   }
 
   /**
@@ -47,6 +59,20 @@ export class MaxHeap<E> {
     return Number(node) - Number(referenceNode);
   }
 
+  /**
+   * 重置堆
+   * @param elements 
+   */
+  reset(...elements: E[]) {
+    this.list.push(...elements);
+
+    // 最后一个叶子节点的父节点是最后一个树节点   
+    // 从底层往上，保证底层的树节点是一个符合条件的堆，
+    for (let i = this.parent(this.size() - 1); i >= 0; i--) {
+      this.siftDown(i);
+    }
+  }
+
   
   size() {
     return this.list.size();
@@ -60,24 +86,21 @@ export class MaxHeap<E> {
     return this.list.get(0);
   }
 
-
   /**
    * 从指定索引处开始自下而上进行堆化
    * @param index 
    * @returns 
    */
   siftUp(index: number) {
-    const parentIndex = this.parent(index);
-    if (parentIndex < 0) return;
-
-    const parentData = this.get(parentIndex)!;
-    const insertData = this.get(index)!;
-    const res = this.compare(insertData, parentData);
-    if (res > 0) {
-      this.list.set(parentIndex, insertData);
-      this.list.set(index, parentData);
+    while(true) {
+      const parentIndex = this.parent(index);
+      if (parentIndex < 0) return;
+      const parentData = this.get(parentIndex)!;
+      const data = this.get(index)!;
+      const res = this.compare(data, parentData);
+      if (res > 0) this.swap(index, parentIndex);
+      index = parentIndex;
     }
-    this.siftUp(parentIndex);
   }
 
   /**
@@ -105,12 +128,10 @@ export class MaxHeap<E> {
     if (max === topData) { 
       return 
     } else if (max === leftData) {
-      this.list.set(index, leftData);
-      this.list.set(leftIndex, topData);
+      this.swap(index, leftIndex);
       this.siftDown(leftIndex);
     } else {
-      this.list.set(index, rightData);
-      this.list.set(rightIndex, topData);
+      this.swap(index, rightIndex);
       this.siftDown(rightIndex);
     }
   }
