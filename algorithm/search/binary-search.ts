@@ -40,7 +40,7 @@ function binarySearch_B(nums: number[], target: number) {
   }
   return i;
 }
-
+console.log(binarySearch_A([1, 4, 5, 6, 7], 2))
 
 /* 
 Q3:
@@ -62,3 +62,5 @@ function binarySearch_C(nums: number[], target: number) {
   }
   return i;
 }
+console.log(binarySearch_A([1, 4, 5, 5, 6, 7], 5))
+
