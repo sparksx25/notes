@@ -132,10 +132,10 @@ function mergeSort(nums: number[]) {
  */
 function heapSort(nums: number[]) {
   function siftDown(i: number) {
-    if (i <= startIndex) return
     let left = 2 * i + 1;
     let right = 2 * i + 2;
-    if (left >= nums.length) return;
+    if (left > nums.length - 1) return;
+
     let min = nums[left] < nums[i] ? nums[left] : nums[i];
     if (right < nums.length) {
       min = min < nums[right] ? min : nums[right];
@@ -155,9 +155,11 @@ function heapSort(nums: number[]) {
   const res: number[] = [];
   for (let i = 0; i < nums.length; i++) {
     res.push(nums[0]);
-    
-    nums[0] = nums.pop()!;
-    siftDown(0);
+    const last = nums.pop();
+    i--;
+    if (nums.length) {
+      nums[0] = last!;
+    }
   }
   return res;
 }

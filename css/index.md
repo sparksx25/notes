@@ -1,5 +1,7 @@
 # css
 
+[大漠 CSS](https://www.w3cplus.com/)
+
 ## css 属性
 aspect-ratio: 规定盒子的宽高比
 will-change: 创建新的图层
@@ -16,7 +18,7 @@ perspective-origin
 pointer-events
 
 ## css函数
-calc
+calc()
 max()
 min()
 linear-gradient()
