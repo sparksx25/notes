@@ -1,5 +1,5 @@
 
-var arr = [8,1,7,3,5,2,4,6];
+var arr = [8, 1, 7, 3, 5, 2, 4, 6];
 
 /**
  * 选择排序：
@@ -33,10 +33,10 @@ function bubbleSort(nums: number[]) {
   let ordered = false;
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j < nums.length - 1 - i; j++) {
-      if (nums[j] > nums[j+1]) {
+      if (nums[j] > nums[j + 1]) {
         const temp = nums[j];
-        nums[j] = nums[j+1];
-        nums[j+1] = temp;
+        nums[j] = nums[j + 1];
+        nums[j + 1] = temp;
         ordered = true;
       }
     }
@@ -56,13 +56,13 @@ function bubbleSort(nums: number[]) {
  */
 function insertionSort(nums: number[]) {
   for (let i = 1; i < nums.length; i++) {
-      const base = nums[i];
-      let j = i - 1;
-      while (j >= 0 && nums[j] > base) {
-          nums[j + 1] = nums[j];
-          j--;
-      }
-      nums[j + 1] = base;
+    const base = nums[i];
+    let j = i - 1;
+    while (j >= 0 && nums[j] > base) {
+      nums[j + 1] = nums[j];
+      j--;
+    }
+    nums[j + 1] = base;
   }
 }
 // insertionSort(arr)
@@ -76,10 +76,10 @@ function insertionSort(nums: number[]) {
  * @returns 
  */
 function quickSort(nums: number[]) {
-  function travel(list: number[]):number[] {
+  function travel(list: number[]): number[] {
     if (list.length <= 1) return list;
-    const left:number[] = [];
-    const right:number[] = [];
+    const left: number[] = [];
+    const right: number[] = [];
     for (let i = 1; i < list.length; i++) {
       if (list[i] < list[0]) {
         left.push(list[i]);
@@ -128,6 +128,8 @@ function mergeSort(nums: number[]) {
 
 /**
  * 堆排序
+ * 非原地排序
+ * 非稳定排序
  * @param nums 
  */
 function heapSort(nums: number[]) {
@@ -150,16 +152,16 @@ function heapSort(nums: number[]) {
   }
   const startIndex = Math.floor(nums.length / 2);
   for (let i = startIndex; i >= 0; i--) {
-    siftDown(nums[i]);
+    siftDown(i);
   }
   const res: number[] = [];
-  for (let i = 0; i < nums.length; i++) {
+  while (nums.length) {
     res.push(nums[0]);
-    const last = nums.pop();
-    i--;
-    if (nums.length) {
-      nums[0] = last!;
+    if (nums.length > 1) {
+      nums[0] = nums[nums.length - 1];
     }
+    nums.pop();
+    siftDown(0);
   }
   return res;
 }
