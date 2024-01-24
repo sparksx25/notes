@@ -2,3 +2,14 @@
 - 整理 decimal
 - 整理笔记
 - 位操作
+- aspect-ratio
+- js sort
+- element-ui 上传组件
+- 文件下载 file-saver
+- xlsx.js
+- vscode插件
+- dcloud
+- 上传文件检验规则
+- sort排序的稳定性
+- 枚举值类型映射
+- word-wrap/word-break
