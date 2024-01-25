@@ -1,8 +1,9 @@
 # 索引
 
 ## 常用站点
-[Markdown基本语法](https://markdown.com.cn/basic-syntax/code.html)
-[维基百科](https://zh.wikipedia.org/wiki/TeX)
+- [Markdown基本语法](https://markdown.com.cn/basic-syntax/code.html)
+- [维基百科](https://zh.wikipedia.org/wiki/TeX)
+- [MDN: github sort排序](https://github.com/mdn/translated-content/blob/main/files/zh-cn/web/javascript/reference/global_objects/array/sort/index.md?plain=1)
 
 ## 电子书
 [免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)
@@ -42,3 +43,5 @@
 - [文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
 
 - [技术选型：各框架的特性](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ%3D%3D&idx=3&mid=2247571219&scene=27&sn=77d2e326bd8039bafd47eaf4b4577a9d#wechat_redirect)
+
+- [v8相关](https://v8.js.cn/features/)

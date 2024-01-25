@@ -19,10 +19,13 @@ pointer-events
 
 ## css函数
 calc()
-max()
-min()
+var()
+env()
 linear-gradient()
 radial-gradient()
-var()
 rgb()
 rgba()
+attr()
+clamp(MIN, VAL, MAX)
+min()
+max()
