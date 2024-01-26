@@ -4,6 +4,8 @@
 - [Markdown基本语法](https://markdown.com.cn/basic-syntax/code.html)
 - [维基百科](https://zh.wikipedia.org/wiki/TeX)
 - [MDN: github sort排序](https://github.com/mdn/translated-content/blob/main/files/zh-cn/web/javascript/reference/global_objects/array/sort/index.md?plain=1)
+- [英语学习](http://www.tanglib.com/explore?cid=19&tab=popular)
+- [ECMA 规格文档](https://tc39.es/ecma262/2022/)
 
 ## 电子书
 [免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)
@@ -33,6 +35,7 @@
 
 
 ## 多种技术文档
+- [webkit 技术博客](https://webkit.org/blog/category/javascript/)
 - [网道技术文档](https://github.com/wangdoc)
 - [廖雪峰技术文档](https://www.liaoxuefeng.com/)
 - [java开发](https://pdai.tech/md/java/basic/java-basic-lan-sum.html)
@@ -45,3 +48,7 @@
 - [技术选型：各框架的特性](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ%3D%3D&idx=3&mid=2247571219&scene=27&sn=77d2e326bd8039bafd47eaf4b4577a9d#wechat_redirect)
 
 - [v8相关](https://v8.js.cn/features/)
+
+
+## 年度报告
+- [穿越时空：2023年前端技术盘点与2024年技术展望](https://mp.weixin.qq.com/s/LiygBJqMN8U_vSpAjxMibQ)

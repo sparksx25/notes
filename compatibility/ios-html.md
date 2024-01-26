@@ -55,3 +55,22 @@ console.log([...str].length) // 3
 
 ## window.open
 IOS 上执行 window.open 会被拦截，IOS认为这种操作打开的是广告。
+
+
+## 内容安全区域
+> 最初由 iOS 浏览器提供
+> 注意：当 viewport-fit=contain 时 env() 是不起作用的，必须要配合 viewport-fit=cover 使用。对于不支持env() 的浏览器，浏览器将会忽略它。
+
+[Designing Websites for iPhone X](https://webkit.org/blog/7929/designing-websites-for-iphone-x/)
+```css
+  /* 兼容 iOS < 11.2 */
+  padding-top: constant(safe-area-inset-top);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  /* 兼容 iOS >= 11.2 */
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+```
