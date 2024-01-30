@@ -74,3 +74,8 @@ IOS 上执行 window.open 会被拦截，IOS认为这种操作打开的是广告
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
 ```
+
+## 默认拖拽行为
+IOS默认图片,视频，a标签都是可拖拽的。解决方法如下
+1. 标签添加 `draggable=false`属性
+2. 添加 `-webkit-user-drag: none;` 样式

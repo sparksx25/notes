@@ -31,7 +31,7 @@ Git分支管理
 jest
 JSLint
 CSSLint
-
+[stylelint](https://stylelint.io/user-guide/customize)
 ## 模块化开发
 
 
