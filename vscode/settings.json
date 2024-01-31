@@ -1,0 +1,37 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": true,
+  },
+
+  // eslint 配置
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+
+  // 禁用 vscode 内置样式检查, 使用 stylelint 规则
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  
+  // stylelint配置
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "scss",
+    "postcss",
+    "vue"
+  ],
+
+  // todohighlight
+  "todohighlight.include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.vue"
+  ]
+}

@@ -9,8 +9,9 @@
 
 ## 2. 安装 eslint 插件  {#install-extensions}
 - `vscode`安装`eslint`插件
-- 配置 vscode `settings.json`
+- vscode `eslint` 插件默认会使用项目根目录的 eslint 配置文件作为配置
 
+`.vscode/settings.json`
 ```json
 {
   "eslint.enable": true,
@@ -24,12 +25,13 @@
 }
 ```
 
-
 ## 创建 elsint 配置 {#create-config}
+- `.eslintrc.json`, `.eslintignore`
 - 使用`vscode`任务面板执行插件提供的命令创建配置文件
 - 使用命令行 `npm init @eslint/config`，可以根据提示交互式创建配置文件
 - 也可以使用 `javascript` 注释指定使用的规则
 - 具体详细配置可查看 `eslint npm` 包
+- 在项目根目录下
 
 
 ## eslintrc.json 常用配置

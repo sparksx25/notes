@@ -8,7 +8,6 @@
 ## 切换 vscode ts 语法提示版本（仅供语法提示）
 vscode 默认内置了最新的TS稳定版本作为语法提示，也可以使用项目中的 ts 版本
 1. 可以在命令面板选择 ts 版本
-2. settings.json中配置 `"typescript.tsdk": "node_modules/typescript/lib"`
 
 - [vscode官网：选择新的ts版本](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-newer-typescript-versions)
 
