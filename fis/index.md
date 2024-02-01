@@ -9,23 +9,30 @@
 
 
 ## 开发规范
-git 提交规范
+- 代码格式: 一般是指代码缩进使用空格还是 Tab、每行结尾要不要加分号、左花括号需不需要换行等等
 
-[编码风格 editorconfig](https://editorconfig.org/)
+- 代码规范:一般包含了代码格式规范、变量和函数命名规范、文档注释规范等等。   
 
-代码规范一般包含了代码格式规范、变量和函数命名规范、文档注释规范等等。
-代码格式一般是指代码缩进使用空格还是 Tab、每行结尾要不要加分号、左花括号需不需要换行等等
-变量命名：小驼峰式命名法（lower camel case），大驼峰式命名法（upper camel case），下划线命名法（snake case），
-匈牙利命名法：这种方式在变量名的前面加上表示变量类型或属性的前缀
+变量命名：
+  1. 小驼峰式命名法（lower camel case）
+  2. 大驼峰式命名法（upper camel case）
+  3. 下划线命名法（snake case），
+  4. 匈牙利命名法：这种方式在变量名的前面加上表示变量类型或属性的前缀
 
-Stylelint 是一个开源的、用于检查 CSS 代码格式的开源工具。具体如何使用请看下一节。
 
 目录结构的制定
-编码规范
 前后端接口规范
 文档规范
 组件管理
 Git分支管理
+
+具体约束：
+- [编码风格 editorconfig](https://editorconfig.org/)
+- [typescript 强类型约束与语法提示](./ts.md)
+- [eslint 规范](./eslint.md)
+- [stylelint 规范](./stylelint.md)
+- [git 规范](./git.md)
+- 单词拼写检查
 
 ## 代码质量
 jest
