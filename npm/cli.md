@@ -15,6 +15,10 @@ e.g. npm view vue@3.0.0 dependencies
 ```
 
 
+## npm run    
+列举当前项目 `package.json` 文件 `scripts` 属性配置的 npm 脚本。
+
+
 ## 参考文章
 - [npm scripts](https://docs.npmjs.com/cli/v6/using-npm/scripts)
 - [阮一峰: npm_scripts](https://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)

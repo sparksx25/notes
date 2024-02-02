@@ -11,9 +11,19 @@ npm 脚本的原理非常简单。每当执行npm run，就会自动新建一个
 
 这意味着，当前目录的node_modules/.bin子目录里面的所有脚本，都可以直接用脚本名调用，而不必加上路径
 
-## 常用脚本
-`npm run`    
-列举当前项目 `package.json` 文件 `scripts` 属性配置的 npm 脚本。
+
+## Life Cycle Scripts 
+prepare:
+- 在本地 npm install 时运行（不带任何参数），
+
+## Life Cycle Operation Order
+`npm install`
+  - preinstall
+  - install
+  - postinstall
+  - prepublish
+  - prepare
+
 
 ## 钩子
 npm 脚本有pre 和 post 两个钩子。举例来说，build 脚本命令的钩子就是 prebuild 和 postbuild。
