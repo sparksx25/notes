@@ -16,7 +16,7 @@ npm 脚本的原理非常简单。每当执行npm run，就会自动新建一个
 列举当前项目 `package.json` 文件 `scripts` 属性配置的 npm 脚本。
 
 ## 钩子
-npm 脚本有pre和post两个钩子。举例来说，build 脚本命令的钩子就是 prebuild 和 postbuild。
+npm 脚本有pre 和 post 两个钩子。举例来说，build 脚本命令的钩子就是 prebuild 和 postbuild。
 
 
 ## 参考文章
