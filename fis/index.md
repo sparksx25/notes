@@ -8,39 +8,17 @@
 ## 前端开发框架选型
 
 
-## 开发规范
-- 代码格式: 一般是指代码缩进使用空格还是 Tab、每行结尾要不要加分号、左花括号需不需要换行等等
-
-- 代码规范:一般包含了代码格式规范、变量和函数命名规范、文档注释规范等等。   
-
-变量命名：
-  1. 小驼峰式命名法（lower camel case）
-  2. 大驼峰式命名法（upper camel case）
-  3. 下划线命名法（snake case），
-  4. 匈牙利命名法：这种方式在变量名的前面加上表示变量类型或属性的前缀
-
-
-目录结构的制定
-前后端接口规范
-文档规范
-组件管理
-Git分支管理
-
-具体约束：
-- [编码风格 editorconfig](https://editorconfig.org/)
+## 开发规范与风格检查
+- [代码规范](./dev-norms.md)
+- [js代码规范](./eslint.md)
+- [样式代码规范](./stylelint.md)
+- [git提交规范](./git.md)
 - [typescript 强类型约束与语法提示](./ts.md)
-- [eslint 规范](./eslint.md)
-- [stylelint 规范](./stylelint.md)
-- [git 规范](./git.md)
-- 单词拼写检查
 
-## 代码质量
-jest
-JSLint
-CSSLint
-[stylelint](https://stylelint.io/user-guide/customize)
+
 ## 模块化开发
-
+styled-component
+css in js
 
 ## 组件化开发
 
@@ -53,7 +31,7 @@ CSSLint
 |           ---       |                             ---                               |
 |       请求数量	    | 合并脚本和样式表，CSS Sprites，拆分初始化负载，划分主域     |
 |       请求带宽	    | 开启GZip，精简JavaScript，移除重复脚本，图像优化              |
-|       缓存利用      | 使用CDN，使用外部JavaScript和CSS，添加Expires头，减少DNS查找，配置ETag，使AjaX可缓存    |
+|       缓存利用      | 使用CDN，使用外部JavaScript和CSS，添加Expires头，减少DNS查找，配置ETag，使AjaX可缓存 |
 |       页面结构	    | 将样式表放在顶部，将脚本放在底部，尽早刷新文档的输出                 |
 |       代码校验	    | 避免CSS表达式，避免重定向  |
 
@@ -67,3 +45,5 @@ CSSLint
 - 根据文件内容生成 `contentHash` 作为文件名，确保相同内容相同的文件生成的`contentHash`一样
 - 根据入口文件递归文件的资源依赖关系，首先构建最底层被依赖的资源文件名。
 - 部署发布时，先更新资源文件（如js，css，图片），最后更新 html，采用非覆盖式发布
+
+## CI, CD
