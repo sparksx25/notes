@@ -40,7 +40,6 @@
 
 
 ### 合并分支
-
 - git merge `branch_name`   
   将分支`branch_name`合并到当前分支
 
