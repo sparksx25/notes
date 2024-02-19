@@ -11,9 +11,9 @@
 - Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 macOS 和 Linux 只使用换行（LF）一个字符。
 - 注：使用 windows 自带的记事本创建的文本使用的是 CRLF 换行，且不支持修改换行符，需要使用高级编辑器修改换行符。
 - 配置 `git config core.autocrlf` 指示 git 如何处理**文本文件**的换行符。
-- `git config core.autocrlf false` `commit`和`checkout`文件时均不对换行符进行转换
-- `git config core.autocrlf true`  `commit`时将 `CRLF` 转换成 `LF`, `checkout`时将 `LF` 转成 `CRLF`
-- `git config core.autocrlf input` `commit`时将 `CRLF` 转换成 `LF`, `checkout`时不进行转换
+- `git config core.autocrlf false`。 `commit`和`checkout`文件时均不对换行符进行转换
+- `git config core.autocrlf true`。  `commit`时将 `CRLF` 转换成 `LF`, `checkout`时将 `LF` 转成 `CRLF`
+- `git config core.autocrlf input`。 `commit`时将 `CRLF` 转换成 `LF`, `checkout`时不进行转换
 
 
 ## gitattributes
@@ -51,7 +51,7 @@
 	ignorecase = true
 	hooksPath = .husky
 [remote "origin"]
-	url = git@gitlab.jjsnt.com:tony/play-control-h5.git
+	url = git@gitlab.sparksx.com:tony/play-control-h5.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin
@@ -61,13 +61,19 @@
 	merge = refs/heads/zwf-bridge
 	description = 原生桥接调整
 ```
-`git config --list` 显示当前 git 仓库的所有配置
-`git config user.name` 显示当前 git 仓库配置的用户名
-`git config branch.zwf-bridge.description` "原生桥接调整"
 
+## 命令行配置
+`git config --list`   
+显示当前 git 仓库的所有配置
 
-`git checkout -- <file>` 与 ` git restore <file>` 功能相同。放弃工作区的更改, 若该文件也已提交到暂存区，则回退到暂存区的内容，否则回退到上一次提交
+`git config user.name "zwf"`   
+配置本地仓库的用户名
 
-`git restore --staged <file>` 放弃暂存区的修改，工作区的不会改动
+`git config user.name`   
+显示本地仓库配置的用户名
 
-`git reset --hard` 丢弃自上次提交以来对工作目录和暂存区的所有更改，即回退到上一次快照。
+`git config branch.zwf-bridge.description "原生桥接调整"`   
+设置分支描述
+
+`git config branch.zwf-bridge.description`   
+查看分支描述
