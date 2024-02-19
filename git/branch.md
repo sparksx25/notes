@@ -50,10 +50,11 @@
 ## 推送分支
 git push   
 - 将本地的当前分支推送到远程的同名分支
-  
+git  
 git push -u origin `branch_name`   
 - -u 是 --set-upstream 的简写
 - 将`branch_name`分支推送到远程，并在远程创建一个同名的`branch_name`分支，同时建立跟踪
+
 
 ## 其它
 - git branch -m `old_branch` `new_branch`   
