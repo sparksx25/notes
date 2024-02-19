@@ -2,6 +2,12 @@
 https://mikemcl.github.io/bignumber.js/#coefficient
 https://mikemcl.github.io/decimal.js/#decimal
 
+注意点:
+1. 超出 Number.MAX_SAFE_INTEGER, Number.MAX_VALUE
+2. 数字的整数部分可以使用 "_"分割表示
+3. 数字的科学计数法表示 4e4 = 40000
+4. 超出 1e+21 将使用科学计数法表示
+
 addition
 subtraction
 multiplication
