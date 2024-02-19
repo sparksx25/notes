@@ -95,7 +95,7 @@ function disassemble(n: Decimal): [Sign, string] {
  * @param n 
  * @returns 
  */
-function nomalize(n: Decimal): string {
+function normalize(n: Decimal): string {
   const num = String(n);
   const expression = num.match(/e([-+])?(\d+)$/);
   if (!expression) return num;
@@ -114,7 +114,7 @@ function nomalize(n: Decimal): string {
  * @returns 正负号, 整数部分, 小数部分
  */
 function parse(n: Decimal): Meta {
-  const res = nomalize(n).match(/^([+-])?(\d+)(?:\.(\d+))?$/)!;
+  const res = normalize(n).match(/^([+-])?(\d+)(?:\.(\d+))?$/)!;
   const sign = res[1] || '+';
   const integer = res[2];
   const decimal = res[3] || '0'
@@ -328,8 +328,8 @@ function rightShift(n: string, pow: number): string {
  * @returns 
  */
 function add(a: string, b: string): string {
-  const metaA = parse(nomalize(a));
-  const metaB = parse(nomalize(b));
+  const metaA = parse(normalize(a));
+  const metaB = parse(normalize(b));
 
   const places = Math.max(1, metaA.decimal.length, metaB.decimal.length);
   metaA.decimal = padFraction(metaA.decimal, places);
@@ -413,9 +413,9 @@ function ge(n: string, m: string) {
 }
 
 // console.log(disassemble(-12321321123213123213213))
-// console.log(nomalize('-1.313123e1111'))
+// console.log(normalize('-1.313123e1111'))
 // console.log(leftShift('-1', 3))
-// console.log(nomalize('1e-3'))
+// console.log(normalize('1e-3'))
 // console.log(add('0.1', '0.2')) // 0.3
 // console.log(add('0.19', '-0.21')) // -0.02
 // console.log(sub('-0.21', '-0.19')) // -0.02
