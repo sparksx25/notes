@@ -28,7 +28,7 @@
 - `post-commit` 钩子在整个提交过程完成后运行。
 
 
-## usage
+## git hooks 提交检查
 husky: 修改 git hooks 文件路径，执行 git hooks 自定义脚本
 commitlint：使用 husky 自定义 git hooks 脚本的功能，提交时对提交信息进行检查
 lint-staged: 对暂存区的文件执行一些任务
@@ -44,3 +44,4 @@ lint-staged: 对暂存区的文件执行一些任务
 - [约定式提交规范](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
 - [commitlint 文档](https://commitlint.js.org/#/reference-configuration)
 - [git 官方文档: git hooks](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
+- [lint-staged](https://www.npmjs.com/package/lint-staged)

@@ -2,7 +2,7 @@
 也叫前端集成解决方案(Front-end Integrated Solution)
 
 ## 参考资料
-[张云龙 github](https://github.com/fouber/blog)
+[fis](https://github.com/fouber/blog)
 [带你入门前端工程](https://woai3c.gitee.io/introduction-to-front-end-engineering/02.html#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83)
 
 ## 前端开发框架选型

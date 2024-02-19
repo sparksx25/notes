@@ -72,14 +72,14 @@ Unicode 只是一个符号集，它只规定了符号的二进制代码，却没
 
 
 ## javascript 字符与码点的相互转换
-String.proprotype.codePointAt() // 获取字符的 unicode 码点值
-String.fromCodePoint() // 获 unicode 码点值对应的字符
+String.prototype.codePointAt() // 获取字符的 unicode 码点值
+String.fromCodePoint() // 获取 unicode 码点值对应的字符
 
 
 ## BOM(Byte Order Mark), BE(Big Endian), LE(Little Endian),
 > BOM —— Byte Order Mark，中文名译作“字节顺序标记”，出现在文本文件头部，Unicode编码标准中用于标识文件是采用哪种格式的编码。
 
-对于使用 unicode编码的文件，若包含了 BOM 则可以知道改文件的编码格式。否则是无法确定改文件是使用何种格式编码的。
+对于使用 unicode 编码的文件，若包含了 BOM 则可以知道改文件的编码格式。否则是无法确定改文件是使用何种格式编码的。
 
 [字符编码笔记：ASCII，Unicode 和 UTF-8](https://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
 [阮一峰：理解字节序](http://www.ruanyifeng.com/blog/2016/11/byte-order.html)
