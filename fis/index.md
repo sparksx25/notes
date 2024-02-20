@@ -5,15 +5,17 @@
 [fis](https://github.com/fouber/blog)
 [带你入门前端工程](https://woai3c.gitee.io/introduction-to-front-end-engineering/02.html#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83)
 
+
 ## 前端开发框架选型
 
 
-## 开发规范与风格检查
-- [代码规范](./dev-norms.md)
-- [js代码规范](./eslint.md)
-- [样式代码规范](./stylelint.md)
-- [git提交规范](./git.md)
+## 编码风格与风格检查
+- [编码风格](./code-style.md)
 - [typescript 强类型约束与语法提示](./ts.md)
+- [js 代码规范](./eslint.md)
+- [css 代码规范](./stylelint.md)
+- [git 提交规范](./git.md)
+- [代码提交检查](./code-test.md)
 
 
 ## 模块化开发
@@ -27,13 +29,13 @@ css in js
 - [雅虎开发者文档](https://developer.yahoo.com/performance/rules.html)
 
 
-|         优化方向     |                           	优化手段                           |
-|           ---       |                             ---                               |
-|       请求数量	    | 合并脚本和样式表，CSS Sprites，拆分初始化负载，划分主域     |
-|       请求带宽	    | 开启GZip，精简JavaScript，移除重复脚本，图像优化              |
-|       缓存利用      | 使用CDN，使用外部JavaScript和CSS，添加Expires头，减少DNS查找，配置ETag，使AjaX可缓存 |
-|       页面结构	    | 将样式表放在顶部，将脚本放在底部，尽早刷新文档的输出                 |
-|       代码校验	    | 避免CSS表达式，避免重定向  |
+|  优化方向     |                           	优化手段                           |
+|  ---         |                             ---                               |
+|  请求数量	    | 合并脚本和样式表，CSS Sprites，拆分初始化负载，划分主域     |
+|  请求带宽	    | 开启GZip，精简JavaScript，移除重复脚本，图像优化              |
+|  缓存利用      | 使用CDN，使用外部JavaScript和CSS，添加Expires头，减少DNS查找，配置ETag，使AjaX可缓存 |
+|  页面结构	    | 将样式表放在顶部，将脚本放在底部，尽早刷新文档的输出                 |
+|  代码校验	    | 避免CSS表达式，避免重定向  |
 
 运行时性能优化
 

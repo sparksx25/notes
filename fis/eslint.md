@@ -1,13 +1,12 @@
 # ESLint
-- [安装 eslint 库](#install-lib)
 
-## 1. 安装 eslint npm 包  {#install-lib}
+## 1.安装 eslint npm 包  {#install-lib}
 安装 `eslint` 包
 - 局部安装: `npm install --save-dev eslint`
 - 全局安装: `npm install -g eslint`
 
 
-## 2. 安装 eslint 插件  {#install-extensions}
+## 2.安装 eslint 插件  {#install-extensions}
 - `vscode`安装`eslint`插件
 - vscode `eslint` 插件默认会使用项目根目录的 eslint 配置文件作为配置
 
@@ -25,7 +24,7 @@
 }
 ```
 
-## 创建 elsint 配置 {#create-config}
+## 3.创建 eslint 配置 {#create-config}
 - `.eslintrc.json`, `.eslintignore`
 - 使用`vscode`任务面板执行插件提供的命令创建配置文件
 - 使用命令行 `npm init @eslint/config`，可以根据提示交互式创建配置文件
@@ -34,7 +33,7 @@
 - 在项目根目录下
 
 
-## eslintrc.json 常用配置
+## 4.eslintrc.json 常用配置
 ```json
 {
   // 指明当前目录是根目录，不在向上查找 eslint 配置
@@ -65,12 +64,12 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
+  // "vue" 对应 eslint-plugin-vue
+  "plugins": ["vue"],
   "processor": {},
   // "settings"：{}
   // 插件是一个 npm 包，可以向 ESLint 添加各种扩展。
   // 插件可以执行许多功能，包括但不限于添加新规则和导出可共享的配置。确保软件包已安装在 ESLint 可以要求它的目录中
-  // "vue" 对应 eslint-plugin-vue
-  "plugins": ["vue"],
   // 对所有文件的 eslint 规则进行覆盖或调整
   "rules": {},
   // 禁止行内规则配置
@@ -82,10 +81,33 @@
 }
 ```
 
-## eslintignore 忽略文件
+## 5. 使用 eslintignore 忽略文件
+```
+# Node.js
+node_modules/
 
+# 编译生成的文件
+dist/
 
-## 其他配置
+# 依赖管理工具
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# IDE/编辑器相关
+.vscode/
+.idea/
+
+# macOS 系统文件
+.DS_Store
+
+# 配置文件
+.env
+*.env.local
+```
+
+## 6.其他配置
 1. 使用 `/* global var1:writable, var2:writable */` 配置全局变量可读可写
 2. 使用 `/* eslint-env node, mocha */` 指定环境
 3. 请注意，支持 JSX 语法并不等同于支持 React
