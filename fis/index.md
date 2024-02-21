@@ -44,4 +44,6 @@ css in js
 - 根据入口文件递归文件的资源依赖关系，首先构建最底层被依赖的资源文件名。
 - 部署发布时，先更新资源文件（如js，css，图片），最后更新 html，采用非覆盖式发布
 
-## CI, CD
+## 网站安全
+XSS
+CSRF: (Cross-site request forgery)跨站请求伪造
