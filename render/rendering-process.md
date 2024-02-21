@@ -2,7 +2,8 @@
 
 1. DOM
 2. CSSOM
-3. calculate style
-4. layout
-5. paint
-6. composition
+3. Render Tree
+4. calculate style
+5. layout
+6. paint
+7. composition
