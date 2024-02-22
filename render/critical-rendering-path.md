@@ -1,8 +1,26 @@
 # Critical Rendering Path (关键渲染路径)
+浏览器在执行初始渲染之前执行的一系列步骤称为“关键渲染路径”
+
+初始渲染与首屏不是同一个概念，浏览器是渐进式渲染的。
+初始渲染代表的是屏幕显示该网页的第一帧
+
+## 解析阻塞资源与渲染阻塞资源
 
 ## 参考资料
 [谷歌开发者文档](https://web.dev/articles/critical-rendering-path?hl=zh-cn)
+[关键渲染路径](https://web.dev/learn/performance/understanding-the-critical-path?hl=zh-cn)
 
+## （关键）渲染路径
+呈现路径涉及以下步骤：
+
+- 通过 HTML 构建文档对象模型 (DOM)。
+- 通过 CSS 构建 CSS 对象模型 (CSSOM)。
+- 应用任何会更改 DOM 或 CSSOM 的 JavaScript。
+- 通过 DOM 和 CSSOM 构建渲染树。
+- 在页面上执行样式和布局操作，看看哪些元素适合显示。
+- 在内存中绘制元素的像素。
+- 如果有任何像素重叠，则合成像素。
+- 以物理方式将所有生成的像素绘制到屏幕上
 
 ## 构建对象模型
 DOM 生成流程

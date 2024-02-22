@@ -17,6 +17,10 @@
   3. 主页的内容可以选择内联
   4. ETag 在使用服务器群集处理请求上存在问题
 
+- 压缩
+  - 动态压缩和静态压缩。css，js使用静态压缩，动态 html 使用动态压缩
+  - 尽可能使用 Brotli 压缩算法，接着是 Gzip
+
 - 静态资源使用 CDN
   1. 
 
@@ -28,14 +32,18 @@
 
 - 按需加载脚本
 
-- 将 CSS 放在文件头部，JavaScript 文件放在底部，脚本加上 defer
+- 将 CSS 放在文件头部
   1. 空白的白屏
   2. 无样式内容的闪烁
+
+- 将 JavaScript 文件放在底部，可以的话加上异步属性    
+ [MDN: script标签的async与defer属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)
 
 - 减少 DNS 查找
   1. 将内容分发到至少两个但不超过四个主机
 
 - 避免重定向
+  example.com/page/ 重定向到 example.com/page
 
 - 使用服务端渲染
 
@@ -45,7 +53,10 @@
 
 - 延迟 图片,iframe 加载
 
+- 资源预加载
+  `<link rel="prefetch" href="/chunk.js"/>` 
 
+- 测量服务器响应时间，缩短服务器响应时间
 
 ## 运行时优化
 - 减少重排与重绘
