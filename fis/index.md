@@ -10,7 +10,7 @@
 - [React 与 Vue 技术选型](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&idx=3&mid=2247571219&sn=77d2e326bd8039bafd47eaf4b4577a9d)
 
 
-## 编码风格与风格检查
+## 代码规范
 - [编码风格](./code-style.md)
 - [typescript 强类型约束与语法提示](./ts.md)
 - [js 代码规范](./eslint.md)
@@ -19,41 +19,37 @@
 - [代码提交检查](./code-test.md)
 
 
+
 ## 模块化开发
-styled-component
-css in js
+- 利用模块化开发规范（如 CommonJS、AMD、ES6 Module）将代码拆分成独立的模块，提高代码复用性和可维护性。
+- 使用打包工具（如 Webpack、vite、Parcel）将模块打包成可部署的静态资源文件。
 
 
-## 组件化开发
+## 性能优化
+- [性能优化](./performance.md)
 
 
-## 图标库
-字体图标， svg 图标
-
-## 测试
+## 自动化测试
 1. 单元测试
 2. 集成测试
 3. 端到端测试
 
 
-## 前端监控
+## 持续集成
+将代码集成到共享仓库（如 GitLab、GitHub）后，使用持续集成工具（如 Jenkins、Travis CI、CircleCI）自动触发构建、运行测试，并部署到测试环境或生产环境
 
 
-## 性能优化
-- [性能优化](./performance.md)
-- [雅虎开发者文档](https://developer.yahoo.com/performance/rules.html)
+## 持续部署
+- 缓存：根据文件内容生成 `contentHash` 作为文件名，确保相同内容的文件生成的`contentHash`一样，不同内容的文件生成不一样的哈希
+- 非覆盖式部署: 部署新版本时，先更新资源文件（如js，css，图片），最后更新 html。旧版资源依旧保留
 
-
-## 项目部署
-项目部署：部署按照现行业界的分工标准，虽然不是前端的工作范畴，但它对性能优化有直接的影响，包括静态资源缓存、cdn、非覆盖式发布等问题。合理的静态资源资源部署可以为前端性能带来较大的优化空间。
-
-线上发布：
-- 根据文件内容生成 `contentHash` 作为文件名，确保相同内容相同的文件生成的`contentHash`一样
-- 根据入口文件递归文件的资源依赖关系，首先构建最底层被依赖的资源文件名。
-- 部署发布时，先更新资源文件（如js，css，图片），最后更新 html，采用非覆盖式发布
+如果有条件和需要可以采用“灰度发布”。
 
 
 ## 网站安全
 XSS: （Cross-Site Scripting）跨站脚本攻击
 CSRF: （Cross-site request forgery） 跨站请求伪造
 CSP: （Content Security Policy） 内容安全策略
+
+
+## 前端监控

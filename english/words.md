@@ -13,3 +13,8 @@ external: 外部的
 
 2024/02/23
 alternative: 备选的，替代物
+integration： 继承，结合，求积分
+feature: 特性
+future: 未来，将来的
+modular: 模块化的
+
