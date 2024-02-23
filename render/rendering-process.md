@@ -7,3 +7,4 @@
 5. layout
 6. paint
 7. composition
+8. display

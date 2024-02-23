@@ -6,10 +6,17 @@
 
 
 ## 加载时性能优化
+
 - 减少 HTTP 请求数量
 一个完整的 HTTP 请求需要经历 DNS 查找，TCP 握手，浏览器发出 HTTP 请求，服务器接收请求，服务器处理请求并发回响应，浏览器接收响应等过程
   1. 使用 CSS Sprites
   2. 内联图像 data: URL
+  3. 内联 CSS，JS
+  4. 合并 js，css
+
+- 优化资源的加载
+  1. css
+  2. js
 
 - 使用缓存
   1. 缓存通用 js,css
@@ -22,7 +29,7 @@
   - 尽可能使用 Brotli 压缩算法，接着是 Gzip
 
 - 静态资源使用 CDN
-  1. 
+  1. 使用 CDN 缩短资源的传输距离
 
 - 服务器支持 gzip 压缩格式。Content-Encoding: gzip, Accept-Encoding: gzip。
   1. deflate 压缩效果不是很理想
@@ -38,6 +45,7 @@
 
 - 将 JavaScript 文件放在底部，可以的话加上异步属性    
  [MDN: script标签的async与defer属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)
+ 使用 async 加载的脚本会在下载后立即解析和执行，而使用 defer 加载的脚本会在 HTML 文档解析完成时执行 - 这与浏览器的 DOMContentLoaded 事件同时发生。此外，async 脚本可能会不按顺序执行，而 defer 脚本则会按照它们在标记中出现的顺序执行。defer不能用于内联脚本。
 
 - 减少 DNS 查找
   1. 将内容分发到至少两个但不超过四个主机
@@ -47,8 +55,6 @@
 
 - 使用服务端渲染
 
-- 使用 HTTP2
-
 - 优化图片加载，图片压缩
 
 - 延迟 图片,iframe 加载
@@ -57,6 +63,10 @@
   `<link rel="prefetch" href="/chunk.js"/>` 
 
 - 测量服务器响应时间，缩短服务器响应时间
+
+- 负载均衡
+
+- 使用 HTTP2
 
 ## 运行时优化
 - 减少重排与重绘
@@ -72,6 +82,8 @@
 - 合理提升元素层级(translateZ,will-change)
 
 
+## 字体
+
 ## chrome 
 消除阻塞渲染的资源
 适当调整图片大小
@@ -81,6 +93,9 @@
 缩减 JavaScript
 启用文本压缩 gzip
 
+
+## 客户端渲染
+1. 必须等待脚本下载，解析，执行之后才知道需要加载的资源，预加载扫描程序失去了作用。
 
 
 

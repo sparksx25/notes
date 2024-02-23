@@ -10,3 +10,6 @@ forgery： 赝品，伪造
 expire：到期，失效
 accomplish: 实现，完成
 external: 外部的
+
+2024/02/23
+alternative: 备选的，替代物
