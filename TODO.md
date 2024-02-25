@@ -17,3 +17,6 @@
 - git hooks
 - git submodule
 - 设计模式
+
+- react, vue, solidjs, preact 的区别
+- webpack, vite, parcel, rollup 之间的区别

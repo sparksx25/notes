@@ -117,7 +117,7 @@ nodejs 中使用 ECMA 语法。  可通过以下俩种方法
 2. 父 packages.json 中声明 type: "module"
 
 
-## webgl
+## WebGL
 https://webglfundamentals.org/webgl/lessons/zh_cn/webgl-fundamentals.html
 
 
