@@ -16,3 +16,4 @@
 - Bash 
 - git hooks
 - git submodule
+- 设计模式
