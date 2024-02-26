@@ -21,7 +21,7 @@
   2. tree-shaking：使用 ES Module 静态加载的特性对 javaScript 进行 tree-shaking
   3. code splitting：根据路由或功能进行代码拆分
   4. minimize css: 压缩 css
-  5. optimize css: css 属性简写合并，使用 less，scss 时不要嵌套过深
+  5. optimize css: css 属性简写合并,使用16进制替换 rgb 格式，使用 less，scss 时不要嵌套过深
   6. zip: 使用 Brotli, Gzip 算法对资源进行压缩传输。
 
 

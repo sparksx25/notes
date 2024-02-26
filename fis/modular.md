@@ -6,25 +6,48 @@
 
 ## Webpack
 - Webpack 是一个功能强大的模块打包工具，可以将项目中的各种文件（包括 JavaScript、CSS、图片等）视为模块，通过 loader 和 plugin 等机制对其进行处理和转换，并最终输出一个或多个打包后的文件。
-- Webpack 具有高度的**可配置性和扩展性**，可以满足各种复杂项目的需求，但需要开发者对其配置和使用有一定的了解和掌握。
+- Webpack 具有**高度的可配置性和扩展性**，可以满足各种复杂项目的需求，但需要开发者对其配置和使用有一定的了解和掌握。
 - Webpack 5 更新了许多新特性，如持久化缓存、优化构建性能、模块联邦等，进一步提高了其打包效率和开发体验。
 
-高度可配置性和拓展性:
-- 对资源有高度的拓展性
-- 支持自定义代码拆分 code-splitting
-- 支持持久化缓存
-- tree-shaking
-- 支持  CommonJS、AMD、ES6 Module 模块的打包
+优点:
+- 有丰富的生态，插件系统比较强大，对各种模块系统兼容性最佳（AMD, umd, cjs, esm）
+- 支持自定义代码拆分 code-splitting，持久化缓存，tree-shaking，提取公共代码
+
+缺点：
+- 产物不够干净，产物不支持生成 esm 格式， 插件开发上手较难，不太适合库的开发
+- 构建慢: loader 之间不知道彼此的存在，导致模块存在多部转译的时候存在多次 parse(转成 AST 树)的情况
+- 需要对配置项比较熟悉
 
 
 ## vite
-- Vite 是一个基于 ES Modules 的构建工具，旨在提供更快的开发服务器和更快的生产构建。
-- Vite 利用浏览器原生支持 ES Modules 的特性，在开发环境中使用预构建的 ES Modules 文件，避免了传统打包工具中繁琐的编译和打包过程，从而提高了开发效率。
-- Vite 可以与现代框架（如 Vue.js、React 等）无缝集成，提供了一些有用的开发工具（如自动刷新、HMR 等），使得开发者可以更加专注于业务逻辑的实现。
-- Vite 在开发环境中具有极快的启动速度和开发体验，尤其在现代框架下表现更佳
+- Vite 是一个基于 ES Modules 的构建工具，利用浏览器原生支持 ES Modules 的特性，旨在提供更快的开发服务器和更快的生产构建。
+- Vite 将会使用 **[esbuild 预构建依赖](https://cn.vitejs.dev/guide/dep-pre-bundling)**，以 原生 ESM 方式提供源码。Vite 只需要在浏览器请求源码时进行转换并按需提供源码。
+- 生产环境使用 Rollup 打包，将相关依赖打包成一个文件，减少网络往返
+
+
+特性：
+- 支持将资源内联为 base64 编码。通过 build.assetsInlineLimit 设置
+- 
 
 
 ## Parcel
-- Parcel 是一个**零配置**的模块打包器，能够自动处理项目中的各种文件类型，包括 JavaScript、CSS、HTML、图像等。
-- Parcel 的设计理念是简单易用，引入了许多现代 Web 开发的新特性，如缓存、代码分割、HMR 等，使得开发者无需进行额外的配置即可使用。
-- Parcel 适用于小到中等规模的项目，但在处理大型项目时可能会遇到性能问题。
+- Parcel 强调极速**零配置**Web应用打包工具，它利用多核处理提供了极快的速度，并且不需要任何配置
+- Parcel 能够自动处理项目中的各种文件类型，包括 JavaScript、CSS、HTML、图像等。
+- Parcel 支持代码分割、HMR 等，使得开发者无需进行额外的配置即可使用。
+- Parcel最大的优势：因为webpack的每个 loader 都要生成一遍AST，Parcel 则不用，只需生成一次AST（相当于Parcel内置了loader，才能做此优化）
+
+
+## ESBuild
+- ESBuild 使用 Go 编写，并且比以 JavaScript 编写的打包器预构建依赖快 10-100 倍。
+- 强调性能，内置了对css、图片、react、typescript等内置支持，编译速度特别快(是webpack和rollup速度的100倍+),缺点是目前插件系统较为简单，生态不如webpack和rollup成熟。
+
+## Rollup
+强调对库开发的支持，基于 ESM 模块系统，对tree shaking有着良好的支持，**产物非常干净**，**支持多种输出格式（iife, umd, esm）**，适合做库的开发，插件api比较友好，缺点是对cjs支持需要依赖插件，且支持效果不佳需要较多的hack，不支持HMR，做应用开发时需要依赖各种插件
+
+
+## Snowpack
+Snowpack 也是一个与 Vite 十分类似的非构建式原生 ESM 开发服务器。该项目已经不维护了。团队目前正在开发 Astro，一个由 Vite 驱动的静态站点构建工具
+
+
+## Reference
+- [构建工具之间的差异](https://cloud.tencent.com/developer/article/2030300)
