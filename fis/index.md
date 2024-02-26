@@ -55,7 +55,7 @@ CSP: （Content Security Policy） 内容安全策略
 
 
 ## 其他需求
-1. 移动端设备屏幕适配 postcss + px-to-vw
+1. [移动端适配](https://mp.weixin.qq.com/s/-yQtgXqZVTg50IstopaS9g) postcss + px-to-vw
 2. 网站换肤：web.dev
 3. 多个项目代码共享：npm，git-subtree，git-submodule
 4. 跨端开发 flutter，electron，uniapp，taro，
