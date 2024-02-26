@@ -18,3 +18,5 @@ feature: 特性
 future: 未来，将来的
 modular: 模块化的
 
+2024/02/26
+integral: 必须的，不可或缺的
