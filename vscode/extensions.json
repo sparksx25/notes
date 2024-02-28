@@ -3,11 +3,17 @@
   "recommendations": [
     "Vue.volar",
     "Vue.vscode-typescript-vue-plugin",
-    "eamodio.gitlens",
-    "editorconfig.editorconfig",
+    
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
+    
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
     "wayou.vscode-todo-highlight",
     "streetsidesoftware.code-spell-checker",
+
+    "esbenp.prettier-vscode",
+    "darkriszty.markdown-table-prettify",
+    "docsmsft.docs-markdown"
   ]
 }
