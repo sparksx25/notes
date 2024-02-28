@@ -66,12 +66,15 @@ window.devicePixelRatio = 0.5:
 
 设置文档缩放比例:   
 - `meta`标签可用于提供 名称 - 值 对形式的文档元数据，name 属性为元数据条目提供名称，而 content 属性提供值。
-- CSS 设备适配规范定义了元数据名称 viewport， 为视口的初始大小提供指示（hint），目前仅用于移动设备。（即设置初始文档的显示大小）
+- CSS 设备适配规范定义了元数据名称 viewport， 为视口的初始大小提供指示（hint），目前**仅用于移动设备**。（即设置初始文档的显示大小）
+
 
 initial-scale = 0.5：   
-表示 设备宽度/可视视口 = 0.5。说明屏幕的尺寸是文档尺寸的一半，即文档的尺寸是屏幕尺寸的2倍。   
-如果屏幕的宽是 375px。则文档的 `html`标签的宽是 750px。即表示文档需要放大2倍，相应的字体也会变大2倍。
+~~表示 设备宽度/可视视口 = 0.5。说明屏幕的尺寸是文档尺寸的一半，即文档的尺寸是屏幕尺寸的2倍。~~   
+~~如果屏幕的宽是 375px。则文档的 `html`标签的宽是 750px。即表示文档需要放大2倍，但是字体不一定是等比放大两倍(原因不详)。~~
 
+TODO:
+动态改变 meta initial-scale 效果不对
 
 ## vw 适配（推荐）
 使用 postcss 将 px 转成 vw。
@@ -100,5 +103,6 @@ lib-flexible 是淘宝团队出品的一个移动端自适应解决方案，通�
 
 ## Reference
 - [掘金: 像素/分辨率/物理像素和逻辑像素](https://juejin.cn/post/6844904094344151054)
+- [掘金: 移动端适配](https://juejin.cn/post/6844903951012200456)
 - [MDN: viewport](https://developer.mozilla.org/zh-CN/docs/Glossary/Viewport)
 - [MDN: meta 标签](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name)
