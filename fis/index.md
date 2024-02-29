@@ -16,7 +16,7 @@
 - [js 代码规范](./eslint.md)
 - [css 代码规范](./stylelint.md)
 - [git 提交规范](./git.md)
-- [代码提交检查](./code-test.md)
+- [代码提交检查](./code-lint.md)
 
 
 ## 模块化开发
