@@ -29,3 +29,11 @@ lightning： 闪电，很快的
 customize：定制
 principles: 原则，道德准则
 emphasis: 重点，强调
+
+2024/02/29
+expect: 期待，怀孕
+except： 除了
+exception：异常，例外
+repository: 仓库，(电脑)数据库
+crowd: (体育)观众，听众，挤满
+

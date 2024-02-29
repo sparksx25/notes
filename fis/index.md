@@ -29,9 +29,7 @@
 
 
 ## 自动化测试
-1. 单元测试
-2. 集成测试
-3. 端到端测试
+- [自动化测试](./test.md)
 
 
 ## 持续集成
@@ -54,10 +52,11 @@ CSP: （Content Security Policy） 内容安全策略
 ## 前端监控
 
 
-## 其他需求
+## 其他场景
 - [移动端适配](https://mp.weixin.qq.com/s/-yQtgXqZVTg50IstopaS9g) postcss + px-to-vw
 - 跨端开发 flutter，electron，uni-app，taro，
 - SSR(Server-Side Render)
 - 多个项目代码共享：npm，git-subtree，git-submodule
 - 项目文档
+- 国际化(i18n, crowdin：自动化翻译插件)
 - 网站换肤：web.dev
