@@ -37,3 +37,6 @@ exception：异常，例外
 repository: 仓库，(电脑)数据库
 crowd: (体育)观众，听众，挤满
 
+2024/03/01
+isolate: 孤立，分离，孤独的
+idea: 想法，注意，目标

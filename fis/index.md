@@ -54,9 +54,12 @@ CSP: （Content Security Policy） 内容安全策略
 
 ## 其他场景
 - [移动端适配](https://mp.weixin.qq.com/s/-yQtgXqZVTg50IstopaS9g) postcss + px-to-vw
-- 跨端开发 flutter，electron，uni-app，taro，
+- 跨端开发 flutter，electron，uni-app，taro
 - SSR(Server-Side Render)
 - 多个项目代码共享：npm，git-subtree，git-submodule
 - 项目文档
 - 国际化(i18n, crowdin：自动化翻译插件)
 - 网站换肤：web.dev
+- js babel 转换
+- css 模块化，原子化（tailwind, windicss）
+- [React 组件库 与 相关库 推荐](https://zhuanlan.zhihu.com/p/546697951)
