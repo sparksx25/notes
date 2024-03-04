@@ -5,9 +5,13 @@
 - [数组的稳定排序](../algorithm/sort/array-sort.md)
 - [无限滚动]()
 - [虚拟列表]()
+- [请求竞争]
 
 - [css动画](./animation.md)
 
 
 
+
+
+## 插件
 - [markdown 解析](https://github.com/markdown-it/markdown-it)

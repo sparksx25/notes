@@ -40,3 +40,12 @@ crowd: (体育)观众，听众，挤满
 2024/03/01
 isolate: 孤立，分离，孤独的
 idea: 想法，注意，目标
+
+
+2024/03/02
+individual: 单独的，个人
+although：虽然，但是
+separately：单独地，分别地
+segment: 片段
+imperative: 重要的
+suspend： 暂停，中止

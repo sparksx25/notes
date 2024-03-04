@@ -28,9 +28,10 @@ const FormComponent = forwardRef(function FormComponentImplement(props, ref) {
 })
 ```
 
-- useSyncExternalStore 
+- useSyncExternalStore
+- 使用外部 store, 订阅外部护具
 ```javascript
-const externalStoer = {
+const externalStore = {
   state: {},
   listeners: [],
   subscribe(callback) {
@@ -44,6 +45,6 @@ const externalStoer = {
   }
 }
 function Component() {
-  useSyncExternalStore(externalStoer.subscribe, externalStore.getState)
+  useSyncExternalStore(externalStore.subscribe, externalStore.getState)
 }
 ```
