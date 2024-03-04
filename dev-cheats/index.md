@@ -5,7 +5,7 @@
 - [数组的稳定排序](../algorithm/sort/array-sort.md)
 - [无限滚动]()
 - [虚拟列表]()
-
+- [内容大小自适应](../package/components/fitted-box.vue)
 - [css动画](./animation.md)
 
 

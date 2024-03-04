@@ -40,15 +40,6 @@ export class Subscription {
   }
 
   /**
-   * @description 取消订阅某种类型的事件
-   * @param {string} [eventName]
-  */
-  unsubscribeEvent(eventName) {
-    const key = eventName || this.builtInKey
-    this.subscribers[key] = []
-  }
-
-  /**
    * @description 通知某种类型的事件
    * @param {any} data
    * @param {string} [eventName]

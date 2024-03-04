@@ -40,3 +40,9 @@ crowd: (体育)观众，听众，挤满
 2024/03/01
 isolate: 孤立，分离，孤独的
 idea: 想法，注意，目标
+
+
+2024/03/04
+compatible: 兼容的
+rectangle：矩形
+meal: 进餐

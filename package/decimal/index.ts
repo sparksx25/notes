@@ -84,7 +84,7 @@ function intRightShift(n: string, places: number): string {
  * @param n 
  * @returns 
  */
-function nomalize(n: number | string): string {
+function normalize(n: number | string): string {
   const num = String(n);
   const expression = num.match(/e([-+])?(\d+)$/);
   if (!expression) return num;
@@ -104,7 +104,7 @@ function nomalize(n: number | string): string {
  */
 function parse(n: number | string): Meta {
   // ('1.3123e12').match(/^([+-])?(\d+)(?:\.(\d+))?(?:e([-+])?(\d+))$/)
-  const res = nomalize(n).match(/^([+-])?(\d+)(?:\.(\d+))?$/)!;
+  const res = normalize(n).match(/^([+-])?(\d+)(?:\.(\d+))?$/)!;
   const sign = res[1] || '';
   const integer = res[2];
   const fraction = res[3] || '';
