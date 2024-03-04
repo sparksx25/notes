@@ -41,6 +41,20 @@ crowd: (体育)观众，听众，挤满
 isolate: 孤立，分离，孤独的
 idea: 想法，注意，目标
 
+2024/03/02
+familiar: 熟悉的，知交，妖精
+get familiar with 熟悉...
+seamless: 无缝的
+concept: 概念
+stuck: 被困住
+Traditionally: 习惯上，传统上
+palette: 调色板
+
+2024/03/03
+variant: 变异，变形，变体的
+separator: 分隔符
+visibility: 可见性
+
 
 2024/03/04
 compatible: 兼容的
