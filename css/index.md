@@ -17,6 +17,9 @@ object-fit
 perspective
 perspective-origin
 
+isolation
+mix-blend-mode
+
 ## css函数
 calc()
 var()
