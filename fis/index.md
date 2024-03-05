@@ -7,8 +7,7 @@
 
 
 ## 前端开发框架选型
-- [React 与 Vue 技术选型](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&idx=3&mid=2247571219&sn=77d2e326bd8039bafd47eaf4b4577a9d)
-
+- [技术选型](./technical-choice.md)
 
 ## 代码规范
 - [编码风格](./code-style.md)
