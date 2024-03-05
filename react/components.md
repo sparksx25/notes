@@ -10,5 +10,12 @@
 - 返回 Promise 的组件
 - Relay and Next.js框架
 
+```tsx
+  <Suspense fallback={<Loading />}>
+    <h2>Preview</h2>
+    <MarkdownPreview markdown={markdown} />
+  </Suspense>
+```
+
 
 ## Profiler

@@ -49,6 +49,12 @@ concept: 概念
 stuck: 被困住
 Traditionally: 习惯上，传统上
 palette: 调色板
+individual: 单独的，个人
+although：虽然，但是
+separately：单独地，分别地
+segment: 片段
+imperative: 重要的
+suspend： 暂停，中止
 
 2024/03/03
 variant: 变异，变形，变体的
@@ -60,3 +66,5 @@ visibility: 可见性
 compatible: 兼容的
 rectangle：矩形
 meal: 进餐
+
+

@@ -6,8 +6,13 @@
 - [无限滚动]()
 - [虚拟列表]()
 - [内容大小自适应](../package/components/fitted-box.vue)
+- [请求竞争]
+
 - [css动画](./animation.md)
 
 
 
+
+
+## 插件
 - [markdown 解析](https://github.com/markdown-it/markdown-it)
