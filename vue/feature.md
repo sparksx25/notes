@@ -52,6 +52,31 @@ export function render(...) {
 1. Vue3 对于使用 reactive, ref 创建的响应式数据，对于嵌套的子对象，只有当访问子对象的时候才进行依赖收集。
 2. Vue2 是在组件创建或使用 set 方法时，立即递归遍历整个对象，为每个属性生成 watcher。
 
+```typescript
+function reactive(target) {
+  if (
+    target[ReactiveFlags.RAW] &&
+    !(isReadonly && target[ReactiveFlags.IS_REACTIVE])
+  ) {
+    return target
+  }
+  const existingProxy = proxyMap.get(target)
+  if (existingProxy) {
+    return existingProxy
+  }
+  const targetType = getTargetType(target)
+  if (targetType === TargetType.INVALID) {
+    return target
+  }
+  // 不会立即进行递归遍历对象的所有属性
+  const proxy = new Proxy(
+    target,
+    targetType === TargetType.COLLECTION ? collectionHandlers : baseHandlers
+  )
+  proxyMap.set(target, proxy)
+}
+```
+
 ## 能够更好的监听数组，对象的改变
 1. 能够监听数组长度的变化
 2. 能够监听到对象属性的新增与删除
@@ -72,6 +97,36 @@ export function render(...) {
 
 ## 多个应用实例
 1. 能够创建多个应用实例，每个应用实例之间注册的插件相互独立
+
+## 内存优化
+1. 使用 WeakMap，WeakSet 缓存数据进行内存优化
+
+```typescript
+function reactive(target) {
+  if (
+    target[ReactiveFlags.RAW] &&
+    !(isReadonly && target[ReactiveFlags.IS_REACTIVE])
+  ) {
+    return target
+  }
+  // target already has corresponding Proxy
+  const existingProxy = proxyMap.get(target)
+  if (existingProxy) {
+    return existingProxy
+  }
+  // only specific value types can be observed.
+  const targetType = getTargetType(target)
+  if (targetType === TargetType.INVALID) {
+    return target
+  }
+  const proxy = new Proxy(
+    target,
+    targetType === TargetType.COLLECTION ? collectionHandlers : baseHandlers
+  )
+  proxyMap.set(target, proxy)
+}
+```
+
 
 
 ## cacheHandlers 事件侦听器缓存
