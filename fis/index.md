@@ -61,5 +61,5 @@ CSP: （Content Security Policy） 内容安全策略
 - 国际化(i18n, crowdin：自动化翻译插件)
 - 网站换肤：web.dev
 - js babel 转换
-- css 模块化，原子化（tailwind, windicss）
+- css 模块化，原子化（tailwind, WindiCSS，UnoCss），css 压缩优化(cssnano)
 - [React 组件库 与 相关库 推荐](https://zhuanlan.zhihu.com/p/546697951)

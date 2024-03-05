@@ -70,4 +70,8 @@ meal: 进餐
 
 2024/03/05
 conflict: 争执，冲突
+nano: 毫秒，纳
+innovation: 创新，改革
+influence: 影响，对...起作用
+influenced: 受影响的
 

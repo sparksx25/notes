@@ -37,8 +37,8 @@ const MarkdownPreview = lazy(() => delayForDemo(import('./MarkdownPreview.js')))
 ```
 
 ## memo
+- 类似于 PureComponent，通过比较更新前后 Props 是否一致，决定是要重新渲染该组件
 - 缓存组件，与 vue 的 keep-alive 起相同的作用
-
 
 ## createPortal
 自定义内容挂载位置
