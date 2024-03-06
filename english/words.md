@@ -74,4 +74,5 @@ nano: 毫秒，纳
 innovation: 创新，改革
 influence: 影响，对...起作用
 influenced: 受影响的
+encrypted: 加密的
 
