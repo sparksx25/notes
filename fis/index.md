@@ -11,17 +11,18 @@
 
 ## 代码规范
 - [编码风格](./code-style.md)
-- [typescript 强类型约束与语法提示](./ts.md)
 - [js 代码规范](./eslint.md)
 - [css 代码规范](./stylelint.md)
 - [git 提交规范](./git.md)
+- [typescript 增强代码质量](./ts.md)
 - [代码提交检查](./code-lint.md)
 
 
 ## 模块化开发
 - 利用模块化开发规范（如 CommonJS、AMD、ES6 Module）将代码拆分成独立的模块，提高代码复用性和可维护性。
 - 使用打包工具（如 Webpack、vite、Parcel）将模块打包成可部署的静态资源文件。
-
+- [js 模块化开发]()
+- [css 模块化]()
 
 ## 性能优化
 - [性能优化](./performance.md)
@@ -47,6 +48,9 @@ XSS: （Cross-Site Scripting）跨站脚本攻击
 CSRF: （Cross-site request forgery） 跨站请求伪造
 CSP: （Content Security Policy） 内容安全策略
 
+字符
+same-site
+
 
 ## 前端监控
 
@@ -62,3 +66,4 @@ CSP: （Content Security Policy） 内容安全策略
 - js babel 转换
 - css 模块化，原子化（tailwind, WindiCSS，UnoCss），css 压缩优化(cssnano)
 - [React 组件库 与 相关库 推荐](https://zhuanlan.zhihu.com/p/546697951)
+- [微前端](https://juejin.cn/post/7118712142764703751)

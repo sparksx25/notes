@@ -19,9 +19,10 @@
 - git submodule
 - 设计模式
 
-- react, vue, solidjs, preact 的区别
+- react, vue, solidjs, preact， svelte 的区别
 - 前端组件库
--
--
+
+- 微前端
+- WebComponent
 - https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/clip
 
