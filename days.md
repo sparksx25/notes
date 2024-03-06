@@ -75,7 +75,7 @@ CountQueuingStrategy: 以 Chunk 数量作为排队策略
 ByteLengthQueuingStrategy：以队列中所有 Chunk 的字节总数作为排队策略
 
 
-## Nodesjs Stream
+## Nodejs Stream
 
 ### 四种类型的流： Writable, Readable, Duplex, Transform
 
