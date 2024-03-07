@@ -1,9 +1,9 @@
-# getUserInfo
+# 获取用户信息
 
+## getUserInfo
 - 必须是在用户已经授权的情况下调用
 - wx.getSetting 可以获取用户权限授权情况
 
-## 数据响应
 ```json
 {
   "cloudID": "78_zCeXFfEqZ5PSonKAocfzjbolwnEgVagHIykLSlHejD7Cf_cTNZgXciEXV4I",
@@ -22,12 +22,11 @@
   "rawData": "{\"nickName\":\"微信用户\",\"gender\":0,\"language\":\"\",\"city\":\"\",\"province\":\"\",\"country\":\"\",\"avatarUrl\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132\"}",
   "errMsg": "getUserInfo:ok"
 }
-
 ```
 
+signature：`signature = sha1( rawData + session_key )`   
 
-## signature
-`signature = sha1( rawData + session_key )`
+encryptedData: encryptedData 可能包含敏感数据（如 openId, unioId），接口的明文内容将不包含这些敏感数据。开发者如需要获取敏感数据，
+需要对接口返回的加密数据(encryptedData) 进行对称解密
 
-## encryptedData
-encryptedData 可能包含敏感数据（如 openId, unioId），接口的明文内容将不包含这些敏感数据。开发者如需要获取敏感数据，需要对接口返回的加密数据(encryptedData) 进行对称解密
+
