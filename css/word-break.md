@@ -1,4 +1,10 @@
 # 文本换行
+- word-break
+- word-wrap,overflow-wrap
+- white-space
+- letter-spacing
+- word-spacing
+- text-wrap: 兼容性极差
 
 ## word-break
 CSS 属性 word-break 指定了怎样在**单词内**断行。可以设置以下属性值       
@@ -64,5 +70,5 @@ white-space =
 
 ## word-spacing
 
-## hypen: auto | none | manual  
+## hyphen: auto | none | manual  
 CSS 属性 hyphens 告知浏览器在换行时如何使用连字符连接单词。可以完全阻止使用连字符，也可以控制浏览器什么时候使用，或者让浏览器决定什么时候使用。

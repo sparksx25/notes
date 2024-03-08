@@ -4,11 +4,14 @@
 > 查看指定包的`package.json`相关配置    
 
 ```
-# 语法
+# 查看指定包的 package.json 信息
 npm view [<package-spec>] [<field>[.subfield]...]
 
 # 查看 vue 的所有版本
 npm view vue versions
+
+# 查看指定的字段
+npm view vue@3.0.0 dependencies
 
 aliases: info, show, v
 e.g. npm view vue@3.0.0 dependencies
