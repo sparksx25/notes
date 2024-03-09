@@ -81,3 +81,11 @@ trial: 测试，考验，选拔
 thread: 线程
 audience: 观众
 
+2024/03/09
+chapter: 章， 把……分成章节
+availability：可用行，单身
+whichever: 哪一个
+In case: 万一
+via: 经由，经过（某一地方）；通过，借助于（某种手段或人）
+automate: 使自动化
+deploy: 部署
