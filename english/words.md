@@ -89,3 +89,11 @@ In case: 万一
 via: 经由，经过（某一地方）；通过，借助于（某种手段或人）
 automate: 使自动化
 deploy: 部署
+
+2024/03/11
+inversion: 反转
+standard：标准，标准的
+numeric： 数字，数字的
+FAQ: frequently asked question
+recipe: 食谱，秘诀
+fundamental: 基本的，基本原理

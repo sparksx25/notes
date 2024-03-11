@@ -76,6 +76,12 @@ function createObject(shape: string){
 ## 装饰器模式
 主要体现在**功能拓展**
 
+## 控制反转（IoC）
+inversion of control
+
+## 依赖注入(DI)
+dependency Injection 
+
 # Reference
 - [汤姆大叔](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
 - [维基百科: 设计模式](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA))
