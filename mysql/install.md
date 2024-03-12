@@ -3,8 +3,8 @@
 ## 安装流程
 - 下载软件包[mysql 下载地址](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.34-winx64.zip)
 
-- 配置数据库目录 mysql软件包根目录新建 my.ini 文件，配置 mysql 服务
-  ```
+- mysql 配置: 支持使用`my.ini`文件配置数据库，如数据库字符集，数据存储目录
+  ```conf
     [mysqld]
     # 设置mysql安装目录
     basedir=E:\mysql\mysql-8.0.34-winx64
@@ -25,6 +25,19 @@
 
 ## mysqld(MySQL Server Daemon)
 mysqld 是 MySQL 服务器的主要进程，它负责管理数据库、处理并发连接、执行查询、存储数据等核心功能。当你启动 MySQL 服务器时，实际上就是运行 mysqld 可执行文件。  
+
+
+## 安装目录
+```
+├─bin
+├─database
+├─docs
+├─include
+├─lib
+├─my.ini
+└─share
+
+```
 
 
 ## 设置字符集

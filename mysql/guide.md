@@ -1,10 +1,5 @@
 # getting start
 
-## 查看字符集
-```sql
-show variables like '%char%';
-```
-
 ## 创建数据库
 ```sql
 -- 创建数据库 dev_english:
@@ -46,15 +41,7 @@ INSERT INTO users (name, tel) VALUES ('小贝', 15083749952);
 source /user/home/english.sql
 ```
 
-
-default-character-set = utf8
-character_set_server = utf8
-
-[mysql]
-default-character-set = utf8
-
-[mysql.server]
-default-character-set = utf8
-
-[client]
-default-character-set = utf8
+## 删除
+```sql
+DELETE FROM users WHERE id < 13;
+```

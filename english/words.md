@@ -97,3 +97,14 @@ numeric： 数字，数字的
 FAQ: frequently asked question
 recipe: 食谱，秘诀
 fundamental: 基本的，基本原理
+
+2024/03/12
+furthermore: 此外，而且
+possibility：可能性，发展前景，机会，潜能
+incompatibility: 不兼容
+backslash: 反斜杠
+fatal： 致命的
+capability: 能力，计算机性能
+collation: 校对，排列规则
+collection: 收集，采集
+character：性格，品质，文字
