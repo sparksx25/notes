@@ -114,3 +114,6 @@ further： 进一步，促进
 particular： 特定的
 restrict：限制，约束
 On the other hand: 另一方面
+
+2024/03/14
+manual: 手工的，使用手册
