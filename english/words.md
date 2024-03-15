@@ -117,3 +117,6 @@ On the other hand: 另一方面
 
 2024/03/14
 manual: 手工的，使用手册
+
+2024/03/15
+parallel: 并行的
