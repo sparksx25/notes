@@ -108,6 +108,18 @@ capability: 能力，计算机性能
 collation: 校对，排列规则
 collection: 收集，采集
 character：性格，品质，文字
+retrieval: 检索
+shorthand: 简略的表达方式
+further： 进一步，促进
+particular： 特定的
+restrict：限制，约束
+On the other hand: 另一方面
+
+2024/03/14
+manual: 手工的，使用手册
+
+2024/03/15
+parallel: 并行的
 
 2024/03/16
 allocate: 分配
