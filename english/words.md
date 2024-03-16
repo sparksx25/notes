@@ -108,3 +108,6 @@ capability: 能力，计算机性能
 collation: 校对，排列规则
 collection: 收集，采集
 character：性格，品质，文字
+
+2024/03/16
+allocate: 分配
