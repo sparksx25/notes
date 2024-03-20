@@ -4,6 +4,7 @@
 - useState
 - useReducer
 - useContext
+- useSyncExternalStore
 
 ## 副作用
 - useEffect
@@ -14,6 +15,9 @@
 - useMemo
 - useCallback
 - useDeferredValue
+
+## 工具类
+- useImperativeHandle
 - useTransition
 
 

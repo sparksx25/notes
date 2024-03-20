@@ -1,7 +1,15 @@
 # Vue3 较 Vue2 的优点
 
+新特性:
+  1. 组合式 API
+  2. 单文件组件中的组合式 API 语法糖 (`<script setup>`)*
+  3. Teleport 组件
+  4. Fragments 片段
+  5. Emits 组件选项
+
+
 兼容性:
-  1. vue2 支持 IE9+，Vue3不支持 IE
+  1. Vue3  Vue 只支持原生支持 ES2015 的浏览器。 vue2 支持 IE9+
 
 
 性能方面的提升:
@@ -9,15 +17,18 @@
   2. 静态标记，静态标记加快了 diff 的过程，只比对带有静态标记的节点，且知道需要比较的内容，如属性，文本
   3. 响应式优化，不会在创建组件时立即递归响应式数据，为每个键创建响应式监听，只有在访问该属性时才创建响应式监听
   4. 内存优化，使用 WeakMap 缓存响应式数据
+  5. 更好的 tree-shaking，如何开发中没有使用到 `transition` 组件，将不会打包该组件
 
 
 开发层面的提升
   1. 通过 Proxy 能够更好的监听数组，对象的改变，如能够监听到数组长度的变化，对象属性的新增于删除
   2. Composition API 能够很好的提升代码复用
-  3. 去除了不必要的根组件
+  3. 支持 多根元素模板
   4. 创建的多个应用实例之间注册的插件相互独立
-  5. 更友好的组件信息，`defineExpose`, `defineEmits`
-  6. TS 的支持，更好的类型推断，使用 Volar 编辑器插件可以检测到 Template 模板中数据的类型
+  5. 单文件组件中的组合式 API 语法糖 (`<script setup>`)*
+  6. 组件的 `defineExpose`, `defineEmits`
+  7. Teleport 组件
+  8. TS 的支持，更好的类型推断，使用 Volar 编辑器插件可以检测到 Template 模板中数据的类型
 
 ## 静态提升
 vue2 每次更新时都会重新创建每个虚拟 DOM 节点。   
@@ -154,8 +165,6 @@ function reactive(target) {
 ## cacheHandlers 事件侦听器缓存
 ## ssr渲染
 ## 自定义渲染API
-
-
 
 ## Reference
 - [vue3 相比 vue2 的十项优点](https://bbs.huaweicloud.com/blogs/300280)
