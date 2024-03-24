@@ -9,3 +9,10 @@
 [Ajv JSON schema validator](https://www.npmjs.com/package/ajv)
 [Custom JSON-Schema keywords for Ajv validator](https://www.npmjs.com/package/ajv-keywords)
 [schema-utils](https://www.npmjs.com/package/schema-utils)
+
+
+
+
+## 拖拽
+react-beautiful-dnd
+react-dnd

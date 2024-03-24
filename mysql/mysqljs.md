@@ -11,11 +11,16 @@
 4. 对字段: 使用 `??` 占位符
 
 
-mysql.raw():
+## Method
+mysql.escape: 转译字段值
+
+mysql.escapeId: 转移字段
+
+mysql.raw(): 生成不转译文本
   **Caution:** The string provided to mysql.raw() will skip all escaping functions when used, so be careful when passing in unvalidated input.
 
 mysql.format(sql)
-    可生成预查询语句
+  可生成预查询语句
 
 
 ## FAQ
