@@ -59,6 +59,12 @@ Strings: 字符串
 3. 声明可读取的字符数组。`char name[] = "John Smith";`
 4. 单引号表示单个字符，双引号表示字符串
 5. 字符常量不能赋值给字符变量
+6. 字符数组的长度不是很重要，依靠 "\0" 判断字符串的结束
+
+```c
+`char name[] = {"John Smith"}`
+`char name2[] = "John Smith";`
+```
 
 ## 关键字
 static:
@@ -77,14 +83,21 @@ for, while
 ## 函数
 - printf
 - sprintf(var, format, ...): 格式化赋值，将输出的值重定向到变量 var 中
-- strlen(str): 返回字符串的长度
+- strlen(str): 返回字符串的有效长度，不包含 "\0"
 - strncmp(str1, str2, len): 如果相同，返回数字0；如果不同，返回其他数字
 - strncat(desc, str, len): 将指定长度的 str 字符拷贝到 desc 字符数组
-
+- strcat(str1, str2): 连接
+- strcpy,strncpy: 复制
+- strlwr(): 转小写
+- strupr(): 转小写
+- sizeof(): 求字节，可以对一个类型求字节
+- malloc(字节长度):动态分配内存
+- free(var): 释放内存
 
 ```c
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 int main() {
   char * first_name = "Hello";
   char last_name[] = "World";
@@ -114,7 +127,7 @@ printf("The value of a is now %d\n", a); // 3
 
 ## 库
 stdio
-1. printf
+1. printf: 遇到 "\0" 字符结束输出
 2. sprintf
 3. putchar
 
@@ -135,3 +148,10 @@ void main() {
   printf("%s", name);
 }
 ```
+
+
+## FAQ
+1. 数组不需要取地址符
+2. 字符串以 "\0" 字符作为结束
+3. 变量最好在声明时就赋值，否则可能会使用该内存之前未清理的值
+4. C 语言的变量作用域主要有两种：文件作用域（file scope）和块作用域（block scope）。
