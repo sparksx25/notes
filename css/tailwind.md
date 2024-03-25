@@ -19,3 +19,7 @@ Tailwind CSS v3.0 是针对最新的稳定版本的 Chrome、Firefox、Edge 和 
 2. 除此之外也可以通过插件自定义样式
 3. Vue 组件中的样式不能使用 tailwind 指令
    
+## Reference
+- [tailwindcss 中文网](https://www.tailwindcss.cn/docs/overflow)
+- [tailwindcss UI库](https://tailwindcomponents.com/components/pages)
+- [tailwind 界面参考](https://demos.creative-tim.com/soft-ui-dashboard-pro-tailwind/pages/ecommerce/products/edit-product.html)
