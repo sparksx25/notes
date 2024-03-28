@@ -8,6 +8,7 @@
 - svg文件 可用于 css, 如作为背景图, mask 等
 - `img`,`embed`, `object`, `iframe` 标签可以加载 .svg 文件
 - svg 标签支持添加类样式
+- 可通过操作 DOM 的方式操作 SVG 节点 
 
 ## Concepts  
 SVG 版本: 
