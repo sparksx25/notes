@@ -14,5 +14,11 @@
 
 
 ## 拖拽
-react-beautiful-dnd
+react-beautiful-dnd: 不支持跨层级拖拽
+- [react-beautiful-dnd story](https://react-beautiful-dnd.netlify.app/?path=/story/single-vertical-list--basic)
+- [react-beautiful-dnd demos](https://codesandbox.io/p/sandbox/k260nyxq9v?file=%2Findex.js%3A81%2C42-81%2C53)
+- [Sortable.js](https://sortablejs.github.io/Sortable/#nested)
 react-dnd
+
+## icons
+react-icons
