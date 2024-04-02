@@ -4,8 +4,8 @@
   1. 组合式 API
   2. 单文件组件中的组合式 API 语法糖 (`<script setup>`)*
   3. Teleport 组件
-  4. Fragments 片段
-  5. Emits 组件选项
+  4. Fragments 片段: 支持多根节点组件
+  5. 引入了 Emits, expose, setup 组件选项
 
 
 兼容性:

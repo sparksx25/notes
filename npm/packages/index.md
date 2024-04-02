@@ -11,6 +11,10 @@
 [schema-utils](https://www.npmjs.com/package/schema-utils)
 
 
+## 框选
+selecto:
+- [selecto demo](https://daybrush.com/selecto/storybook/?path=/story/selecto--continue-to-select)
+- [SelectoOptions](https://daybrush.com/selecto/release/latest/doc/Selecto.html#.SelectoOptions)
 
 
 ## 拖拽
