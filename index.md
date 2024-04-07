@@ -8,8 +8,9 @@
 - [ECMA 规格文档](https://tc39.es/ecma262/2022/)
 
 ## 电子书
-[免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)
-[免费电子书阅读](https://github.com/binzh303/IT_Book_pro)
+- [免费电子书阅读](https://github.com/fuhmmin/it-ebooks-cn)
+- [免费电子书阅读](https://github.com/binzh303/IT_Book_pro)
+- [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh)
 
 ## 周刊参考池
 - [InfoQ 前端专栏](https://www.infoq.cn/news/aRc3dogIgR4dABwJRWXw)
