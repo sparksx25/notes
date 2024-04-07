@@ -18,3 +18,4 @@ Tutorialspoint 提供了丰富的在线教程，覆盖了 C 语言的各个方�
 
 ## Reference
 - [阮一峰：C语言](https://wangdoc.com/clang/pointer)
+- [语言学习平台](https://www.learn-c.org/)
