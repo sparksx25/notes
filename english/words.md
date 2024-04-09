@@ -127,3 +127,13 @@ allocate: 分配
 2024/03/27
 vanilla: 香草味的；无特色的，普通的
 beware: 当心，提防
+
+2024/04/02
+volunteer: 志愿者，主动做，志愿做
+emergencies: 紧急情况
+
+
+2024/04/08
+typically: 一般，通常
+beneficial: 有益的
+energy: 能力，精力
