@@ -16,6 +16,7 @@
 
 ## 注意点
 1. 根据规范不存在 '1.0.1' 这个版本，修订版本一定是跟着次版本号走的
-
    
-- 摘自[语义化版本控制规范](https://semver.org/lang/zh-CN/)
+## REFERENCE
+- [语义化版本控制规范](https://semver.org/lang/zh-CN/)
+- [npm 版本范围表示](https://docs.npmjs.com/cli/v6/using-npm/semver)
