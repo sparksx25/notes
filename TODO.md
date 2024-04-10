@@ -43,19 +43,5 @@ rxjs
 无服务
 
 如何开发一个 Vue, React 组件
+vite 热更新的实现
 
-
-```js
-function logger(text) {
-  const logEl = document.querySelector('#logger')
-  const spanEL =  document.createElement('DIV')
-  spanEL.innerText = text
-  logEl.appendChild(spanEL)
-}
-window.addEventListener('error',(err) => {
-  logger(`message: ${err.message}`)
-  logger(`filename: ${err.filename}`)
-  logger(`lineno: ${err.lineno}`)
-  logger(`colno: ${err.colno}`)
-})
-```
