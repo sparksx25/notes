@@ -137,3 +137,6 @@ emergencies: 紧急情况
 typically: 一般，通常
 beneficial: 有益的
 energy: 能力，精力
+
+2024/04/11
+unspecified: 未指定的
