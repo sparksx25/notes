@@ -21,3 +21,9 @@ D3（或 D3.js）是一个免费的开源 JavaScript 库，用于可视化数据
 - 提供了统计图标，多维表格，关系图，流程图，地图，移动统计图，移动关系图等可视化工具
 
 - [antv](https://antv.antgroup.com/)
+
+## x6
+- X6 是基于 HTML 和 SVG 的图编辑引擎
+- 支持使用 SVG/HTML/React/Vue 定制节点样式和交互
+
+- [anv-x6](https://x6.antv.antgroup.com/tutorial/basic/graph)
