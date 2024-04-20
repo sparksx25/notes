@@ -35,8 +35,6 @@
 [进程与线程](https://zhuanlan.zhihu.com/p/441433148)
 
 
-ts include .d.ts 声明文件
-
 glob 模式的通配符
 rxjs
 微服务

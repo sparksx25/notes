@@ -149,3 +149,4 @@ chore: 家庭杂务，杂活；累活，苦差事
 
 2024/04/15
 coordinate: 坐标
+preference: 偏爱，优先
