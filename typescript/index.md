@@ -41,4 +41,6 @@ declare
   - readonly, (+-)?
   - 属性过滤
 
-## 目录
+## Reference
+- [阮一峰: TS教程](https://wangdoc.com/typescript/utility#recordkeys-type)
+- [TS-challenges: TS类型挑战](https://github.com/type-challenges/type-challenges/blob/main/README.zh-CN.md)

@@ -48,21 +48,25 @@
 
 
 ## 推送分支
-git push   
-- 将本地的当前分支推送到远程的同名分支
-git  
-git push -u origin `branch_name`   
-- -u 是 --set-upstream 的简写
-- 将`branch_name`分支推送到远程，并在远程创建一个同名的`branch_name`分支，同时建立跟踪
+- git push   
+ 将本地的当前分支推送到远程的同名分支
+
+- git push -u origin `branch_name`   
+  -u 是 --set-upstream 的简写。将`branch_name`分支推送到远程，并在远程创建一个同名的`branch_name`分支，同时建立跟踪
 
 
-## 其它
+## 重命名
 - git branch -m `old_branch` `new_branch`   
   重命名分支
 
+
+## 仓库分支同步
+- git fetch --prune origin
+从远程仓库 `origin` 中获取最新的更新，并且删除本地已经不存在于远程仓库的分支。
+
+## 其他
 - git config branch.`branch_name`.description   
   配置分支描述信息
 
 - git branch --set-upstream-to=origin/`remote_branch` `local_branch`   
   设置本地分支跟踪远程分支，如果本地分支和远程分支不是同名的，那么 `git pull` 时不会自动合并代码
-

@@ -12,9 +12,6 @@
 git 工具内置本地文档 file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/index.html
 
 
-## HEAD
-
-
 ## 参考文章
 - [知乎: submodule, subtree](https://zhuanlan.zhihu.com/p/100214931)
 - [腾讯：submodule的使用](https://cloud.tencent.com/developer/article/2136829?from_column=20421&from=20421)

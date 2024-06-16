@@ -1,5 +1,8 @@
 # TODO
 
+## bitcoin
+- [bitcoinbook](https://github.com/bitcoinbook/bitcoinbook/blob/develop/preface.adoc)
+
 - 文件下载 file-saver
 - element-ui 上传组件
 - 上传文件检验规则
@@ -33,6 +36,7 @@
 线程与进程的区别：网页开发渲染线程和脚本线程是互斥的，这也是为什么长时间的脚本运行可能会导致页面失去响应，而在小程序中，二者是分开的，分别运行在不同的线程中
 
 [进程与线程](https://zhuanlan.zhihu.com/p/441433148)
+
 
 
 glob 模式的通配符

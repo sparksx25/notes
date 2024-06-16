@@ -107,3 +107,4 @@
 - [chrome开发者平台](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=zh-cn)
 - [雅虎: 网站优化最佳实践](https://developer.yahoo.com/performance/rules.html)
 - [MDN: script标签的async与defer属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)
+- [主线程调度](https://github.com/astoilkov/main-thread-scheduling)

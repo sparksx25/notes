@@ -43,13 +43,20 @@
 
 ## 个人博客
 - [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
+- [月落个人博客](https://notes.yueluo.club)
 
-- [文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
 
-- [技术选型：各框架的特性](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ%3D%3D&idx=3&mid=2247571219&scene=27&sn=77d2e326bd8039bafd47eaf4b4577a9d#wechat_redirect)
+## 大屏开发
+- [DataV 可视化大屏组件库](http://datav.jiaminghi.com/guide/scrollRankingBoard.html#%E5%8D%95%E6%9D%A1%E6%BB%9A%E5%8A%A8)
 
-- [v8相关](https://v8.js.cn/features/)
 
+## 搜索引擎
+- [聚合其他搜索引擎结果的搜索引擎](https://www.searchforjohn.com/)
 
 ## 工具
 - [在线流程图绘制](https://app.diagrams.net/)
+
+
+
+- [v8相关](https://v8.js.cn/features/)
+- [文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
