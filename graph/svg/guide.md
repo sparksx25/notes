@@ -56,6 +56,10 @@
 - polyline
 - polygon
 
+## svg
+svg 的 width,height属性支持 `px,vw,cm,em,pt`等单位，如果只写数字则默认是`px`。
+
+
 ## 元素
 - defs:
   SVG 允许我们定义以后需要重复使用的图形元素，defs 元素里面的内容 支持任意数量、任意顺序的某些元素
@@ -80,5 +84,8 @@
   2. symbol 元素用来定义一个图形模板对象，它可以用一个`<use>`元素实例化
 
 ## 属性
-- viewBox
+viewBox
+  
+  - [张鑫旭：svg viewBox 属性的理解](https://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/?shrink=1)
   -[viewBox属性解读](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Positions)
+

@@ -5,3 +5,7 @@
 ## MessageChannel
 
 ## clicpboard 剪贴板
+
+
+## Reference
+- [HTML attribute 与 DOM property 的区别与映射](https://jakearchibald.com/2024/attributes-vs-properties/)

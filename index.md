@@ -55,8 +55,19 @@
 
 ## 工具
 - [在线流程图绘制](https://app.diagrams.net/)
-
-
-
 - [v8相关](https://v8.js.cn/features/)
 - [文件分片上传](http://creativejs.com/tutorials/advanced-uploading-techniques-part-1/index.html)
+- [自定义环境进度条](https://codepen.io/pizizz/pen/mwyNyG)
+
+
+## TODO:
+margin-top: 重叠，margin-bottom不生效
+element-plus table 滚动加载
+base64 编码的实现
+AES: 工作模式，填充模式
+如何开发一个组件: dialog empty-value
+table 的 colgroup， col 标签起什么作用
+template 中如何循环使用插槽
+
+块级格式化上下文
+margin- 外边距折叠：

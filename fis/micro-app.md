@@ -67,3 +67,4 @@
 ## Reference
 - [软件开发: 微前端详细介绍](https://martinfowler.com/articles/micro-frontends.html)
 - [各微前端框架对比](https://zhuanlan.zhihu.com/p/634567028)
+- [各个微前端框架之间的一个对比](https://lianpf.github.io/posts/frontend-develop/microfrontend_framework_compare/)

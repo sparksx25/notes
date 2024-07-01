@@ -79,3 +79,14 @@ IOS 上执行 window.open 会被拦截，IOS认为这种操作打开的是广告
 IOS默认图片,视频，a标签都是可拖拽的。解决方法如下
 1. 标签添加 `draggable=false`属性
 2. 添加 `-webkit-user-drag: none;` 样式
+
+
+## table
+CSS 动画兼容问题：
+safari 浏览器实现动画时,尽量使用 scale 属性进行变换。其他变换存在动画闪烁的问题。
+复现路径: 从前台切换到后台再切回前台即可复现。
+
+tr:
+tr 设置 `position: relative`,tr:after 设置 `position: absolute`, safari浏览器的表现行为是, tr:after 的定位父元素不是 tr, 而是 tbody。
+
+- [极客 CSS](https://geek-docs.com/css/css-top-articles/1011100_css_tables-2.html)
