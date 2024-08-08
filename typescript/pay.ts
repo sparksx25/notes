@@ -8,3 +8,12 @@ type Filter<T> = {
 }
 
 type FilteredUser = Filter<User> // { name: string }
+
+const STATUS = {
+  SUCCESS: 1,
+  FAIL: 2
+} as const;
+
+type ConstValue<T> = T[keyof T]
+
+type Values = ConstValue<typeof STATUS>
