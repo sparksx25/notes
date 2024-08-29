@@ -1,5 +1,9 @@
 # 索引
 
+## 最近在看
+- [babel](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
+- [cpu](https://cpu.land/)
+
 ## 常用站点
 - [Markdown基本语法](https://markdown.com.cn/basic-syntax/code.html)
 - [维基百科](https://zh.wikipedia.org/wiki/TeX)

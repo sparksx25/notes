@@ -3,6 +3,13 @@
 
 
 ## Table of content
+1. 影子宿主 shadow host
+2. 影子根 shadow root
+3. 影子树 shadow tree
+4. 影子边界 shadow boundary
+5. 自定义元素
+6. 事件冒泡，事件源
+7. 模板，插槽
 
 
 ## 自定义元素
@@ -22,8 +29,12 @@
 - 影子根(Element.shadowRoot)
 
 1. 影子 DOM 树内部对于在页面中运行的 JavaScript 和 CSS 是隐藏。即无法通过 DOM API 访问影子 DOM，全局样式对影子 DOM 不生效
+   
 2. 使用 `{mode: "open"} `参数为页面提供一种破坏影子 DOM 封装的方法。如果你不希望给页面这个能力，传递` {mode: "closed"}` 作为替代，此时 `Element.shadowRoot` 返回 null
+   
 3. `:host` 伪类生效
+
+4. DOM 元素成为 shadow host 之后，其原本的子元素不在页面上显示，显示的是 shadow tree
 
 样式应用:
 - 编程式，通过构建一个 CSSStyleSheet 对象并将其附加到影子根。
@@ -42,6 +53,11 @@ template 和 slot 元素
 
 2. 影子 DOM 如何触发父组件绑定的自定义事件
    调用通过影子宿主(shadow.host)的 dispatchEvent 方法，触发自定义事件冒泡
+
+3. React
+  shadow DOM 中触发的事件，事件源(event.target)指向的是 shadow host, 而不是触发事件的 shadow DOM。
+  由于事件源指向不同，react 使用合成事件机制的原因，导致在 React中 shadow DOM 内触发的事件，在外部不会触发。（react17.0以后修复了这个问题，将事件的代理对象由 document 改为了 app 的根节点）
+
 
 
 ## example
