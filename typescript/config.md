@@ -1,5 +1,10 @@
 # TS Config
 
+## 推荐配置
+- [tsconfig 推荐配置](https://github.com/tsconfig/bases?tab=readme-ov-file)
+
+
+## 配置项
 ```json
 {
   "compilerOptions": {
@@ -113,6 +118,22 @@
 
 ```
 
+## compilerOptions.target
+指定生成的 JavaScript 的目标版本,如 ES6(ES2015)，表示将代码转成 ES6 代码。
+
+
+## compilerOptions.module
+指定生成的模块规范。如 none，commonjs，amd，umd，system，es6/es2015，es2020，es2022，esnext，node16，nodenext
+
+## compilerOptions.moduleResolution
+告诉编译器使用哪种方式解析模块导入。 支持的值有 node10，node16，nodenext，bundler（推荐）
+
+- [typescript 的模块系统介绍](https://www.typescriptlang.org/docs/handbook/modules/reference.html#node16-nodenext)
+
+
+## compilerOptions.baseUrl
+
+
 ## compilerOptions.paths
 paths字段指定非相对路径的模块与实际脚本的映射, **可以指定多个路径**。
 ```json
@@ -120,6 +141,7 @@ paths字段指定非相对路径的模块与实际脚本的映射, **可以指�
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/**"],
       "jquery": ["node_modules/jquery/dist/jquery"]
     }
   }
@@ -138,19 +160,13 @@ rootDirs 字段指定模块定位时必须查找的其他目录。
 }
 ```
 
-## compilerOptions.target
-指定生成的 JavaScript 的目标版本,如 ES6(ES2015)，表示将代码转成 ES6 代码。
-
-
-## compilerOptions.module
-指定生成的模块规范。如 none，commonjs，amd，umd，system，es6/es2015，es2020，es2022，esnext，node16，nodenext
-
 
 ## compilerOptions.esModuleInterop
 生成额外的 JavaScript 以便支持导入 CommonJS 模块
 
+## compileOptions.allowSyntheticDefaultImports
+
+
 ## compilerOptions.forceConsistentCasingInFileNames
 确保在导入时大小写匹配
 
-## compilerOptions.moduleResolution
-告诉编译器使用哪种方式解析模块导入。 支持的值有 node10，node16，nodenext，bundler（推荐）

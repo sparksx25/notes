@@ -1,5 +1,9 @@
 # TODO
 
+- [mac 使用 443 端口](https://blog.csdn.net/u014395826/article/details/128551384)
+- [CSDN: mac电脑接口转发](https://blog.csdn.net/xiaobo060/article/details/100973738)
+- [腾讯: 创建 https 证书](https://cloud.tencent.com/developer/article/2199308)
+
 ## bitcoin
 - [bitcoinbook](https://github.com/bitcoinbook/bitcoinbook/blob/develop/preface.adoc)
 

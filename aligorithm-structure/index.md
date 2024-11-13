@@ -1,54 +1,76 @@
 # 数据结构
 
-## 数组
-- 数组占用的内存是连续的。
-- 数组的长度是固定的。
-- 数组中元素的类型是相同的。
+## 线性表
+- 顺序表（顺序存储）
+- 单链表（链式存储）
 
-## 列表
-列表弥补了数组长度固定的缺点。
-列表可以使用数组或链表实现。
-实现:
-[列表接口](./List.ts)
-[列表实现: ArrayList](./ArrayList.ts)
-[列表实现: ArrayLinked](./ArrayLinked.ts)
+typescript 实现:
+- [typescript 线性表接口](./List.ts)
+- [typescript 顺序表实现: ArrayList](./list/ArrayList.ts)
+- [typescript 单链表实现: ArrayLinked](./list/ArrayLinked.ts)
 
 ## 链表
-- 单向链表：单向链表的节点包含值和指向下一节点的引用两项数据。我们将首
+- 单链表：单向链表的节点包含值和指向下一节点的引用两项数据。我们将首
 个节点称为头节点，将最后一个节点称为尾节点，尾节点指向空 None 。
 使用场景：实现列表，栈，队列，hashMap
 
-- 环形链表：如果我们令单向链表的尾节点指向头节点（即首尾相接），则得到一个环形链表。在环形链
-表中，任意节点都可以视作头节点。
-使用场景：时间片轮转调度算法
-
-- 双向链表：与单向链表相比，双向链表记录了两个方向的引用。双向链表的节点定义同时包含指向后继
+- 双链表：与单向链表相比，双向链表记录了两个方向的引用。双向链表的节点定义同时包含指向后继
 节点（下一个节点）和前驱节点（上一个节点）的引用（指针）。相较于单向链表，双向链表更具灵活
 性，可以朝两个方向遍历链表，但相应地也需要占用更多的内存空间。
 
-实现:
-[单链表](./LinkedList.ts)
+- 循环链表：如果我们令单向链表的尾节点指向头节点（即首尾相接），则得到一个环形链表。在环形链
+表中，任意节点都可以视作头节点。
+使用场景：时间片轮转调度算法
+
+- 静态链表
+
+typescript
+- [typescript 单链表实现](./LinkedList.ts)
 
 
 ## 栈
 后进先出，先进后出
+
 
 ## 队列
 单向队列：队列一端只能进，另一端只能出。
 双向队列：队列任何一端都可以进出
 优先队列(priority queue)：可以使用大顶堆实现 
 
+可以使用单向队列实现树的广度遍历
+
+
 ## 哈希表(hash table)
-[哈希表](./hash-map/index.md)
-[链地址法实现哈希表](./hash-map/LinkedHashMap.ts)
-[线性探测实现哈希表](./hash-map/LinearHashMap.ts)
+
+typescript 实现
+- [实现哈希表](./hash-map/index.md)
+- [链地址法实现哈希表](./hash-map/LinkedHashMap.ts)
+- [线性探测实现哈希表](./hash-map/LinearHashMap.ts)
 
 ## 树
-[二叉树](./tree/binary-tree.md)
-[二叉树的遍历](./tree/BinaryTree.ts)
-[创建完全二叉树](./tree/CompleteBinaryTree.ts)
-[二叉搜索树](./tree/BinarySearchTree.ts)
-[平衡二叉搜索树](./tree/AVLTree.ts)
+树的类型
+- [二叉树](./tree/binary-tree.md)
+- [二叉树的遍历](./tree/BinaryTree.ts)
+- [创建完全二叉树](./tree/CompleteBinaryTree.ts)
+- [二叉搜索树](./tree/BinarySearchTree.ts)
+- [平衡二叉搜索树](./tree/AVLTree.ts)
+- 红黑树
+- 哈夫曼树
+- B 树
+- B+ 树
+
+
+树的操作:
+- 树的遍历
+
+
+## 图
+- 邻接矩阵法
+- 邻接表法
+- 有向图
+- 无向图
+- 加权图
+- 有向无环图
 
 
 ## 堆
