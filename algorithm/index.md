@@ -1,10 +1,12 @@
 # 算法
 
-- [github hello-algorithm 算法](https://www.hello-algo.com/chapter_divide_and_conquer/build_binary_tree_problem/#4)
+- [文档: hello-algorithm 算法](https://www.hello-algo.com/chapter_divide_and_conquer/build_binary_tree_problem/#4)
 - [github hello-algo](https://github.com/krahets/hello-algo/releases)
 
 
 ## 算法评估
+时间复杂度分析统计的不是算法运行时间，而是算法运行时间随着数据量变大时的增长趋势。
+
 时间效率：算法运行速度的快慢。
 空间效率：算法占用内存空间的大小。
 
@@ -17,18 +19,21 @@
 
 
 
-## 搜索
+## 搜索算法
 二分查找：针对有序的数据结构
 双指针
 
 
 ## 遍历
-深度优先遍历 (dfs)
+树的遍历:
+- 层序遍历
 - 前序遍历
 - 中序遍历
 - 后续遍历
 
-广度优先遍历（bfs）
+图的遍历
+- 深度优先遍历 (dfs)
+- 广度优先遍历（bfs）
 
 
 ## 分治
@@ -46,7 +51,13 @@
 - 其基本思想是在问题的每个决策阶段，都选择当前看起来最优的选择，即贪心地做出局部最优的决策，以期获得全局最优解。
 
 ## 排序
-
+- 冒泡排序
+- 选择排序
+- 快速排序
+- 插入排序
+- 希尔排序
+- 基数排序
+- 
 
 ## 迭代
 从指定位置开始遍历全部元素
