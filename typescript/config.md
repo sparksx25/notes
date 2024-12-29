@@ -1,4 +1,4 @@
-# TS Config
+# TS 配置说明
 
 ## 推荐配置
 - [tsconfig 推荐配置](https://github.com/tsconfig/bases?tab=readme-ov-file)
@@ -121,21 +121,20 @@
 ## compilerOptions.target
 指定生成的 JavaScript 的目标版本,如 ES6(ES2015)，表示将代码转成 ES6 代码。
 
-
 ## compilerOptions.module
-指定生成的模块规范。如 none，commonjs，amd，umd，system，es6/es2015，es2020，es2022，esnext，node16，nodenext
+指定生成产物的模块系统。如 none，commonjs，amd，umd，system，es6/es2015，es2020，es2022，esnext，node16，nodenext
 
 ## compilerOptions.moduleResolution
 告诉编译器使用哪种方式解析模块导入。 支持的值有 node10，node16，nodenext，bundler（推荐）
 
-- [typescript 的模块系统介绍](https://www.typescriptlang.org/docs/handbook/modules/reference.html#node16-nodenext)
+
 
 
 ## compilerOptions.baseUrl
-
+指定项目的基础路径
 
 ## compilerOptions.paths
-paths字段指定非相对路径的模块与实际脚本的映射, **可以指定多个路径**。
+路径别名, **可以指定多个路径**。
 ```json
 {
   "compilerOptions": {
@@ -150,8 +149,29 @@ paths字段指定非相对路径的模块与实际脚本的映射, **可以指�
 ```
 加载模块jquery时，实际加载的脚本是node_modules/jquery/dist/jquery，它的位置要根据baseUrl字段计算得到
 
+
+
+
+## compilerOptions.typeRoots
+typeRoots设置类型模块所在的目录，默认是`node_modules/@types`，该目录里面的模块会自动加入编译。一旦指定了该属性，就不会再用默认值`node_modules/@types`里面的类型模块。
+
+该属性的值是一个数组，数组的每个成员就是一个目录，它们的路径是相对于tsconfig.json位置。
+
+## compilerOptions.types
+默认情况下，typeRoots目录下所有模块都会自动加入编译，如果指定了types 属性，那么只有其中列出的模块才会自动加入编译。
+
+
+
+
+## compilerOptions.esModuleInterop
+生成额外的 JavaScript 以便支持导入 CommonJS 模块。
+如果 module 属性为 node16 或 nodenext，则 `esModuleInterop` 默认为true，其他情况默认为 false。
+注意，打开 `esModuleInterop`，将自动打开`allowSyntheticDefaultImports`。
+
+## compileOptions.allowSyntheticDefaultImports
+
 ## compilerOptions.rootDirs
-rootDirs 字段指定模块定位时必须查找的其他目录。
+rootDirs 字段指定查找模块时必须查找的其他目录。
 ```json
 {
   "compilerOptions": {
@@ -160,13 +180,7 @@ rootDirs 字段指定模块定位时必须查找的其他目录。
 }
 ```
 
-
-## compilerOptions.esModuleInterop
-生成额外的 JavaScript 以便支持导入 CommonJS 模块
-
-## compileOptions.allowSyntheticDefaultImports
-
-
 ## compilerOptions.forceConsistentCasingInFileNames
-确保在导入时大小写匹配
+确保在导入时文件名大小写匹配
+
 

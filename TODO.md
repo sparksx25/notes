@@ -7,6 +7,17 @@
 ## bitcoin
 - [bitcoinbook](https://github.com/bitcoinbook/bitcoinbook/blob/develop/preface.adoc)
 
+
+
+
+## 相对 URL 与 绝对 URL
+URL  指的是网络资源，绝对 URL 可以唯一表示一个资源在网络中的地址。
+
+
+## 相对路径 与 绝对路径
+路径指的是文件在磁盘中的路径。
+
+
 - 文件下载 file-saver
 - element-ui 上传组件
 - 上传文件检验规则
@@ -57,4 +68,17 @@ flutter
 docker 容器的背景与价值
 请求竞态
 
-
+- ts-node（待总结）
+- vscode debug/task（待总结）
+- rollup（待总结）
+- pnpm workspace（多个项目放在一个仓库进行管理：1. 可以跨项目间引用 2. 各项目相同的依赖使用同一版本 3.代码风格使用同一份配置 ，具体参考 vue3 仓库）
+- proxyMiddle(http-proxy, http-proxy-middle, http-proxy-agent)
+- 微信支付
+- babel
+- translate
+- audio 安全，基本知识, getUserMedia https
+- 请求竞态处理
+- 音频播放，多个 blob 文件实现持续播放
+- vite.config.ts 配置文件会先经过 esbuild 进行一次构建，构建的时候会将 `import.meta.filename`,`__filename` 等变量进行替换。
+- vite 实现多页面构建
+- vscode, chrome 插件开发

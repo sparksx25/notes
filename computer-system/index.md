@@ -58,3 +58,5 @@ CPU的增加会导致对主内存的读写存在冲突
 ## Reference
 - [廖雪峰：进程和线程](https://www.liaoxuefeng.com/wiki/1252599548343744/1304521607217185)
 - [CPU 工作流程](https://cpu.land/)
+- [计算机组成原理](https://0xinfection.github.io/reversing/pages/part-1-goals.html)
+

@@ -103,3 +103,13 @@ PCM 文件就是未经封装的音频原始文件或者叫音频”裸数据“
 
 ## 音视频相关
 [音视频相关](https://hughfenghen.github.io/posts/2023/07/31/webav-3-create-video/)
+
+- [WebAV](https://bilibili.github.io/WebAV/demo/2_1-concat-video)
+
+- [音频处理](https://hughfenghen.github.io/posts/2024/10/28/webav-video-editor/)
+
+- [音频: 声音的振幅，频率](https://pudding.cool/2018/02/waveforms/)
+
+- [张鑫旭: JS交互增加声音](https://www.zhangxinxu.com/wordpress/2017/06/html5-web-audio-api-js-ux-voice/)
+
+- [博客: PCM音量控制](https://blog.jianchihu.net/pcm-volume-control.html)
