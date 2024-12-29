@@ -4,4 +4,3 @@
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
 ```
 - [MDN: HTTP Authorization](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization)
-
