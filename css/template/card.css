@@ -1,0 +1,26 @@
+.cus-column {
+  --cus-column-width: 33.333%;
+  --cus-column-gap-y: 12px;
+  --cus-column-gap-x: 12px;
+  --cus-column-gap-x-half: calc(var(--cus-column-gap-x) / 2);
+  overflow: hidden;
+}
+.cus-column > ul {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: calc(-1 * var(--cus-column-gap-y));
+  margin-left: calc(-1 * var(--cus-column-gap-x-half));
+  margin-right: calc(-1 * var(--cus-column-gap-x-half));
+  width: auto;
+  padding: 0;
+  list-style: none;
+}
+.cus-column > ul > li {
+  width: var(--cus-column-width);
+  margin-top: var(--cus-column-gap-y);
+  padding-left: var(--cus-column-gap-x-half);
+  padding-right: var(--cus-column-gap-x-half);
+  box-sizing: border-box;
+}

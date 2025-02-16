@@ -18,24 +18,6 @@
 [MDN: 网页音频接口的基本概念](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API)
 
 
-
-## 声音
-
-混响：
-
-共鸣：
-
-音量：由“振幅”（amplitude）和人离声源的距离决定，振幅越大响度越大，人和声源的距离越小，响度越大。（单位：分贝dB）
-
-音调：频率越高音调越高
-
-音色：又称音品，波形决定了声音的音色。声音因物体材料的特性而不同，音色本身是一种抽象的东西，但波形是把这个抽象直观的表现。波形不同，音色则不同。不同的音色，通过波形，完全可以分辨的
-
-
-[百度百科：声音](https://baike.baidu.com/item/%E5%A3%B0%E9%9F%B3/33686?fr=ge_ala)
-
-
-
 ## 模拟信号转数字信号的过程
 1. 采样
 2. 量化
@@ -78,11 +60,10 @@ PCM 文件就是未经封装的音频原始文件或者叫音频”裸数据“
 
 
 
-- [知乎: 腾讯-视频基础知识](https://zhuanlan.zhihu.com/p/107804061)
 - [知乎： 分辨率、帧速率、比特率、视频格式的关系](https://zhuanlan.zhihu.com/p/60868555)
 
 
-## 音频
+## 音频术语
 - Opus 是一种高效的音频编码格式，适用于语音和音乐，具有低延迟和良好的音质。
 - PCM（脉冲编码调制）是一种无损的音频格式
 
@@ -98,8 +79,6 @@ PCM 文件就是未经封装的音频原始文件或者叫音频”裸数据“
 音频格式
 - wav
 - mp3
-
-- [腾讯: 音频基础知识](https://cloud.tencent.com/developer/article/2384198)
 
 ## 音视频相关
 [音视频相关](https://hughfenghen.github.io/posts/2023/07/31/webav-3-create-video/)

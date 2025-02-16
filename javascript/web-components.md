@@ -58,6 +58,43 @@ template 和 slot 元素
   shadow DOM 中触发的事件，事件源(event.target)指向的是 shadow host, 而不是触发事件的 shadow DOM。
   由于事件源指向不同，react 使用合成事件机制的原因，导致在 React中 shadow DOM 内触发的事件，在外部不会触发。（react17.0以后修复了这个问题，将事件的代理对象由 document 改为了 app 的根节点）
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>app</h1>
+    </div>
+    <script>
+        // 1. app 元素成为 shadow host 之后，其原本的子元素不在页面上显示，显示的是 shadow tree
+        // 2. shadow DOM 中触发的事件，事件源指向的是 shadow host, 而不是触发事件的 shadow DOM。
+        // 3. 由于 react 合成事件机制的原因，导致 shadow DOM 内触发的事件，在外部不会触发。
+        // （react17.0以后修复了这个问题，将事件的代理对象由 document 改为了 app 的根节点）
+        // 参考网址: https://michaeljier.cn/blog/shadow-dom
+        const app = document.querySelector('#app');
+        const shadowRoot = app.attachShadow({'mode': "open"});
+
+        const button = document.createElement('button')
+        button.textContent = 'inner Click';
+        button.onclick = function(event) {
+            // event.target -> app
+            console.log(event)
+        }
+        shadowRoot.appendChild(button);
+
+        document.body.addEventListener('click', (event) => {
+            // event.target -> app
+            console.log(event)
+        })
+    </script>
+</body>
+</html>
+```
 
 
 ## example

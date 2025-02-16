@@ -21,6 +21,13 @@ CPU的组成包含:
 ## 内存
 操作系统将应用程序代码加载到内存中。
 
+## 指令集架构（ISA）
+x86 架构: 采用复杂指令集计算机（CISC）设计
+ARM 架构: 精简指令集计算机（RISC）架构
+MIPS 架构：也是一种 RISC 架构
+
+指令集架构根据复杂度可分为: 复杂指令集计算机（CISC） 与 精简指令集计算机（RISC）
+
 
 ## 零散知识点
 
@@ -57,6 +64,7 @@ CPU的增加会导致对主内存的读写存在冲突
 
 ## Reference
 - [廖雪峰：进程和线程](https://www.liaoxuefeng.com/wiki/1252599548343744/1304521607217185)
-- [CPU 工作流程](https://cpu.land/)
 - [计算机组成原理](https://0xinfection.github.io/reversing/pages/part-1-goals.html)
+- [CPU 工作流程](https://cpu.land/)
+- [使用 c 语言实现简易操作系统](https://operating-system-in-1000-lines.vercel.app/zh/02-assembly)
 

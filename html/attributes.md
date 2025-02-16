@@ -1,0 +1,1 @@
+- [HTML attributes vs DOM properties](https://jakearchibald.com/2024/attributes-vs-properties/)

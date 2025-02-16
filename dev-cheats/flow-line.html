@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+
+  </style>
+  <svg width="600" height="600" id="container">
+    <defs>
+      <radialGradient
+        id="grad"
+        r="100"
+      >
+        <stop offset="0%" stop-color="#fff" stop-opacity='1'/>
+        <stop offset="100%" stop-color="#fff" stop-opacity='0' />
+      </radialGradient>
+      <mask id="Mask" maskUnits="userSpaceOnUse">
+        <circle id="m-circle" r="150" fill="url(#grad)"  />
+      </mask>
+    </defs>
+    <path d="M30, 30 100, 30 100, 100 30, 100 Z" stroke="none" fill="none" id="track"></path>
+  </svg>
+  <script>
+
+    function getLast(list) {
+      if (list.length) return list[list.length - 1];
+    }
+
+    /**
+     * @description 对象坐标点转数组
+    */
+    function point2Coords(points) {
+      points = Array.isArray(points) ? points : [point];
+      return points.reduce((coords, point) => {
+        coords.push(point.x, point.y);
+        return coords;
+      }, []);
+    }
+
+    /**
+     * @description 优化线段坐标点，去除直线上的重复点
+    */
+    function tersePolylinePoints(points) {
+      // y = kx + b(k != 0);
+      function createLinearEquation(a, b) {
+        const x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;
+        return function isOnLine(point) {
+          const x = point.x, y = point.y;
+          if (y1 === y2 && y === y1) return 0;
+          if (x1 === x2 && x === x1) return 0;
+          return (x - x1) / (x2 - x1) - (y - y1) / (y2 - y1);
+        }
+      }
+
+      let lineEquation = null;
+      const tersePoints = points.slice(0, 2);
+      for (let i = 2; i < points.length; i++) {
+        if (!lineEquation) lineEquation = createLinearEquation(...tersePoints.slice(-2));
+
+        const point = points[i];
+        const delta = Math.abs(lineEquation(point));
+        // 由于 js 计算精度的问题，没有使用 Decimal 相关库进行比较
+        // 所以采用一个粗略的值进行比较
+        if (delta < 0.1) {
+          tersePoints[tersePoints.length - 1] = point;
+        } else {
+          tersePoints.push(point);
+          lineEquation = null;
+        }
+      }
+      if (tersePoints.length > 3) {
+        console.log(tersePoints.length);
+      }
+      return tersePoints;
+    }
+
+    function joinPolylinePath(points) {
+      let path = [`M ${points[0].x} ${points[0].y}`];
+
+      for (let i = 1; i < points.length; i++) {
+        const point = points[i];
+        path.push(`L ${point.x} ${point.y}`);
+      }
+      return path.join(' ');
+    }
+
+    class Animation {
+      duration = 3000;
+      update;
+      percentage = 0;
+      startTime = null;
+      loop = true;
+      rafId = null;
+
+      constructor(update) {
+        this.update = update;
+      }
+
+      frame() {
+        this.rafId = requestAnimationFrame((currentTime) => {
+          if (this.startTime === null) this.startTime = currentTime;
+
+          const elapsed = currentTime - this.startTime;
+          this.percentage = Math.min(elapsed / this.duration, 1);
+          this.update(this.percentage);
+          if (elapsed >= this.duration) {
+            if (this.loop) {
+              this.startTime = currentTime;
+              this.frame();
+            } else {
+              this.stop();
+            }
+          } else {
+            this.frame();
+          }
+        });
+      }
+
+      start() {
+        this.frame();
+      }
+
+      stop() {
+        cancelAnimationFrame(this.rafId);
+      }
+
+      resume() {
+        this.startTime = null;
+        this.percentage = 0;
+        this.frame();
+      }
+    }
+
+    class FlowLine {
+      lineLength = 50;
+      line;
+      svg;
+      container;
+      track;
+      trackLength = 0;
+
+      constructor(svg, containerId, trackId) {
+        this.svg = svg;
+        this.container = this.getElementById(containerId);
+        this.track = this.getElementById(trackId);
+        this.trackLength = this.track.getTotalLength();
+        this.line = document.createElementNS(svg.namespaceURI, 'path');
+        this.line.setAttribute('fill', 'none');
+        this.line.setAttribute('stroke', 'red');
+        this.line.setAttribute('stroke-width', '2');
+        this.container.appendChild(this.line);
+      }
+
+      getElementById(selector) {
+        if (typeof selector === 'string') return document.getElementById(selector);
+        return selector;
+      }
+
+      update(percentage) {
+        const progress = percentage * (this.trackLength + this.lineLength);
+        let startLength = 0;
+        if (progress > this.lineLength) {
+          startLength = progress - this.lineLength;
+        }
+
+        const points = [];
+        for (let i = startLength; i <= progress; i++) {
+          const point = this.track.getPointAtLength(i);
+          points.push(point);
+        }
+        if (points.length > 1) {
+          const tersePoints = tersePolylinePoints(points);
+          const path = joinPolylinePath(tersePoints);
+          this.line.setAttribute('d', path);
+        }
+      }
+    }
+
+    class FlowGraph {
+      lines = [];
+
+      constructor(lines) {
+        this.lines = lines;
+      }
+
+      update(percentage) {
+        this.lines.forEach(line => {
+          line.update(percentage);
+        });
+      }
+
+      animate() {
+        const animate = new Animation();
+        animate.duration = 3000;
+        animate.update = this.update.bind(this);
+        animate.start();
+      }
+    }
+
+    const svg = document.getElementById('container');
+    new FlowGraph([
+      new FlowLine(svg, 'container', 'track')
+    ]).animate();
+
+  </script>
+</body>
+</html>

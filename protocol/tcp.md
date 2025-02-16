@@ -1,5 +1,9 @@
 # TCP 
 
+## Reference
+- [TCP3次握手](https://www.pixelstech.net/article/1727412048-Why-TCP-needs-3-handshakes)
+
+
 ## 介绍
 TCP 提供了可靠传输和拥塞控制。
 
