@@ -45,14 +45,6 @@
 - [廖雪峰技术文档](https://www.liaoxuefeng.com/)
 - [java开发](https://pdai.tech/md/java/basic/java-basic-lan-sum.html)
 
-## 个人博客
-- [来自一个老外的笔记](https://github.com/jbranchaud/til/tree/master/vim)
-- [月落个人博客](https://notes.yueluo.club)
-
-
-## 大屏开发
-- [DataV 可视化大屏组件库](http://datav.jiaminghi.com/guide/scrollRankingBoard.html#%E5%8D%95%E6%9D%A1%E6%BB%9A%E5%8A%A8)
-
 
 ## 搜索引擎
 - [聚合其他搜索引擎结果的搜索引擎](https://www.searchforjohn.com/)

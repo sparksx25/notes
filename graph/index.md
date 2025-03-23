@@ -29,4 +29,8 @@ D3（或 D3.js）是一个免费的开源 JavaScript 库，用于可视化数据
 - [anv-x6](https://x6.antv.antgroup.com/tutorial/basic/graph)
 
 
+## 大屏开发组件库
+- [DataV 可视化大屏组件库](http://datav.jiaminghi.com/guide/scrollRankingBoard.html#%E5%8D%95%E6%9D%A1%E6%BB%9A%E5%8A%A8)
+
+
 ## Three.js
