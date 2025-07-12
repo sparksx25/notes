@@ -46,13 +46,16 @@
     */
     function tersePolylinePoints(points) {
       // y = kx + b(k != 0);
+      function precis(n) {
+        return Number(n.toFixed(0));
+      }
       function createLinearEquation(a, b) {
-        const x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;
+        const x1 = precis(a.x), y1 = precis(a.y), x2 = precis(b.x), y2 = precis(b.y);
         return function isOnLine(point) {
-          const x = point.x, y = point.y;
-          if (y1 === y2 && y === y1) return 0;
-          if (x1 === x2 && x === x1) return 0;
-          return (x - x1) / (x2 - x1) - (y - y1) / (y2 - y1);
+          const x = precis(point.x), y = precis(point.y);
+          if (y1 === y2 && y === y1) return true;
+          if (x1 === x2 && x === x1) return true;
+          return (x - x1) / (x2 - x1) - (y - y1) / (y2 - y1) === 0;
         }
       }
 
@@ -62,18 +65,14 @@
         if (!lineEquation) lineEquation = createLinearEquation(...tersePoints.slice(-2));
 
         const point = points[i];
-        const delta = Math.abs(lineEquation(point));
         // 由于 js 计算精度的问题，没有使用 Decimal 相关库进行比较
         // 所以采用一个粗略的值进行比较
-        if (delta < 0.1) {
+        if (lineEquation(point)) {
           tersePoints[tersePoints.length - 1] = point;
         } else {
           tersePoints.push(point);
           lineEquation = null;
         }
-      }
-      if (tersePoints.length > 3) {
-        console.log(tersePoints.length);
       }
       return tersePoints;
     }

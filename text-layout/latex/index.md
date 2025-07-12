@@ -2,7 +2,7 @@
 # 排版
 
 - [知乎: Tex, LaTeX的基本使用](https://zhuanlan.zhihu.com/p/496078810)
-- [博客: LaTeX 符号速查表](http://www.uinio.com/Math/LaTex/)
+- [官网: KaTex](https://katex.org/docs/supported)
 
 ## Tex 排版系统
 TeX 是一种排版系统，由美国计算机科学家 Donald Knuth 开发，它基于宏语言的编程原理，专门用于生成和处理各种科技文献和出版物的复杂格式。
@@ -35,7 +35,7 @@ LaTeX是一种文档布局语言，所以 MathJax、Katex 只支持用于描述�
 - [MathJax](https://www.mathjax.org/#features)
 
 
-## markdown 中使用 LaTeX
+## markdown 中使用 KaTeX
 markdown 中使用方式如下
 
 $ \log_{2}(n+1) $
