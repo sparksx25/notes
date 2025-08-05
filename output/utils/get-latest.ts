@@ -1,20 +1,25 @@
-function getLatestValue(fn) {
-  if (getLatestValue.requestId === undefined) {
-    getLatestValue.requestId = 0;
+class FreshAction {
+  id: number = 0;
+
+  constructor() {
+    this.id = 0;
   }
-  getLatestValue.requestId++;
-  const redId = getLatestValue.requestId;
-  return new Promise((resolve, reject) => {
-    fn()
-      .then((res) => {
-        if (redId === getLatestValue.requestId) {
-          resolve(res);
-        }
-      })
-      .catch((err) => {
-        if (redId === getLatestValue.requestId) {
-          reject(err);
-        }
-      });
-  });
+
+  exec(fn: (...params: any[]) => Promise<any>, ...params: any[]) {
+    this.id++;
+    let index = this.id;
+    return new Promise((resolve, reject) => {
+      fn(...params)
+        .then((res) => {
+          if (this.id === index) {
+            resolve(res);
+          }
+        })
+        .catch((err) => {
+          if (this.id === index) {
+            reject(err);
+          }
+        })
+    })
+  }
 }

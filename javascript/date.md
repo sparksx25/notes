@@ -23,6 +23,8 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 // Fri Dec 27 2024 00:00:00 GMT+0800 (中国标准时间)
 new Date('2024/12/27')
 
+// 对 ISO 8601 格式的支持中，仅有日期的串 (例如 "1970-01-01") 
+// 会被处理为 UTC 而不是本地时间，与其他格式的串的处理不同。
 // 这个格式的日期被当作是 UTC 时间进行解析
 // Fri Dec 27 2024 08:00:00 GMT+0800 (中国标准时间)
 new Date('2024-12-27')

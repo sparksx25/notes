@@ -12,3 +12,12 @@ open -a QQ.app
 # 打开网址
 open -u http://example.com
 ```
+
+
+## 应用卸载
+- [mac卸载图标带锁的应用程序](https://zhuanlan.zhihu.com/p/20329604974)
+```
+sudo /usr/bin/chflags -R noschg /Applications/CorpLink.app
+sudo rm -rf /Applications/CorpLink.app
+```
+
