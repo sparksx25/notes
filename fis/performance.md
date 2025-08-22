@@ -19,8 +19,6 @@
 
 ## 加载时性能优化
 
-
-
 - 减少 HTTP 请求资源的数量   
   一个完整的 HTTP 请求需要经历 DNS 查找，TCP 握手，浏览器发出 HTTP 请求，服务器接收请求，服务器处理请求并发回响应，浏览器接收响应等过程，所以请求是比较耗时的。
 
@@ -40,12 +38,10 @@
   5. minimize css: 压缩 css
   6. zip: 使用 Brotli, Gzip 算法对资源进行压缩传输。
 
-
-- 避免资源重定向
-  example.com/page/ 重定向到 example.com/page
-
-- 资源预加载
+- 资源预获取，预加载   
+  预加载 chunk 会在父 chunk 加载时以并行方式开始加载；而预获取 chunk 则在浏览器闲置时下载
   1. 使用 `<link>` 标签预获取资源如 `<link rel="prefetch" href="/chunk.js"/>` 
+  2. 使用 `<link>` 标签预加载资源如 `<link rel="preload" href="/chunk.js"/>` 
 
 - 将 CSS 放在文件头部
   1. 长时间的白屏
@@ -75,6 +71,11 @@
   1. 压缩图片
   2. 使用合理的图片尺寸，根据需要加载合适大小的尺寸。如使用 img 的 srcset 属性，使用 picture 加载图片
   3. 图片懒加载
+
+
+- 避免资源重定向
+  example.com/page/ 重定向到 example.com/page
+
 
 
 ## 运行时优化
