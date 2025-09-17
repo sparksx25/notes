@@ -10,7 +10,8 @@
 ## 页面功能
 - [文案复制](./clipboard.md)
 - [无限滚动]()
-- [博客-虚拟滚动](https://youthfighter.github.io/react-virtual-list/transform.html)
+- [虚拟列表：使用 transform实现](https://vue-virtual-scroller-demo.netlify.app/recycle)
+- [虚拟列表：使用padding 实现](https://tangbc.github.io/vue-virtual-scroll-list/#/fixed-size)
 
 
 ## 请求优化

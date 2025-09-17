@@ -26,7 +26,8 @@
   2. 合理的合并 js，css文件，如 js 与 css 合并成一个文件，多个 js 文件或 css 文件合并到一个文件
   3. 较小的图片 icon 转成 base64 内联到代码中
   4. 使用字体图标，CSS Sprites 替代图片 icon
-  5. 缓存，合理的拆分 bundler，将第三方库打包成一个独立的 bundler，并设置一个较长时间的强缓存，缓存 img，对 components 进行协商缓存
+  5. 不使用 `@import`加载 css，会创建多余的 CSS 请求
+  6. 缓存，合理的拆分 bundler，将第三方库打包成一个独立的 bundler，并设置一个较长时间的强缓存，缓存 img，对 components 进行协商缓存
 
 
 
@@ -38,10 +39,11 @@
   5. minimize css: 压缩 css
   6. zip: 使用 Brotli, Gzip 算法对资源进行压缩传输。
 
-- 资源预获取，预加载   
+- 资源预获取，预加载，预连接
   预加载 chunk 会在父 chunk 加载时以并行方式开始加载；而预获取 chunk 则在浏览器闲置时下载
   1. 使用 `<link>` 标签预获取资源如 `<link rel="prefetch" href="/chunk.js"/>` 
   2. 使用 `<link>` 标签预加载资源如 `<link rel="preload" href="/chunk.js"/>` 
+  3. 使用 `<link>` 标签预加载资源如 `<link rel="preconnect" href="www.google.com"/>` 
 
 - 将 CSS 放在文件头部
   1. 长时间的白屏
