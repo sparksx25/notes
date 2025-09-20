@@ -1,6 +1,6 @@
 ## 正则
 ```js
-var tel = '15083749947'
+var tel = '15033756367'
 function escapeTel(tel) {
     return tel.replace(/^(\d{3})\d*(\d{4})$/, '$1****$2')
 }
