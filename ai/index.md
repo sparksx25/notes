@@ -1,0 +1,4 @@
+- [langchain官网](https://docs.langchain.com/oss/javascript/langchain/overview)
+- [图解 rect](https://7km.top/main/fibertree-prepare)
+- [掘金小册：深入浅出微前端](https://juejin.cn/book/7258893482318626868/section/7293207994501627939)
+- [掘金：子弈的 2025 年度总结](https://aicoding.juejin.cn/post/7598947628468207662)
